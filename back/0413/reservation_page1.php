@@ -30,10 +30,35 @@
 		    }
 			document.f3.submit();
 		}
+
+		function change3(){
+
+			var obj = document.getElementById("classname1");
+			for (i=0;i<obj.length;i++ ){
+				if(obj[i].selected){
+					document.f3.h.value= obj[i].value;
+			    }
+		    }
+			
+			var obj2 = document.getElementById("classname2");
+			for (i=0;i<obj2.length;i++ ){
+				if(obj2[i].selected){
+					document.f3.h2.value= obj2[i].value;
+			    }
+		    }
+
+			var obj3 = document.getElementById("testDate");
+			for (i=0;i<obj3.length;i++ ){
+				if(obj3[i].selected){
+					document.f3.h3.value= obj3[i].value;
+			    }
+		    }
+			document.f3.submit();
+		}
     </script>
 </head>
 <body>
-<form name="f3" method="post" action="reservation_page1.php">
+<form name="f3" method="POST" action="reservation_page1.php">
 <?php
     $date = $_POST['h3'];
 	if(strlen($date) == 0){	
@@ -106,6 +131,7 @@
 	}
 ?>	
 	</select>
+	
 <?php
 	$v_testDate = $_POST [ "testDate" ];
 
@@ -116,10 +142,14 @@
 	}
 ?>
 	<form method = "POST" action = "<?php echo $_SERVER [ 'PHP_SELF' ];?>" >
-	<input type = "date" name = "testDate" value =&lt?php echo $v_testDate ?> 
-	<input type = "submit" value = "조회" />
+	<input onchange="change3()" type = "date" name = "testDate" id = "testDate" value =<?php echo $v_testDate ?> > 
+	<!-- <input type = "submit" value = "조회" /> -->
 	<br><br>
 	</form>
+
+
+
+
 <?php	
 	$a="Y";
 	$b="Y";
