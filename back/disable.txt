@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+
+<body>
+
+ 
+
+<form>
+
+Buttons:
+
+<input type="button" id="firstbtn" value="OK">
+
+<input type="button" id="secondbtn" value="OK">
+
+</form>
+
+ 
+
+<p>Click the button below to disable the first button above.</p>
+
+ 
+
+<button onclick="disableElement()">Disable button</button>
+
+ 
+
+<script>
+
+ 
+
+function disableElement()
+
+{
+
+document.getElementById("firstbtn").disabled=true;
+
+}
+
+ 
+
+</script>
+
+</body>
+
+</html>

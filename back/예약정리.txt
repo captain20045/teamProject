@@ -1,0 +1,42 @@
+예약하기
+타임테이블(1시,2시,3시,4시,5시,6시,7시,8시)8개
+테마4개
+date("H:i:s")
+
+고객이 지역 지점 날짜를 선택하면 페이지를 리프레쉬 시키고 현재날짜 현재 시간을
+가져와서 시간이 지난 테마를 회색으로 바꾼다(델구분 n)(update 쿼리 사용).
+
+고객이 예약을 하면 예약 테이블에 고객정보를 담고 예약현황 테이블에는 날짜 테마명과 가격을 담는다 그리고 예약된 테마를 회색으로 바꾼다(델구분 n)(update 쿼리 사용).
+
+고객이 예약취소하면 예약 테이블과 예약현황 테이블에서 고객정보를 삭제하고
+(delete 쿼리 사용)예약취소된 테마를 노란색으로 바꾼다
+(델구분 y)(update 쿼리 사용).
+
+<현황>
+ 현황일련번호
+ 날짜
+ 테마
+ 시간대예약가능여부1
+ 시간대예약가능여부2
+ 시간대예약가능여부3
+ 시간대예약가능여부4
+ 시간대예약가능여부5
+ 시간대예약가능여부6
+ 시간대예약가능여부7
+ 시간대예약가능여부8
+ 
+create table p_reservation_status(
+ reservation_status_seq int(10) NOT NULL AUTO_INCREMENT,
+ date date NULL,
+ theme_seq int(4) NULL,
+ booking_possibiity_1 varchar(1) NULL,
+ booking_possibiity_2 varchar(1) NULL,
+ booking_possibiity_3 varchar(1) NULL,
+ booking_possibiity_4 varchar(1) NULL,
+ booking_possibiity_5 varchar(1) NULL,
+ booking_possibiity_6 varchar(1) NULL,
+ booking_possibiity_7 varchar(1) NULL,
+ booking_possibiity_8 varchar(1) NULL,
+ PRIMARY KEY(reservation_status_seq)
+);
+
