@@ -7,7 +7,7 @@
     <script src="http://www.youtube.com/player_api"></script><script language="javascript">
     document.title="SHERLOCK HOLMES - 셜록홈즈 방탈출 게임";
     </script>
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="css/main.css">
     
         <meta name="keywords" content="신천 방탈출카페,신림 방탈출카페,홍대 방탈출카페,잠실 방탈출카페,강남 방탈출카페,방탈출카페">
     <meta name="description" content="강남,홍대,잠실,노량진,신림 등 전국 40호점 국내최대 셜록 방탈출 카페">
@@ -18,11 +18,11 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="현생탈출 방탈출 카페">
  
-    <link rel="stylesheet" href="main.css" type="text/css">
-    <link rel="stylesheet" href="main.css" type="text/css">
-    <link rel="stylesheet" href="main.css" type="text/css">
-    <link rel="stylesheet" href="main.css" type="text/css">
-    <link rel="stylesheet" href="main.css" type="text/css">
+    <link rel="stylesheet" href="css/main.css" type="text/css">
+    <link rel="stylesheet" href="css/main.css" type="text/css">
+    <link rel="stylesheet" href="css/main.css" type="text/css">
+    <link rel="stylesheet" href="css/main.css" type="text/css">
+    <link rel="stylesheet" href="css/main.css" type="text/css">
     </head>
     <body>
         <header id="header">
