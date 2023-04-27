@@ -34,6 +34,68 @@
     <script type="text/javascript" src="/js/common.js"></script>
     </head>
     <body>
+    
+    <script>
+		function change1(){
+			var obj = document.getElementById("classname1");
+			for (i=0;i<obj.length;i++ ){
+				if(obj[i].selected){
+					document.f3.select_region.value= obj[i].value;
+			    }
+		    }
+			document.f3.submit();
+		}
+		
+		function change2(){
+			var obj = document.getElementById("classname1");
+			for (i=0;i<obj.length;i++ ){
+				if(obj[i].selected){
+					document.f3.selectArea.value= obj[i].value;
+			    }
+		    }
+			
+			var obj2 = document.getElementById("classname2");
+			for (i=0;i<obj2.length;i++ ){
+				if(obj2[i].selected){
+					document.f3.selectBranch.value= obj2[i].value;
+			    }
+		    }
+			document.f3.submit();
+		}
+
+		function change3(){
+
+			var obj = document.getElementById("classname1");
+			for (i=0;i<obj.length;i++ ){
+				if(obj[i].selected){
+					document.f3.selectArea.value= obj[i].value;
+			    }
+		    }
+			
+			var obj2 = document.getElementById("classname2");
+			for (i=0;i<obj2.length;i++ ){
+				if(obj2[i].selected){
+					document.f3.selectBranch.value= obj2[i].value;
+			    }
+		    }
+
+			var obj3 = document.getElementById("testDate");
+			for (i=0;i<obj3.length;i++ ){
+				if(obj3[i].selected){
+					document.f3.selectDate.value= obj3[i].value;
+			    }
+		    }
+			document.f3.submit();
+		}
+    </script>
+
+
+
+
+
+
+
+
         <header id="header">
             <div class="inner">
                 <div class="header_logo">
@@ -109,44 +171,128 @@
                     <li><a href="/reservation/res_info.php">예약확인</a></li>
                     <li><a href="/reservation/res_info.php">예약취소</a></li>
                 </ul>
+
+                
                 <div class="selectArea">
                 
-                    <!--현대극장 선택시 지역선택 노출 없음 -->
+                
                                 
-                    <select id="selectArea">
-                        <option value="">지역선택</option>
-                                                <option value="1">서울특별시</option>
-                                                <option value="9">경기도</option>
-                                                <option value="4">인천광역시</option>
-                                                <option value="12">충청 대전 세종</option>
-                                                <option value="13">전라 광주</option>
-                                                <option value="17">제주 강원</option>
-                                                <option value="15">경상도</option>
-                                        </select>
+<form name="f3" method="POST" action="rev_test.php">
+
+<?php
+    $date = $_POST['selectDate'];
+	if(strlen($date) == 0){	
+		$date = date('y-m-d');
+	}else{
+		$date = $_POST['selectDate'];
+	}
+	
+	$region_seq = $_POST['selectArea'];
+	if(strlen($region_seq) == 0){	
+		$region_seq = 1;
+	}else{
+		$region_seq = $_POST['selectArea'];
+	}
+	
+	$branch_seq = $_POST['selectBranch'];
+	if(strlen($branch_seq) == 0){	
+		$branch_seq = 1;
+	}else{
+		$branch_seq = $_POST['selectBranch'];
+	}
+	
+
+?>	
+
+
+<?php
+    $connect = mysqli_connect('localhost','root','','project3');
+    if(mysqli_connect_error()) {
+        echo "데이터베이스 연결에 실패하였습니다.";
+    }
+    $result2 = mysqli_query($connect, "SELECT region_seq,region_name FROM p_region");
+?>	
+    <select name="classname1" id="classname1" onchange="change1()">
+<?php
+    while($data = mysqli_fetch_array($result2)){
+		if($data['region_seq'] == $region_seq){
+?>
+		    <option value="<?php echo $data['region_seq']; ?>"selected><?php echo $data['region_name']; ?>
+<?php
+        }else{
+?>
+		    <option value="<?php echo $data['region_seq']; ?>"><?php echo $data['region_name']; ?>
+<?php		
+		}
+	}
+?>	
+	</select>
+               
+<?php	
+	$result3 = mysqli_query($connect, "SELECT branch_seq, region_seq, branch_name FROM p_branch where region_seq=$region_seq");
+?>	
+    <select name="classname2" id="classname2" onchange="change2()">
+<?php
+    while($data = mysqli_fetch_array($result3)){
+		if($data['branch_seq'] == $branch_seq){
+?>
+		    <option value="<?php echo $data['branch_seq']; ?>" selected><?php echo $data['branch_name']; ?>
+<?php
+        }else{
+?>
+		    <option value="<?php echo $data['branch_seq']; ?>"><?php echo $data['branch_name']; ?>
+<?php		
+		}
+	}
+?>	
+	</select>                    
                     
-                    
-                    <select id="selectBranch"><option value="">지점선택</option><option value="57">노량진점</option><option value="48">노원점</option><option value="88">대학로점</option><option value="89">서울대입구점</option><option value="54">성신여대점</option><option value="77">신림2호점</option><option value="35">잠실1호점</option><option value="67">잠실2호점</option><option value="69">종각점</option></select>
+                  
                     
                                     
-                    <!--현대극장 선택시 지역선택 노출 없음 -->
+
                                     
-                    <span class="datepicker date">
-                        <input type="text" name="res_date" id="res_date" class="ipt black hasDatepicker" autocomplete="off" readonly="">
-                        <i class="ico left cal_w"></i>
-                    </span>
-                </div>
-            </div>
+            <span class="datepicker date">
+<?php
+	$v_testDate = $_POST [ "testDate" ];
+
+	if (! empty ( $v_testDate )){
+		$newTestDate = new DateTime( $v_testDate );
+		$dayInt = $newTestDate ->format( "w" );
+		$day = [ "일" , "월" , "화" , "수" , "목" , "금" , "토" ];
+	}
+?>
+	<form method = "POST" action = "<?php echo $_SERVER [ 'PHP_SELF' ];?>" >
+	<input onchange="change3()" type = "date" name = "testDate" id = "testDate" value =<?php echo $v_testDate ?> > 
+	</form>
+            </span>
+        </div>
+    </div>
     
         </section>
     
+
+
+
+
+
+
         <section class="select_branch_img"></section>
     
+
+
+
+
+
         <section class="res_list">	
         
-        <div class="info_box"><!-- 개발시 display:none 삭제 -->
+        <div class="info_box">
             <h5>이벤트</h5>
             <div class="inner"><p><img src="/attach/plupload/o_1euhrue1c15a11bfj1khsc5muh2a.jpg" alt="노량진점-이벤트-수정.jpg" class="txc-image" style="font-size: 9pt; clear: none; float: none;"></p><p></p><p></p></div>
         </div>
+
+
+
         <div class="inner container">
             <ul>
 <?php
@@ -245,7 +391,7 @@ while($data = mysqli_fetch_array($result)){
                             <div class="row">
                                     <div class="col true">
                                     
-                                                                            <a href="/reservation/res_write.php?bno=57&amp;tno=186&amp;rdate=20230413&amp;rtime=14:50">
+                                            <a href="/reservation/res_write.php?bno=57&amp;tno=186&amp;rdate=20230413&amp;rtime=14:50">
                                         
                                             <p class="time"><?= $data['theme_start'] ?></p>
                                             <p class="state">예약가능</p>
@@ -260,8 +406,12 @@ while($data = mysqli_fetch_array($result)){
                     </li>
                 </ul>
         </div>
+        </section>
 
-
+        <input type="hidden" name="selectArea">
+        <input type="hidden" name="selectBranch">
+        <input type="hidden" name="selectDate">
+</form>
 
 <?php
     mysqli_close($connect); 
@@ -269,50 +419,7 @@ while($data = mysqli_fetch_array($result)){
 
 
 
-        <script>
-	
-            $('#selectArea').change(function(){
-                var o='<option value="">지점선택</option>';
-                if($("#selectArea option:selected").val()==''){
-                    $('#selectBranch').attr("disabled",true);
-                } else {
-                    $('#selectBranch').attr("disabled",false);
-                }
-                var a=$(this).val();
-    
-                if(a ==='1'){
-                    o += '<option value="11">노원점</op tion><option value="12">서울대점</option><option value="13">성신여대점</option>';
-                    
-                 }
-                if(a ==='9'){ 
-                    o += '<option value="21">모란역점</op tion><option value="22">수원여대점</option><option value="23">미사역점</option>';
-                }
-                if(a ==='4'){
-                    o += '<option value="31">부천점</option><option value="32">인하대점</option><option value="33">인천점</option>';
-                }
-                if(a ==='12'){
-                    o += '<option value="41">대전점</option><option value="42">세종점</option><option value="43">천안점</option>';
-                }
-                if(a ==='13'){
-                    o += '<option value="51">광주점</option><option value="52">충장로점</option><option value="53">전주점</option>';
-                }
-                if(a ==='17'){
-                    o += '<option value="61">제주점</option><option value="62">강릉점</option><option value="63">춘천점</option>';
-                }
-                if(a ==="15"){
-                    o += '<option value="71">대구점</option><option value="72>창원점</option><option value="73">부산점</option>';
-                }
-                $('#selectBranch').html(o);
-                $(function() {
-        $("#selectBranch").on("click", function() {
-            $("#inner container").show();
-        })
-        $("#selectArea").on("click", function() {
-            $("#inner container").hide();
-        })
-    })
-            });
-        </script>
+       
             <footer id="footer">
             <section class="footer_top">
                 <div class="inner container">
