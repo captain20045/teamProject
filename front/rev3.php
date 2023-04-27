@@ -2,22 +2,20 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi">
-    <!--<title>SHERLOCK HOLMES - 셜록홈즈 방탈출 게임</title>-->
     <title>Cube Escape</title>
     <script language="javascript">
-    document.title="Cube Escape - 큐브형식의 방 탈출 게임";
+    document.title="Cube Escape Game";
     </script>
-    	<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
     <link rel="stylesheet" href="css/main.css">
     
         <meta name="keywords" content="신천 방탈출카페,신림 방탈출카페,홍대 방탈출카페,잠실 방탈출카페,강남 방탈출카페,방탈출카페">
-    <meta name="description" content="강남,홍대,잠실,노량진,신림 등 전국 40호점 국내최대 셜록 방탈출 카페">
+    <meta name="description" content="강남,홍대,잠실,노량진,신림 등 전국 40호점 국내최대 큐브 방탈출 카페">
     <meta property="og:description" content="강남,홍대,잠실,노량진,신림 등 전국 40호점 국내최대 셜록 방탈출 카페">
     <meta name="naver-site-verification" content="90315006b3ecb880974d00ad95d55b4518b7de7b">
         
     
     <meta property="og:type" content="website">
-    <meta property="og:title" content="현생탈출 방탈출 카페">
+    <meta property="og:title" content="Cube Escape Game 카페">
  
     <link rel="stylesheet" href="css/main.css" type="text/css">
     <link rel="stylesheet" href="css/main.css" type="text/css">
@@ -47,6 +45,7 @@
                         </li>
             </div>
         </header>
+    
 <div id="reservation" class="body">
     <section id="title_area">
         <div class="container">
@@ -301,6 +300,8 @@
 </div>
 
 <script type="text/javascript">
+
+
     
 
 
