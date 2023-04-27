@@ -32,15 +32,13 @@
     <script type="text/javascript" src="/js/jquery.tweenmax.js"></script>
     <script type="text/javascript" src="/js/slick.min.js"></script>
     <script type="text/javascript" src="/js/common.js"></script>
-    </head>
-    <body>
-    
+
     <script>
 		function change1(){
 			var obj = document.getElementById("classname1");
 			for (i=0;i<obj.length;i++ ){
 				if(obj[i].selected){
-					document.f3.select_region.value= obj[i].value;
+					document.f3.selectRegion.value = obj[i].value;
 			    }
 		    }
 			document.f3.submit();
@@ -50,7 +48,7 @@
 			var obj = document.getElementById("classname1");
 			for (i=0;i<obj.length;i++ ){
 				if(obj[i].selected){
-					document.f3.selectArea.value= obj[i].value;
+					document.f3.selectRegion.value= obj[i].value;
 			    }
 		    }
 			
@@ -68,7 +66,7 @@
 			var obj = document.getElementById("classname1");
 			for (i=0;i<obj.length;i++ ){
 				if(obj[i].selected){
-					document.f3.selectArea.value= obj[i].value;
+					document.f3.selectRegion.value= obj[i].value;
 			    }
 		    }
 			
@@ -88,6 +86,11 @@
 			document.f3.submit();
 		}
     </script>
+
+    </head>
+    <body>
+    <form name="f3" method="POST" action="rev_test.php">
+    
 
 
 
@@ -177,7 +180,7 @@
                 
                 
                                 
-<form name="f3" method="POST" action="rev_test.php">
+
 
 <?php
     $date = $_POST['selectDate'];
@@ -187,11 +190,11 @@
 		$date = $_POST['selectDate'];
 	}
 	
-	$region_seq = $_POST['selectArea'];
+	$region_seq = $_POST['selectRegion'];
 	if(strlen($region_seq) == 0){	
 		$region_seq = 1;
 	}else{
-		$region_seq = $_POST['selectArea'];
+		$region_seq = $_POST['selectRegion'];
 	}
 	
 	$branch_seq = $_POST['selectBranch'];
@@ -201,7 +204,6 @@
 		$branch_seq = $_POST['selectBranch'];
 	}
 	
-
 ?>	
 
 
@@ -217,11 +219,11 @@
     while($data = mysqli_fetch_array($result2)){
 		if($data['region_seq'] == $region_seq){
 ?>
-		    <option value="<?php echo $data['region_seq']; ?>"selected><?php echo $data['region_name']; ?>
+		    <option value="<?= $data['region_seq'] ?>"selected><?= $data['region_name'] ?>
 <?php
         }else{
 ?>
-		    <option value="<?php echo $data['region_seq']; ?>"><?php echo $data['region_name']; ?>
+		    <option value="<?= $data['region_seq'] ?>"><?= $data['region_name'] ?>
 <?php		
 		}
 	}
@@ -262,7 +264,7 @@
 		$day = [ "일" , "월" , "화" , "수" , "목" , "금" , "토" ];
 	}
 ?>
-	<form method = "POST" action = "<?php echo $_SERVER [ 'PHP_SELF' ];?>" >
+	<form method = "POST" action = "<?php echo $_SERVER [ 'PHP_SELF' ] ?>" >
 	<input onchange="change3()" type = "date" name = "testDate" id = "testDate" value =<?php echo $v_testDate ?> > 
 	</form>
             </span>
@@ -272,15 +274,7 @@
         </section>
     
 
-
-
-
-
-
         <section class="select_branch_img"></section>
-    
-
-
 
 
 
@@ -296,36 +290,32 @@
         <div class="inner container">
             <ul>
 <?php
-            $connect = mysqli_connect('localhost','root','','project3');
-    if(mysqli_connect_error()) {
-        echo "데이터베이스 연결에 실패하였습니다.";
-    }
-    $result = mysqli_query($connect, "SELECT theme_name FROM p_theme where theme_number=1");
+           
+    $result = mysqli_query($connect, "SELECT theme_number, branch_seq from p_theme GROUP by theme_number,branch_seq having branch_seq = $branch_seq");
     
-    if($data = mysqli_fetch_array($result))
+    while($data = mysqli_fetch_array($result)){
+
+        $result2 = mysqli_query($connect, "SELECT theme_name, theme_level, theme_scare from p_theme where branch_seq=$branch_seq");
+        if($data2 = mysqli_fetch_array($result2)){
 ?>
+    
                     <li id="theme_ac_186">
-                        <h2 class="title"><?= $data['theme_name'] ?> &nbsp; <a href="javascript:void(0);" onclick="pop_detail(186);">[자세히 보기]</a></h2>
+                        <h2 class="title"> &nbsp;<?= $data2['theme_name'] ?> <a href="javascript:void(0);" onclick="pop_detail(186);">[자세히 보기]</a></h2>
 
                         <div class="info">
                             <div class="level">
                                 <span>난이도:</span>
-                                        <i class="ico star_black"></i>
-                                        <i class="ico star_black"></i>
-                                        <i class="ico star_black"></i>
+                                       <?= $data2['theme_level'] ?>
                             </div>
 
                             
                             <div class="level">
                                 <span>공포도</span>
-                                                                <i class="ico star_black"></i>
+                                    <?= $data2['theme_scare'] ?>
                             </div>
                          
 <?php
-$connect = mysqli_connect('localhost','root','','project3');
-if(mysqli_connect_error()) {
-    echo "데이터베이스 연결에 실패하였습니다.";
-}
+        }
 $result = mysqli_query($connect, "SELECT theme_start  FROM p_theme where theme_number=1");
 $count = mysqli_num_rows($result);
 
@@ -347,68 +337,18 @@ while($data = mysqli_fetch_array($result)){
                         
 <?php
             }
+        
 ?>
                     </li>
-<?php
-            $connect = mysqli_connect('localhost','root','','project3');
-    if(mysqli_connect_error()) {
-        echo "데이터베이스 연결에 실패하였습니다.";
-    }
-    $result = mysqli_query($connect, "SELECT theme_name FROM p_theme where theme_number=2");
-    
-    if($data = mysqli_fetch_array($result))
+<?php 
+        }
 ?>
 
-
-
-                    </li>
-                                <li id="theme_ac_283">
-                        <h2 class="title"><?= $data['theme_name'] ?> &nbsp; <a href="javascript:void(0);" onclick="pop_detail(283);">[자세히 보기]</a></h2>
-                        <div class="info">
-                            <div class="level">
-                                <span>난이도:</span>
-                                                                <i class="ico star_black"></i>
-                                                                <i class="ico star_black"></i>
-                                                                <i class="ico star_black"></i>
-                                                                <i class="ico star_black"></i>
-                                                        </div>
-                            <div class="level">
-                                <span>공포도</span>
-                                                        </div>
-         
-
-<?php
-$connect = mysqli_connect('localhost','root','','project3');
-if(mysqli_connect_error()) {
-    echo "데이터베이스 연결에 실패하였습니다.";
-}
-$result = mysqli_query($connect, "SELECT theme_start  FROM p_theme where theme_number=2");
-$count = mysqli_num_rows($result);
-
-while($data = mysqli_fetch_array($result)){
-
-?>                           
-                            <div class="row">
-                                    <div class="col true">
-                                    
-                                            <a href="/reservation/res_write.php?bno=57&amp;tno=186&amp;rdate=20230413&amp;rtime=14:50">
-                                        
-                                            <p class="time"><?= $data['theme_start'] ?></p>
-                                            <p class="state">예약가능</p>
-                                        </a>
-                                    </div>
-
-                                    
-                            </div>
-<?php
-            }
-?>
-                    </li>
                 </ul>
         </div>
         </section>
 
-        <input type="hidden" name="selectArea">
+        <input type="hidden" name="selectRegion">
         <input type="hidden" name="selectBranch">
         <input type="hidden" name="selectDate">
 </form>
