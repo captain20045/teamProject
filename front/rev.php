@@ -1,27 +1,24 @@
 <html lang="en"><head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi">
-	<!--<title>SHERLOCK HOLMES - 셜록홈즈 방탈출 게임</title>-->
-	<title>SHERLOCK HOLMES - 셜록홈즈 방탈출 게임</title>
-	<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
-		
-	document.title="SHERLOCK HOLMES - 셜록홈즈 방탈출 게임";
-	</script>
-	<link rel="stylesheet" href="css/main.css">
-	
-		<meta name="keywords" content="신천 방탈출카페,신림 방탈출카페,홍대 방탈출카페,잠실 방탈출카페,강남 방탈출카페,방탈출카페">
-	<meta name="description" content="강남,홍대,잠실,노량진,신림 등 전국 40호점 국내최대 셜록 방탈출 카페">
-	<meta property="og:description" content="강남,홍대,잠실,노량진,신림 등 전국 40호점 국내최대 셜록 방탈출 카페">
-	<meta name="naver-site-verification" content="90315006b3ecb880974d00ad95d55b4518b7de7b">
-		
-	
-	<meta property="og:type" content="website">
-	<meta property="og:title" content="셜록홈즈 방탈출 카페">
-	<meta property="og:image" content="http://sherlock-holmes.co.kr/images/main/og.png">
-	<meta property="og:url" content="http://sherlock-holmes.co.kr">
-	
-	<link rel="stylesheet" href="/css/privacy.css" type="text/css">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi">
+    <title>Cube Escape</title>
+    <script language="javascript">
+    document.title="Cube Escape Game";
+    </script>
+    <link rel="stylesheet" href="css/main.css">
+    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+    
+        <meta name="keywords" content="신천 방탈출카페,신림 방탈출카페,홍대 방탈출카페,잠실 방탈출카페,강남 방탈출카페,방탈출카페">
+    <meta name="description" content="강남,홍대,잠실,노량진,신림 등 전국 40호점 국내최대 큐브 방탈출 카페">
+    <meta property="og:description" content="강남,홍대,잠실,노량진,신림 등 전국 40호점 국내최대 셜록 방탈출 카페">
+    <meta name="naver-site-verification" content="90315006b3ecb880974d00ad95d55b4518b7de7b">
+        
+    
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Cube Escape Game 카페">
+ 
+    <link rel="stylesheet" href="/css/privacy.css" type="text/css">
 	<link rel="stylesheet" href="/css/jquery-ui.css" type="text/css">
 	<link rel="stylesheet" href="/css/slick.css" type="text/css">
 	<link rel="stylesheet" href="/css/default.css" type="text/css">
@@ -32,71 +29,29 @@
 	<script type="text/javascript" src="/js/jquery.tweenmax.js"></script>
 	<script type="text/javascript" src="/js/slick.min.js"></script>
 	<script type="text/javascript" src="/js/common.js"></script>
-	</head>
-	<body>
-		<header id="header">
-			<div class="inner">
-				<div class="header_logo">
-					<a href="/"><img src="/images/common/header_logo.png"></a>
-				</div>
-				<nav class="header_nav">
-					<ul class="depth1">
-						<li class="theme">
-							<a href="/theme">테마</a>
-						</li>
-											<li class="activity">
-							<a href="/activity/activity.php">Activity</a>
-						</li>
-											<li class="branch">
-							<a href="/branch">지점소개</a>
-						</li>
-						<li class="board">
-							<a href="/board/press.php">게시판</a>
-							<ul class="depth2">
-								<li><a href="/board/press.php">언론속의 셜록홈즈</a></li>
-								<li><a href="/board/event.php">이벤트</a></li>
-								<li><a href="/board/qna.php">지점질문</a></li>
-								<li><a href="/contact">가맹문의</a></li>
-							</ul>
-						</li>
-						
-						<li class="franchise">
-							<!-- <a href="/franchise">프랜차이즈</a> -->
-							<a href="http://unreal-company.co.kr" title="새 창 열기" target="_blank">프랜차이즈</a>
-							 <!-- <ul class="depth2">
-								<li><a href="#">Team unreal company</a></li>
-								<li><a href="#">셜록홈즈 가맹본부</a></li>
-								<li><a href="#">About us</a></li>
-							</ul>  -->
-						</li>
-						
-						<li class="reservation active">
-							<a href="/reservation">예약하기</a>
-						</li>
-						<li class="unreal">
-							<a href="http://www.unrealcompany.co.kr" title="새 창 열기" target="_blank">언리얼 컴퍼니</a>
-						</li>
-						<li class="lang">
-							<a href="javascript:void(0);">KOR</a>
-							<ul>
-								<li><a href="#">KOR</a></li>
-								<li><a href="#none">ENG</a></li>
-							</ul>
-						</li>
-					</ul>
-				</nav>
-				<div class="m_util">
-					<ul class="lang">
-						<li class="active"><a href="#">KOR</a></li>
-						<li><a href="#none">ENG</a></li>
-					</ul>
-					<div class="m_btns">
-						<a href="javascript:void(0);" class="menu_open">open</a>
-						<a href="javascript:void(0);" class="menu_close">close</a>
-					</div>
-				</div>
-			</div>
-		</header>
+    </head>
+    <body>
+        <header id="header">
+            <div class="inner">
+                <div class="header_logo">
+                    <a href="/"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/logo.png"></a>
+                </div>
+                <nav class="header_nav">
+                    <ul class="depth1">
+                        <li class="theme">
+                            <a href="/theme">테마</a>
+                        </li>
+                       <li class="branch">
+                            <a href="/branch">지점소개</a>
+                        </li>
+                        <li class="board">
+                            <a href="/board/press.php">공지사항</a>
+                        </li>
+                        <li class="reservation active">
+                            <a href="/reservation">예약하기</a>
+                        </li>
+            </div>
+        </header>
 	
 	<div id="reservation" class="body">
 		<section id="title_area">
@@ -223,16 +178,11 @@
 							1104470884800
 						</div>
 					</div> -->
-					<ul class="sns">
-						<li><a href="#"><img src="/images/common/ico_facebook.png" alt="facebook"></a></li>
-						<li><a href="#"><img src="/images/common/ico_blogger.png" alt="blogger"></a></li>
-						<li><a href="#"><img src="/images/common/ico_twitter.png" alt="twitter"></a></li>
-						<li><a href="#"><img src="/images/common/ico_youtube.png" alt="youtube"></a></li>
-						<li><a href="#"><img src="/images/common/ico_instagram.png" alt="instagram"></a></li>
-					</ul>
 				</div>
 			</section>
 		</footer>
+	</body>
+</html>
+
 	
 	
-	<div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"><div class="ui-datepicker-header ui-widget-header ui-helper-clearfix ui-corner-all"><a class="ui-datepicker-prev ui-corner-all ui-state-disabled" title="Prev"><span class="ui-icon ui-icon-circle-triangle-w">Prev</span></a><a class="ui-datepicker-next ui-corner-all" data-handler="next" data-event="click" title="Next"><span class="ui-icon ui-icon-circle-triangle-e">Next</span></a><div class="ui-datepicker-title"><span class="ui-datepicker-month">April</span>&nbsp;<span class="ui-datepicker-year">2023</span></div></div><table class="ui-datepicker-calendar"><thead><tr><th scope="col" class="ui-datepicker-week-end"><span title="Sunday">Su</span></th><th scope="col"><span title="Monday">Mo</span></th><th scope="col"><span title="Tuesday">Tu</span></th><th scope="col"><span title="Wednesday">We</span></th><th scope="col"><span title="Thursday">Th</span></th><th scope="col"><span title="Friday">Fr</span></th><th scope="col" class="ui-datepicker-week-end"><span title="Saturday">Sa</span></th></tr></thead><tbody><tr><td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">1</span></td></tr><tr><td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">2</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">3</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">4</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">5</span></td><td class=" ui-datepicker-days-cell-over  ui-datepicker-current-day ui-datepicker-today" data-handler="selectDay" data-event="click" data-month="3" data-year="2023"><a class="ui-state-default ui-state-highlight ui-state-active ui-state-hover" href="#">6</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="3" data-year="2023"><a class="ui-state-default" href="#">7</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="3" data-year="2023"><a class="ui-state-default" href="#">8</a></td></tr><tr><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="3" data-year="2023"><a class="ui-state-default" href="#">9</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="3" data-year="2023"><a class="ui-state-default" href="#">10</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="3" data-year="2023"><a class="ui-state-default" href="#">11</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="3" data-year="2023"><a class="ui-state-default" href="#">12</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="3" data-year="2023"><a class="ui-state-default" href="#">13</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="3" data-year="2023"><a class="ui-state-default" href="#">14</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="3" data-year="2023"><a class="ui-state-default" href="#">15</a></td></tr><tr><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="3" data-year="2023"><a class="ui-state-default" href="#">16</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="3" data-year="2023"><a class="ui-state-default" href="#">17</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="3" data-year="2023"><a class="ui-state-default" href="#">18</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="3" data-year="2023"><a class="ui-state-default" href="#">19</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="3" data-year="2023"><a class="ui-state-default" href="#">20</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="3" data-year="2023"><a class="ui-state-default" href="#">21</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="3" data-year="2023"><a class="ui-state-default" href="#">22</a></td></tr><tr><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="3" data-year="2023"><a class="ui-state-default" href="#">23</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="3" data-year="2023"><a class="ui-state-default" href="#">24</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="3" data-year="2023"><a class="ui-state-default" href="#">25</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="3" data-year="2023"><a class="ui-state-default" href="#">26</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="3" data-year="2023"><a class="ui-state-default" href="#">27</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="3" data-year="2023"><a class="ui-state-default" href="#">28</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="3" data-year="2023"><a class="ui-state-default" href="#">29</a></td></tr><tr><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="3" data-year="2023"><a class="ui-state-default" href="#">30</a></td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td></tr></tbody></table></div></body></html>
