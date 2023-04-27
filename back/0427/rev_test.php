@@ -290,12 +290,12 @@
         <div class="inner container">
             <ul>
 <?php
-           
     $result = mysqli_query($connect, "SELECT theme_number, branch_seq from p_theme GROUP by theme_number,branch_seq having branch_seq = $branch_seq");
-    
+        $f = 0;     // 아래 sql문에서 limit 사용할때 사용
+        $l = $f+1;  // $f+1값이 사용 안되서 변수 하나 더 선언
     while($data = mysqli_fetch_array($result)){
-
-        $result2 = mysqli_query($connect, "SELECT theme_name, theme_level, theme_scare from p_theme where branch_seq=$branch_seq");
+        
+        $result2 = mysqli_query($connect, "SELECT theme_name, theme_level, theme_scare from p_theme group by theme_number,branch_seq having branch_seq=$branch_seq limit $f,$l ");
         if($data2 = mysqli_fetch_array($result2)){
 ?>
     
@@ -316,18 +316,18 @@
                          
 <?php
         }
-$result = mysqli_query($connect, "SELECT theme_start  FROM p_theme where theme_number=1");
-$count = mysqli_num_rows($result);
+        $d =  $data['theme_number'];  //sql문에 안들어가서 변수로 선언
+        $result3 = mysqli_query($connect, "SELECT theme_start  FROM p_theme where branch_seq = $branch_seq and theme_number = $d");
 
-while($data = mysqli_fetch_array($result)){
+while($data3 = mysqli_fetch_array($result3)){
 
 ?>                           
                             <div class="row">
                                     <div class="col true">
                                     
-                                                                            <a href="/reservation/res_write.php?bno=57&amp;tno=186&amp;rdate=20230413&amp;rtime=14:50">
+                                            <a href="/reservation/res_write.php?bno=57&amp;tno=186&amp;rdate=20230413&amp;rtime=14:50">
                                         
-                                            <p class="time"><?= $data['theme_start'] ?></p>
+                                            <p class="time"><?= $data3['theme_start'] ?></p>
                                             <p class="state">예약가능</p>
                                         </a>
                                     </div>
@@ -341,6 +341,7 @@ while($data = mysqli_fetch_array($result)){
 ?>
                     </li>
 <?php 
+    $f++;
         }
 ?>
 
