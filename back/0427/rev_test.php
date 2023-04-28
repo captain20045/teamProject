@@ -90,7 +90,11 @@
     </head>
     <body>
     <form name="f3" method="POST" action="rev_test.php">
-    
+    <?php  
+       $_POST['selectRegion'] =  isset($_POST['selectRegion']) ? $_POST['selectRegion'] : '';
+       $_POST['selectBranch'] =  isset($_POST['selectBranch']) ? $_POST['selectBranch'] : '';
+       $_POST['selectDate'] =  isset($_POST['selectDate']) ? $_POST['selectDate'] : ''; 
+    ?>
 
 
 
