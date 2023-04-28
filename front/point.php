@@ -84,7 +84,7 @@
               </div>
                <div class="tit">구리점</div>
                  <div class="btns center">
-                      <a href="" class="btn"><i class="ico left zoom_black"></i>지점소개</a>          
+                      <a href="point1.php?branch_seq=10" class="btn"><i class="ico left zoom_black"></i>지점소개</a>          
                       <a href="" class="btn"><i class="ico left cal_black"></i>예약하기</a>
                   </div>
             </div>
@@ -102,7 +102,7 @@
                <div class="img"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/noryangjin.png"></div>
                <div class="tit">노량진점</div>
                  <div class="btns center">
-                      <a href="" class="btn"><i class="ico left zoom_black"></i>지점소개</a>          
+                      <a href="point1.php?branch_seq=1" class="btn"><i class="ico left zoom_black"></i>지점소개</a>          
                       <a href="" class="btn"><i class="ico left cal_black"></i>예약하기</a>
                   </div>
             </div>
