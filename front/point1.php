@@ -11,7 +11,7 @@
 $branch_seq=$_GET['branch_seq'];
 echo $branch_seq;
 
-$connect = mysqli_connect('localhost','root','mmission','project3');
+$connect = mysqli_connect('localhost','root','','project3');
     if(mysqli_connect_error()) {
         echo "데이터베이스 연결에 실패하였습니다.";
     }
