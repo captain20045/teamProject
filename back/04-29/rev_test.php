@@ -288,10 +288,12 @@
 		
 		$reservation_status_date = $_POST [ "testDate" ];
 		
-		$sql = "select reservation_status_date, booking_possibility_1, booking_possibility_2, booking_possibility_3, booking_possibility_4, booking_possibility_5, booking_possibility_6, booking_possibility_7, booking_possibility_8 from p_reservation_status where reservation_status_date='$reservation_status_date' and region_seq=$region_seq and branch_seq=$branch_seq";
+		$sql = "select reservation_status_date, booking_possibility_1, booking_possibility_2, booking_possibility_3, booking_possibility_4, booking_possibility_5, booking_possibility_6, booking_possibility_7, booking_possibility_8, theme_number from p_reservation_status where reservation_status_date='$reservation_status_date' and region_seq=$region_seq and branch_seq=$branch_seq";
 
 		$result = mysqli_query($connect,$sql);
-
+		
+		$add1=[];
+		
 		while($rows = mysqli_fetch_row($result)){
 			$reservation_status_date=$rows[0];
 			$a=$rows[1];
@@ -302,7 +304,12 @@
 			$f=$rows[6];
 			$g=$rows[7];
 			$h=$rows[8];
+			$theme1=$rows[9];
+			
+			array_push($add1, $theme1);
 		}
+		
+		print_r($add1);
 		
 		$box1="09";
 		$box2="11";
@@ -338,12 +345,44 @@
 		
     $result1 = mysqli_query($connect, "SELECT theme_number, branch_seq from p_theme GROUP by theme_number,branch_seq having branch_seq = $branch_seq");
     while($data = mysqli_fetch_array($result1)){
-		$theme=$data[0];
-		$branch=$data[1];
+		$theme2=$data[0];
+
+		echo $theme2;
+
+		$a="Y";
+		$b="Y";
+		$c="Y";
+		$d="Y";
+		$e="Y";
+		$f="Y";
+		$g="Y";
+		$h="Y";
+			
+		for($i=0;$i<count($add1);$i++){
+			if($theme2==$add1[$i]){
+				$theme2=$add1[$i];
+				echo $theme2;
+				$sql2 = "select booking_possibility_1, booking_possibility_2, booking_possibility_3, booking_possibility_4, booking_possibility_5, booking_possibility_6, booking_possibility_7, booking_possibility_8 from p_reservation_status where reservation_status_date='$reservation_status_date' and branch_seq=$branch_seq and theme_number=$theme2";
+		
+				$result3 = mysqli_query($connect,$sql2);
+				
+				while($rows = mysqli_fetch_row($result3)){
+					$a=$rows[0];
+					$b=$rows[1];
+					$c=$rows[2];
+					$d=$rows[3];
+					$e=$rows[4];
+					$f=$rows[5];
+					$g=$rows[6];
+					$h=$rows[7];
+				}
+			}				
+		}
 
         
-        $result2 = mysqli_query($connect, "SELECT theme_name, theme_level, theme_scare from p_theme where theme_number=$theme");
+        $result2 = mysqli_query($connect, "SELECT theme_name, theme_level, theme_scare from p_theme where theme_number=$theme2");
         if($data2 = mysqli_fetch_array($result2)){
+					
 ?>
     
                     <li id="theme_ac_186">
