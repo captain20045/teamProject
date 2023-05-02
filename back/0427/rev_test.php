@@ -77,7 +77,7 @@
 			    }
 		    }
 
-			var obj3 = document.getElementById("testDate");
+			var obj3 = document.getElementById("selectDate");
 			for (i=0;i<obj3.length;i++ ){
 				if(obj3[i].selected){
 					document.f3.selectDate.value= obj3[i].value;
@@ -189,25 +189,24 @@
 <?php
     $date = $_POST['selectDate'];
 	if(strlen($date) == 0){	
-		$date = date('y-m-d');
+		$date = date('Y-m-d');
 	}else{
-		$date = $_POST['selectDate'];
+		$date = date('Y-m-d',$_POST['selectDate']);
 	}
 	
 	$region_seq = $_POST['selectRegion'];
 	if(strlen($region_seq) == 0){	
-		$region_seq = 1;
+		$region_seq = 0;
 	}else{
 		$region_seq = $_POST['selectRegion'];
 	}
 	
 	$branch_seq = $_POST['selectBranch'];
 	if(strlen($branch_seq) == 0){	
-		$branch_seq = 1;
+		$branch_seq = 0;
 	}else{
 		$branch_seq = $_POST['selectBranch'];
 	}
-	
 ?>	
 
 
@@ -219,6 +218,7 @@
     $result2 = mysqli_query($connect, "SELECT region_seq,region_name FROM p_region");
 ?>	
     <select name="classname1" id="classname1" onchange="change1()">
+        <option value=0>지역선택</option>
 <?php
     while($data = mysqli_fetch_array($result2)){
 		if($data['region_seq'] == $region_seq){
@@ -238,6 +238,7 @@
 	$result3 = mysqli_query($connect, "SELECT branch_seq, region_seq, branch_name FROM p_branch where region_seq=$region_seq");
 ?>	
     <select name="classname2" id="classname2" onchange="change2()">
+        <option value=0>지점선택</option>
 <?php
     while($data = mysqli_fetch_array($result3)){
 		if($data['branch_seq'] == $branch_seq){
@@ -260,7 +261,7 @@
                                     
             <span class="datepicker date">
 <?php
-	$v_testDate = $_POST [ "testDate" ];
+	$v_testDate = $_POST [ "selectDate" ];
 
 	if (! empty ( $v_testDate )){
 		$newTestDate = new DateTime( $v_testDate );
@@ -268,9 +269,9 @@
 		$day = [ "일" , "월" , "화" , "수" , "목" , "금" , "토" ];
 	}
 ?>
-	<form method = "POST" action = "<?php echo $_SERVER [ 'PHP_SELF' ] ?>" >
-	<input onchange="change3()" type = "date" name = "testDate" id = "testDate" value =<?php echo $v_testDate ?> > 
-	</form>
+	            <form method = "POST" action = "<?php echo $_SERVER [ 'PHP_SELF' ] ?>" >
+	                <input onchange="change3()" type = "date" name = "selectDate" id = "selectDate" value =<?php echo $date ?> > 
+	            </form>
             </span>
         </div>
     </div>
@@ -299,11 +300,11 @@
         $l = $f+1;  // $f+1값이 사용 안되서 변수 하나 더 선언
     while($data = mysqli_fetch_array($result)){
         
-        $result2 = mysqli_query($connect, "SELECT theme_name, theme_level, theme_scare from p_theme group by theme_number,branch_seq having branch_seq=$branch_seq limit $f,$l ");
+        $result2 = mysqli_query($connect, "SELECT theme_name, theme_level, theme_scare, theme_people from p_theme group by theme_number,branch_seq having branch_seq=$branch_seq limit $f,$l ");
         if($data2 = mysqli_fetch_array($result2)){
 ?>
     
-                    <li id="theme_ac_186">
+                <li id="theme_ac_186">
                         <h2 class="title"> &nbsp;<?= $data2['theme_name'] ?> <a href="javascript:void(0);" onclick="pop_detail(186);">[자세히 보기]</a></h2>
 
                         <div class="info">
@@ -317,11 +318,17 @@
                                 <span>공포도</span>
                                     <?= $data2['theme_scare'] ?>
                             </div>
+
+                            <div class="level">
+                                <span>인원</span>
+                                    <?= $data2['theme_people'] ?>
+                            </div>
+                         <div class="real_row">
                          
 <?php
         }
         $d =  $data['theme_number'];  //sql문에 안들어가서 변수로 선언
-        $result3 = mysqli_query($connect, "SELECT theme_start  FROM p_theme where branch_seq = $branch_seq and theme_number = $d");
+        $result3 = mysqli_query($connect, "SELECT DATE_FORMAT(theme_start,'%H:%i') as theme_start  FROM p_theme where branch_seq = $branch_seq and theme_number = $d");
 
 while($data3 = mysqli_fetch_array($result3)){
 
@@ -361,6 +368,7 @@ while($data3 = mysqli_fetch_array($result3)){
 <?php
     mysqli_close($connect); 
 ?>
+
 
 
 
