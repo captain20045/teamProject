@@ -10,7 +10,7 @@
 	</script>
 	<link rel="stylesheet" href="css/main.css">
     
-    <meta name="keywords" content="신천 방탈출카페,신림 방탈출카페,홍대 방탈출카페,잠실 방탈출카페,강남 방탈출카페,방탈출카페">
+        <meta name="keywords" content="신천 방탈출카페,신림 방탈출카페,홍대 방탈출카페,잠실 방탈출카페,강남 방탈출카페,방탈출카페">
     <meta name="description" content="강남,홍대,잠실,노량진,신림 등 전국 40호점 국내최대 셜록 방탈출 카페">
     <meta property="og:description" content="강남,홍대,잠실,노량진,신림 등 전국 40호점 국내최대 셜록 방탈출 카페">
     <meta name="naver-site-verification" content="90315006b3ecb880974d00ad95d55b4518b7de7b">
@@ -26,61 +26,55 @@
     <link rel="stylesheet" href="/css/slick.css" type="text/css">
     <link rel="stylesheet" href="/css/default.css" type="text/css">
     <link rel="stylesheet" href="/css/style.css?v1812211743" type="text/css">
-    <script type="text/javascript" src="/js/jquery-1.12.3.min.js"></script>
-    <script type="text/javascript" src="/js/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="/assets/js/jquery.form.min.js"></script>
-    <script type="text/javascript" src="/js/jquery.tweenmax.js"></script>
-    <script type="text/javascript" src="/js/slick.min.js"></script>
-    <script type="text/javascript" src="/js/common.js"></script>
 
     <script>
 		function change1(){
-			var obj = document.getElementById("classname1");
+			var obj = document.getElementById("selRegion");
 			for (i=0;i<obj.length;i++ ){
 				if(obj[i].selected){
-					document.f3.selectRegion.value = obj[i].value;
+					document.f3.selectedRegion.value = obj[i].value;
 			    }
 		    }
 			document.f3.submit();
 		}
 		
 		function change2(){
-			var obj = document.getElementById("classname1");
+			var obj = document.getElementById("selRegion");
 			for (i=0;i<obj.length;i++ ){
 				if(obj[i].selected){
-					document.f3.selectRegion.value= obj[i].value;
+					document.f3.selectedRegion.value= obj[i].value;
 			    }
 		    }
-			
-			var obj2 = document.getElementById("classname2");
+
+			var obj2 = document.getElementById("selBranch");
 			for (i=0;i<obj2.length;i++ ){
 				if(obj2[i].selected){
-					document.f3.selectBranch.value= obj2[i].value;
+					document.f3.selectedBranch.value= obj2[i].value;
 			    }
 		    }
 			document.f3.submit();
 		}
 
 		function change3(){
-
-			var obj = document.getElementById("classname1");
+            
+			var obj = document.getElementById("selRegion");
 			for (i=0;i<obj.length;i++ ){
 				if(obj[i].selected){
-					document.f3.selectRegion.value= obj[i].value;
+					document.f3.selectedRegion.value= obj[i].value;
 			    }
 		    }
 			
-			var obj2 = document.getElementById("classname2");
+			var obj2 = document.getElementById("selBranch");
 			for (i=0;i<obj2.length;i++ ){
 				if(obj2[i].selected){
-					document.f3.selectBranch.value= obj2[i].value;
+					document.f3.selectedBranch.value= obj2[i].value;
 			    }
 		    }
 
-			var obj3 = document.getElementById("testDate");
+			var obj3 = document.getElementById("selDate");
 			for (i=0;i<obj3.length;i++ ){
 				if(obj3[i].selected){
-					document.f3.selectDate.value= obj3[i].value;
+					document.f3.selectedDate.value= obj3[i].value;
 			    }
 		    }
 			document.f3.submit();
@@ -91,10 +85,19 @@
     <body>
     <form name="f3" method="POST" action="rev_test.php">
     <?php  
-       $_POST['selectRegion'] =  isset($_POST['selectRegion']) ? $_POST['selectRegion'] : '';
-       $_POST['selectBranch'] =  isset($_POST['selectBranch']) ? $_POST['selectBranch'] : '';
-       $_POST['selectDate'] =  isset($_POST['selectDate']) ? $_POST['selectDate'] : ''; 
+       $_POST['selectedRegion'] =  isset($_POST['selectedRegion']) ? $_POST['selectedRegion'] : '';
+       $_POST['selectedBranch'] =  isset($_POST['selectedBranch']) ? $_POST['selectedBranch'] : '';
+       $_POST['selectedDate'] =  isset($_POST['selectedDate']) ? $_POST['selectedDate'] : '';
+       $_POST['selDate'] =  isset($_POST['selDate']) ? $_POST['selDate'] : date("Y-m-d");
+        
     ?>
+
+
+
+
+
+
+
 
         <header id="header">
             <div class="inner">
@@ -174,30 +177,37 @@
 
                 
                 <div class="selectArea">
+                
+                
+                                
+
 
 <?php
-    $date = $_POST['selectDate'];
+/*
+    $date = $_POST['selectedDate'];
 	if(strlen($date) == 0){	
-		$date = date('y-m-d');
+		$date = date('Y-m-d');
 	}else{
-		$date = $_POST['selectDate'];
+		$date = $_POST['selectedDate'];
 	}
-	
-	$region_seq = $_POST['selectRegion'];
+*/	
+	$region_seq = $_POST['selectedRegion'];
 	if(strlen($region_seq) == 0){	
-		$region_seq = 1;
+		$region_seq = 0;
 	}else{
-		$region_seq = $_POST['selectRegion'];
+		$region_seq = $_POST['selectedRegion'];
 	}
 	
-	$branch_seq = $_POST['selectBranch'];
+	$branch_seq = $_POST['selectedBranch'];
 	if(strlen($branch_seq) == 0){	
-		$branch_seq = 1;
+		$branch_seq = 0;
 	}else{
-		$branch_seq = $_POST['selectBranch'];
+		$branch_seq = $_POST['selectedBranch'];
 	}
-	
-?>	
+?>
+
+
+
 
 <?php
     $connect = mysqli_connect('localhost','root','','project3');
@@ -206,7 +216,8 @@
     }
     $result2 = mysqli_query($connect, "SELECT region_seq,region_name FROM p_region");
 ?>	
-    <select name="classname1" id="classname1" onchange="change1()">
+    <select name="selRegion" id="selRegion" onchange="change1()">
+        <option value=0>----지역선택----</option>
 <?php
     while($data = mysqli_fetch_array($result2)){
 		if($data['region_seq'] == $region_seq){
@@ -225,7 +236,8 @@
 <?php	
 	$result3 = mysqli_query($connect, "SELECT branch_seq, region_seq, branch_name FROM p_branch where region_seq=$region_seq");
 ?>	
-    <select name="classname2" id="classname2" onchange="change2()">
+    <select name="selBranch" id="selBranch" onchange="change2()">
+        <option value=0>----지점선택----</option>
 <?php
     while($data = mysqli_fetch_array($result3)){
 		if($data['branch_seq'] == $branch_seq){
@@ -240,26 +252,30 @@
 	}
 ?>	
 	</select>                    
-                   
-	<span class="datepicker date">
-<?php
-	$v_testDate = $_POST [ "testDate" ];
+                    
+                  
+                    
+                                    
 
-	if (! empty ( $v_testDate )){
-		$newTestDate = new DateTime( $v_testDate );
-		$dayInt = $newTestDate ->format( "w" );
-		$day = [ "일" , "월" , "화" , "수" , "목" , "금" , "토" ];
-	}
+                                    
+            <span class="datepicker date">
+<?php
+
+    $selectedDate = $_POST [ "selDate" ];
+    
+
 ?>
-	<form method = "POST" action = "<?php echo $_SERVER [ 'PHP_SELF' ] ?>" >
-	<input onchange="change3()" type = "date" name = "testDate" id = "testDate" value =<?php echo $v_testDate ?> > 
-	</form>
+	            <form method = "POST" action = "<?php echo $_SERVER [ 'PHP_SELF' ] ?>" >
+	                <input onchange="change3()" type = "date" name = "selDate" id = "selDate" value =<?php echo $selectedDate ?> > 
+	            </form>
             </span>
         </div>
     </div>
-    
         </section>
-    
+<?php
+
+?>
+
 
         <section class="select_branch_img"></section>
 
@@ -277,112 +293,13 @@
         <div class="inner container">
             <ul>
 <?php
-		$a="Y";
-		$b="Y";
-		$c="Y";
-		$d="Y";
-		$e="Y";
-		$f="Y";
-		$g="Y";
-		$h="Y";
-		
-		$reservation_status_date = $_POST [ "testDate" ];
-		
-		$sql = "select reservation_status_date, booking_possibility_1, booking_possibility_2, booking_possibility_3, booking_possibility_4, booking_possibility_5, booking_possibility_6, booking_possibility_7, booking_possibility_8, theme_number from p_reservation_status where reservation_status_date='$reservation_status_date' and region_seq=$region_seq and branch_seq=$branch_seq";
-
-		$result = mysqli_query($connect,$sql);
-		
-		$add1=[];
-		
-		while($rows = mysqli_fetch_row($result)){
-			$reservation_status_date=$rows[0];
-			$a=$rows[1];
-			$b=$rows[2];
-			$c=$rows[3];
-			$d=$rows[4];
-			$e=$rows[5];
-			$f=$rows[6];
-			$g=$rows[7];
-			$h=$rows[8];
-			$theme1=$rows[9];
-			
-			array_push($add1, $theme1);
-		}
-		
-		print_r($add1);
-		
-		$box1="09";
-		$box2="11";
-		$box3="13";
-		$box4="15";
-		$box5="17";
-		$box6="19";
-		$box7="21";
-		$box8="23";
-		$no="예약불가";
-		$yes="예약가능";
-		
-		$YY = (int)date("Y");
-		$MM = date("m");
-		$DD = date("d");
-		$AA = $MM.$DD;
-		$calc = (int)$AA;
-		
-		$str1 = (int)substr($reservation_status_date, 0, 4); 
-		$str2 = substr($reservation_status_date, 5, 2); 
-		$str3 = substr($reservation_status_date, 8, 2); 
-		$str4 = $str2.$str3;
-		$str5 = (int)$str4;
-		
-		if($str5<$calc){
-			$HH="24";
-		}else if($str5>$calc){
-			$HH="08";
-		}else if($str5==$calc){
-			$HH=date("H");
-		}
-		
-		
-    $result1 = mysqli_query($connect, "SELECT theme_number, branch_seq from p_theme GROUP by theme_number,branch_seq having branch_seq = $branch_seq");
-    while($data = mysqli_fetch_array($result1)){
-		$theme2=$data[0];
-
-		echo $theme2;
-
-		$a="Y";
-		$b="Y";
-		$c="Y";
-		$d="Y";
-		$e="Y";
-		$f="Y";
-		$g="Y";
-		$h="Y";
-			
-		for($i=0;$i<count($add1);$i++){
-			if($theme2==$add1[$i]){
-				$theme2=$add1[$i];
-				echo $theme2;
-				$sql2 = "select booking_possibility_1, booking_possibility_2, booking_possibility_3, booking_possibility_4, booking_possibility_5, booking_possibility_6, booking_possibility_7, booking_possibility_8 from p_reservation_status where reservation_status_date='$reservation_status_date' and branch_seq=$branch_seq and theme_number=$theme2";
-		
-				$result3 = mysqli_query($connect,$sql2);
-				
-				while($rows = mysqli_fetch_row($result3)){
-					$a=$rows[0];
-					$b=$rows[1];
-					$c=$rows[2];
-					$d=$rows[3];
-					$e=$rows[4];
-					$f=$rows[5];
-					$g=$rows[6];
-					$h=$rows[7];
-				}
-			}				
-		}
-
+    $result = mysqli_query($connect, "SELECT theme_number, branch_seq from p_theme GROUP by theme_number,branch_seq having branch_seq = $branch_seq");
+        $f = 0;     // 아래 sql문에서 limit 사용할때 사용
+        $l = $f+1;  // $f+1값이 사용 안되서 변수 하나 더 선언
+    while($data = mysqli_fetch_array($result)){
         
-        $result2 = mysqli_query($connect, "SELECT theme_name, theme_level, theme_scare from p_theme where theme_number=$theme2");
+        $result2 = mysqli_query($connect, "SELECT theme_name, theme_level, theme_scare, theme_people from p_theme group by theme_number,branch_seq having branch_seq=$branch_seq limit $f,$l ");
         if($data2 = mysqli_fetch_array($result2)){
-					
 ?>
     
                     <li id="theme_ac_186">
@@ -391,6 +308,7 @@
                         <div class="info">
                             <div class="level">
                                 <span>난이도:</span>
+                                <img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/ico_star_black.png"></img>
                                        <?= $data2['theme_level'] ?>
                             </div>
 
@@ -399,174 +317,59 @@
                                 <span>공포도</span>
                                     <?= $data2['theme_scare'] ?>
                             </div>
-							
-							
-						<div class="row">
-						
-							<div class="col true">
-								<a href="/reservation/res_write.php?bno=57&amp;tno=186&amp;rdate=20230413&amp;rtime=14:50">
-									<p class="time">
-						<?php
-									if($HH<$box1 && $a=='Y'){
-						?>
-										<?= $box1 ?>:00
-						<?php		
-									}else{
-						?>
-										<option disabled><?= $box1 ?>:00</option>
-						<?php
-									}
-						?>
-									</p>
-								</a>
-							</div> 
-							
-							<div class="col true">
-								<a href="/reservation/res_write.php?bno=57&amp;tno=186&amp;rdate=20230413&amp;rtime=14:50">
-									<p class="time">
-						<?php
-									if($HH<$box2 && $b=='Y'){
-						?>
-										<?= $box2 ?>:00
-						<?php		
-									}else{
-						?>
-										<option disabled><?= $box2 ?>:00</option>
-						<?php
-									}
-						?>
-									</p>
-								</a>
-							</div> 
 
-							<div class="col true">
-								<a href="/reservation/res_write.php?bno=57&amp;tno=186&amp;rdate=20230413&amp;rtime=14:50">
-									<p class="time">
-						<?php
-									if($HH<$box3 && $c=='Y'){
-						?>
-										<?= $box3 ?>:00
-						<?php		
-									}else{
-						?>
-										<option disabled><?= $box3 ?>:00</option>
-						<?php
-									}
-						?>
-									</p>
-								</a>
-							</div> 
-
-							<div class="col true">
-								<a href="/reservation/res_write.php?bno=57&amp;tno=186&amp;rdate=20230413&amp;rtime=14:50">
-									<p class="time">
-						<?php
-									if($HH<$box4 && $d=='Y'){
-						?>
-										<?= $box4 ?>:00
-						<?php		
-									}else{
-						?>
-										<option disabled><?= $box4 ?>:00</option>
-						<?php
-									}
-						?>
-									</p>
-								</a>
-							</div> 
-
-							<div class="col true">
-								<a href="/reservation/res_write.php?bno=57&amp;tno=186&amp;rdate=20230413&amp;rtime=14:50">
-									<p class="time">
-						<?php
-									if($HH<$box5 && $e=='Y'){
-						?>
-										<?= $box5 ?>:00
-						<?php		
-									}else{
-						?>
-										<option disabled><?= $box5 ?>:00</option>
-						<?php
-									}
-						?>
-									</p>
-								</a>
-							</div> 
-
-							<div class="col true">
-								<a href="/reservation/res_write.php?bno=57&amp;tno=186&amp;rdate=20230413&amp;rtime=14:50">
-									<p class="time">
-						<?php
-									if($HH<$box6 && $f=='Y'){
-						?>
-										<?= $box6 ?>:00
-						<?php		
-									}else{
-						?>
-										<option disabled><?= $box6 ?>:00</option>
-						<?php
-									}
-						?>
-									</p>
-								</a>
-							</div> 
-
-							<div class="col true">
-								<a href="/reservation/res_write.php?bno=57&amp;tno=186&amp;rdate=20230413&amp;rtime=14:50">
-									<p class="time">
-						<?php
-									if($HH<$box7 && $g=='Y'){
-						?>
-										<?= $box7 ?>:00
-						<?php		
-									}else{
-						?>
-										<option disabled><?= $box7 ?>:00</option>
-						<?php
-									}
-						?>
-									</p>
-								</a>
-							</div> 
-
-							<div class="col true">
-								<a href="/reservation/res_write.php?bno=57&amp;tno=186&amp;rdate=20230413&amp;rtime=14:50">
-									<p class="time">
-						<?php
-									if($HH<$box8 && $h=='Y'){
-						?>
-										<?= $box8 ?>:00
-						<?php		
-									}else{
-						?>
-										<option disabled><?= $box8 ?>:00</option>
-						<?php
-									}
-						?>
-									</p>
-								</a>
-							</div> 	
-							
-						</div>
- 
+                            <div class="level">
+                                <span>인원 : </span>
+                                    <?= $data2['theme_people'] ?>
+                            </div>
+                         <div class="real_row">
 <?php
         }
-	}
-?>            
-   
-</li>
-</ul>
-</div>
-</section>
-<input type="hidden" name="selectRegion">
-<input type="hidden" name="selectBranch">
-<input type="hidden" name="selectDate">
+        $d =  $data['theme_number'];  //sql문에 안들어가서 변수로 선언
+        $result3 = mysqli_query($connect, "SELECT DATE_FORMAT(theme_start,'%H:%i') as theme_start  FROM p_theme where branch_seq = $branch_seq and theme_number = $d");
+        while($data = mysqli_fetch_array($result3)){
+
+?>                           
+                            <div class="row">
+                                    <div class="col true">
+                                    
+                                            <a href="/reservation/res_write.php?bno=57&amp;tno=186&amp;rdate=20230413&amp;rtime=14:50">
+                                        
+                                            <p class="time"><?= $data['theme_start'] ?></p>
+                                            <p class="state">예약가능</p>
+                                        </a>
+                                    </div>
+                                    
+                            </div>
+                        
+<?php
+            }
+        
+?>
+                        </div>
+                    </li>
+<?php 
+    $f++;
+        }
+?>
+
+                </ul>
+        </div>
+        </section>
+
+        <input type="hidden" name="selectedRegion">
+        <input type="hidden" name="selectedBranch">
+        <input type="hidden" name="selectedDate">
 </form>
 
 <?php
     mysqli_close($connect); 
 ?>
 
+
+
+
+       
             <footer id="footer">
             <section class="footer_top">
                 <div class="inner container">
@@ -615,11 +418,4 @@
         </footer>
     
     
-    <div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"><div class="ui-datepicker-header ui-widget-header ui-helper-clearfix ui-corner-all"><a class="ui-datepicker-prev ui-corner-all ui-state-disabled" title="Prev"><span class="ui-icon ui-icon-circle-triangle-w">Prev</span></a><a class="ui-datepicker-next ui-corner-all" data-handler="next" data-event="click" title="Next"><span class="ui-icon ui-icon-circle-triangle-e">Next</span></a><div class="ui-datepicker-title"><span class="ui-datepicker-month">April</span>&nbsp;<span class="ui-datepicker-year">2023</span></div></div><table class="ui-datepicker-calendar"><thead><tr><th scope="col" class="ui-datepicker-week-end"><span title="Sunday">Su</span></th><th scope="col"><span title="Monday">Mo</span></th><th scope="col"><span title="Tuesday">Tu</span></th><th scope="col"><span title="Wednesday">We</span></th><th scope="col"><span title="Thursday">Th</span></th><th scope="col"><span title="Friday">Fr</span></th><th scope="col" class="ui-datepicker-week-end"><span title="Saturday">Sa</span></th></tr></thead><tbody><tr><td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">1</span></td></tr><tr><td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">2</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">3</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">4</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">5</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">6</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">7</span></td><td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">8</span></td></tr><tr><td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">9</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">10</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">11</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">12</span></td><td class=" ui-datepicker-days-cell-over  ui-datepicker-current-day ui-datepicker-today" data-handler="selectDay" data-event="click" data-month="3" data-year="2023"><a class="ui-state-default ui-state-highlight ui-state-active ui-state-hover" href="#">13</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="3" data-year="2023"><a class="ui-state-default" href="#">14</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="3" data-year="2023"><a class="ui-state-default" href="#">15</a></td></tr><tr><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="3" data-year="2023"><a class="ui-state-default" href="#">16</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="3" data-year="2023"><a class="ui-state-default" href="#">17</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="3" data-year="2023"><a class="ui-state-default" href="#">18</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="3" data-year="2023"><a class="ui-state-default" href="#">19</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="3" data-year="2023"><a class="ui-state-default" href="#">20</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="3" data-year="2023"><a class="ui-state-default" href="#">21</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="3" data-year="2023"><a class="ui-state-default" href="#">22</a></td></tr><tr><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="3" data-year="2023"><a class="ui-state-default" href="#">23</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="3" data-year="2023"><a class="ui-state-default" href="#">24</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="3" data-year="2023"><a class="ui-state-default" href="#">25</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="3" data-year="2023"><a class="ui-state-default" href="#">26</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="3" data-year="2023"><a class="ui-state-default" href="#">27</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="3" data-year="2023"><a class="ui-state-default" href="#">28</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="3" data-year="2023"><a class="ui-state-default" href="#">29</a></td></tr><tr><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="3" data-year="2023"><a class="ui-state-default" href="#">30</a></td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</body>
-</html>
+    <div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"><div class="ui-datepicker-header ui-widget-header ui-helper-clearfix ui-corner-all"><a class="ui-datepicker-prev ui-corner-all ui-state-disabled" title="Prev"><span class="ui-icon ui-icon-circle-triangle-w">Prev</span></a><a class="ui-datepicker-next ui-corner-all" data-handler="next" data-event="click" title="Next"><span class="ui-icon ui-icon-circle-triangle-e">Next</span></a><div class="ui-datepicker-title"><span class="ui-datepicker-month">April</span>&nbsp;<span class="ui-datepicker-year">2023</span></div></div><table class="ui-datepicker-calendar"><thead><tr><th scope="col" class="ui-datepicker-week-end"><span title="Sunday">Su</span></th><th scope="col"><span title="Monday">Mo</span></th><th scope="col"><span title="Tuesday">Tu</span></th><th scope="col"><span title="Wednesday">We</span></th><th scope="col"><span title="Thursday">Th</span></th><th scope="col"><span title="Friday">Fr</span></th><th scope="col" class="ui-datepicker-week-end"><span title="Saturday">Sa</span></th></tr></thead><tbody><tr><td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">1</span></td></tr><tr><td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">2</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">3</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">4</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">5</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">6</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">7</span></td><td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">8</span></td></tr><tr><td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">9</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">10</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">11</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">12</span></td><td class=" ui-datepicker-days-cell-over  ui-datepicker-current-day ui-datepicker-today" data-handler="selectDay" data-event="click" data-month="3" data-year="2023"><a class="ui-state-default ui-state-highlight ui-state-active ui-state-hover" href="#">13</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="3" data-year="2023"><a class="ui-state-default" href="#">14</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="3" data-year="2023"><a class="ui-state-default" href="#">15</a></td></tr><tr><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="3" data-year="2023"><a class="ui-state-default" href="#">16</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="3" data-year="2023"><a class="ui-state-default" href="#">17</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="3" data-year="2023"><a class="ui-state-default" href="#">18</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="3" data-year="2023"><a class="ui-state-default" href="#">19</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="3" data-year="2023"><a class="ui-state-default" href="#">20</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="3" data-year="2023"><a class="ui-state-default" href="#">21</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="3" data-year="2023"><a class="ui-state-default" href="#">22</a></td></tr><tr><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="3" data-year="2023"><a class="ui-state-default" href="#">23</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="3" data-year="2023"><a class="ui-state-default" href="#">24</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="3" data-year="2023"><a class="ui-state-default" href="#">25</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="3" data-year="2023"><a class="ui-state-default" href="#">26</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="3" data-year="2023"><a class="ui-state-default" href="#">27</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="3" data-year="2023"><a class="ui-state-default" href="#">28</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="3" data-year="2023"><a class="ui-state-default" href="#">29</a></td></tr><tr><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="3" data-year="2023"><a class="ui-state-default" href="#">30</a></td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td></tr></tbody></table></div></body></html>
