@@ -18,16 +18,12 @@
     <meta property="og:title" content="Cube Escape Game 카페">
  
     <link rel="stylesheet" href="css/main.css" type="text/css">
-    <link rel="stylesheet" href="css/main.css" type="text/css">
-    <link rel="stylesheet" href="css/main.css" type="text/css">
-    <link rel="stylesheet" href="css/main.css" type="text/css">
-    <link rel="stylesheet" href="css/main.css" type="text/css">
     </head>
     <body>
         <header id="header">
             <div class="inner">
                 <div class="header_logo">
-                    <a href="/"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/logo.png"></a>
+                    <a href="/"><img src="img/logo.png"></a>
                 </div>
                 <nav class="header_nav">
                     <ul class="depth1">
@@ -177,27 +173,13 @@
                             </ul>
                             <div class="copyright">Copyright ⓒ Escape from the Present. All rights reserved.</div>
                         </div>
-                        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
-                            <div class="carousel-inner">
-                              <div class="carousel-item active" data-bs-interval="10000">
-                                <img src="/img/main.png" class="d-block w-100" alt="...">
-                              </div>
-                              <div class="carousel-item" data-bs-interval="2000">
-                                <img src="/img/main.png" class="d-block w-100" alt="...">
-                              </div>
-                              <div class="carousel-item">
-                                <img src="/img/main.png" class="d-block w-100" alt="...">
-                              </div>
-                            </div>
-                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
-                              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                              <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
-                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                              <span class="visually-hidden">Next</span>
-                            </button>
-                          </div>
+                    </div>
+                </section>
+            </footer>
+    </div>
+    </body>
+</html>
+
                         <!-- <div class="bank_info">
                             <p>신구은행 / 예금주 : 신구 </p>
                             <div class="acount_num">
