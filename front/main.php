@@ -23,7 +23,7 @@
         <header id="header">
             <div class="inner">
                 <div class="header_logo">
-                    <a href="/"><img src="img/logo.png"></a>
+                    <a href="/"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/logo.png"></a>
                 </div>
                 <nav class="header_nav">
                     <ul class="depth1">
