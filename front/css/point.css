@@ -48,10 +48,7 @@ table {
 	border-spacing: 0;
 }
 a { color: initial; }
-img {   max-width: 100%; 
-        width: 150%;
-        height: 230;
-        border-radius: 50%; }
+
 input {appearance:none;-webkit-appearance:none;-moz-appearance:none;border-radius: 0;-webkit-border-radius: 0;-moz-border-radius: 0;}
 select { border-radius: 0;-webkit-border-radius: 0;-moz-border-radius: 0; }
 body { font-family: 'NanumSquare', Arial, sans-serif; color:#666; font-size: 15px; line-height: 1; font-weight: normal; }
@@ -113,6 +110,10 @@ blockquote { margin: 20px 0; padding-left: 25px;  border-left: 5px solid #ee6e73
 .row .col.pull-s9 { right: 75%; }
 .row .col.pull-s10 { right: 83.3333333333%; }
 .row .col.pull-s11 { right: 91.6666666666%; }
+.row  img {   max-width: 100%; 
+    width: 150%;
+    height: 230;
+    border-radius: 50%; }
 
 /* Panels */
 .panel { background-color: #fff; border: 1px solid #e5e8eb; border-radius: 4px; box-sizing: border-box; padding: 25px; }
