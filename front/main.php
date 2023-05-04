@@ -28,17 +28,19 @@
                 <nav class="header_nav">
                     <ul class="depth1">
                         <li class="theme">
-                            <a href="/theme">테마</a>
+                            <a href="theme.php">테마</a>
                         </li>
                        <li class="branch">
-                            <a href="/branch">지점소개</a>
+                            <a href="branch.php">지점소개</a>
                         </li>
                         <li class="board">
-                            <a href="/board/press.php">공지사항</a>
+                            <a href="board.php">공지사항</a>
                         </li>
                         <li class="reservation active">
-                            <a href="/reservation">예약하기</a>
+                            <a href="reservation.php">예약하기</a>
                         </li>
+</ul>
+</div>
             </div>
         </header>
     
@@ -143,8 +145,6 @@
 
         
     
-        
-        
             <footer id="footer">
                 <section class="footer_top">
                     <div class="inner container">
@@ -173,22 +173,7 @@
                             </ul>
                             <div class="copyright">Copyright ⓒ Escape from the Present. All rights reserved.</div>
                         </div>
-                    </div>
-                </section>
-            </footer>
-    </div>
-    </body>
-</html>
-
-                        <!-- <div class="bank_info">
-                            <p>신구은행 / 예금주 : 신구 </p>
-                            <div class="acount_num">
-                                <img src="/images/common/bank_logo.png">
-                                1104470884800
-                            </div>
-                        </div> 
-
-                    </div>
+                            
                 </section>
             </footer>
     </body></html>
