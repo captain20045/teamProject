@@ -11,44 +11,32 @@
     
         <meta name="keywords" content="신천 방탈출카페,신림 방탈출카페,홍대 방탈출카페,잠실 방탈출카페,강남 방탈출카페,방탈출카페">
     <meta name="description" content="강남,홍대,잠실,노량진,신림 등 전국 40호점 국내최대 큐브 방탈출 카페">
-    <meta property="og:description" content="강남,홍대,잠실,노량진,신림 등 전국 40호점 국내최대 셜록 방탈출 카페">
+    <meta property="og:description" content="강남,홍대,잠실,노량진,신림 등 전국 40호점 국내최대  현생탈출 카페">
     <meta name="naver-site-verification" content="90315006b3ecb880974d00ad95d55b4518b7de7b">
         
     
     <meta property="og:type" content="website">
     <meta property="og:title" content="Cube Escape Game 카페">
- 
-    <link rel="stylesheet" href="/css/privacy.css" type="text/css">
-	<link rel="stylesheet" href="/css/jquery-ui.css" type="text/css">
-	<link rel="stylesheet" href="/css/slick.css" type="text/css">
-	<link rel="stylesheet" href="/css/default.css" type="text/css">
-	<link rel="stylesheet" href="/css/style.css?v1812211743" type="text/css">
-	<script type="text/javascript" src="/js/jquery-1.12.3.min.js"></script>
-	<script type="text/javascript" src="/js/jquery-ui.min.js"></script>
-	<script type="text/javascript" src="/assets/js/jquery.form.min.js"></script>
-	<script type="text/javascript" src="/js/jquery.tweenmax.js"></script>
-	<script type="text/javascript" src="/js/slick.min.js"></script>
-	<script type="text/javascript" src="/js/common.js"></script>
     </head>
     <body>
         <header id="header">
             <div class="inner">
                 <div class="header_logo">
-                    <a href="/"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/logo.png"></a>
+                    <a href="main.php"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/logo.png"></a>
                 </div>
                 <nav class="header_nav">
                     <ul class="depth1">
                         <li class="theme">
-                            <a href="/theme">테마</a>
+                            <a href="theme.php">테마</a>
                         </li>
                        <li class="branch">
-                            <a href="/branch">지점소개</a>
+                            <a href="branch.php">지점소개</a>
                         </li>
                         <li class="board">
-                            <a href="/board/press.php">공지사항</a>
+                            <a href="board.php">공지사항</a>
                         </li>
                         <li class="reservation active">
-                            <a href="/reservation">예약하기</a>
+                            <a href="reservation.php">예약하기</a>
                         </li>
             </div>
         </header>
@@ -102,46 +90,6 @@
 		<section class="res_list"></section>
 	
 	</div>
-	
-	<script>
-	
-		$('#selectArea').change(function(){
-			var o='<option value="">지점선택</option>';
-			if($("#selectArea option:selected").val()==''){
-				$('#selectBranch').attr("disabled",true);
-			} else {
-				$('#selectBranch').attr("disabled",false);
-			}
-			var a=$(this).val();
-
-			if(a ==='1'){
-				o += '<option value="11">노원점</op tion><option value="12">서울대점</option><option value="13">성신여대점</option>';
-				
-	     	}
-			if(a ==='9'){ 
-				o += '<option value="21">모란역점</op tion><option value="22">수원여대점</option><option value="23">미사역점</option>';
-			}
-			if(a ==='4'){
-				o += '<option value="31">부천점</option><option value="32">인하대점</option><option value="33">인천점</option>';
-			}
-			if(a ==='12'){
-				o += '<option value="41">대전점</option><option value="42">세종점</option><option value="43">천안점</option>';
-			}
-			if(a ==='13'){
-				o += '<option value="51">광주점</option><option value="52">충장로점</option><option value="53">전주점</option>';
-			}
-			if(a ==='17'){
-				o += '<option value="61">제주점</option><option value="62">강릉점</option><option value="63">춘천점</option>';
-			}
-			if(a ==="15"){
-				o += '<option value="71">대구점</option><option value="72>창원점</option><option value="73">부산점</option>';
-			}
-			$('#selectBranch').html(o);
-		});
-	</script>
-		
-	
-	
 		<footer id="footer">
 			<section class="footer_top">
 				<div class="inner container">
@@ -171,13 +119,6 @@
 						</ul>
 						<div class="copyright">Copyright ⓒ The Team Sherlock-Hormes. All rights reserved.</div>
 					</div>
-					<!-- <div class="bank_info">
-						<p>신한은행 / 예금주 : 권충도 </p>
-						<div class="acount_num">
-							<img src="/images/common/bank_logo.png">
-							1104470884800
-						</div>
-					</div> -->
 				</div>
 			</section>
 		</footer>

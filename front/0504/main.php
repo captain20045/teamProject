@@ -18,16 +18,14 @@
     <meta property="og:title" content="Cube Escape Game 카페">
  
     <link rel="stylesheet" href="css/main.css" type="text/css">
-    
     </head>
-
     <body>
         <header id="header">
             <div class="inner">
                 <div class="header_logo">
                     <a href="main.php"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/logo.png"></a>
                 </div>
-                    <nav class="header_nav">
+                <nav class="header_nav">
                     <ul class="depth1">
                         <li class="theme">
                             <a href="theme.php">테마</a>
@@ -41,7 +39,8 @@
                         <li class="reservation active">
                             <a href="reservation.php">예약하기</a>
                         </li>
-                    </ul>
+</ul>
+</div>
             </div>
         </header>
     
@@ -146,8 +145,6 @@
 
         
     
-        
-        
             <footer id="footer">
                 <section class="footer_top">
                     <div class="inner container">
@@ -161,7 +158,8 @@
                 </section>
                 <section class="footer_bottom">
                     <div class="inner container">
-                        <div class="site_info"> 
+                        <div class="site_info">
+                            <a href="/" class="footer_logo"><img src="/images/common/footer_logo.png"></a>
                             <ul class="site_info_1">
                                 <li><span>상호명</span> 현생탈출</li>
                                 <li><span>주소</span> 경기도 성남시 중원구 광명로 377</li>
@@ -175,22 +173,7 @@
                             </ul>
                             <div class="copyright">Copyright ⓒ Escape from the Present. All rights reserved.</div>
                         </div>
-                    </div>
-                </section>
-            </footer>
-    </div>
-    </body>
-</html>
-
-                        <!-- <div class="bank_info">
-                            <p>신구은행 / 예금주 : 신구 </p>
-                            <div class="acount_num">
-                                <img src="/images/common/bank_logo.png">
-                                1104470884800
-                            </div>
-                        </div> 
-
-                    </div>
+                            
                 </section>
             </footer>
     </body></html>

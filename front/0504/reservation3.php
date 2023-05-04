@@ -2,20 +2,22 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi">
+    <!--<title>SHERLOCK HOLMES - 셜록홈즈 방탈출 게임</title>-->
     <title>Cube Escape</title>
     <script language="javascript">
-    document.title="Cube Escape Game";
+    document.title="Cube Escape - 큐브형식의 방 탈출 게임";
     </script>
+    	<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
     <link rel="stylesheet" href="css/main.css">
     
         <meta name="keywords" content="신천 방탈출카페,신림 방탈출카페,홍대 방탈출카페,잠실 방탈출카페,강남 방탈출카페,방탈출카페">
-    <meta name="description" content="강남,홍대,잠실,노량진,신림 등 전국 40호점 국내최대 큐브 방탈출 카페">
+    <meta name="description" content="강남,홍대,잠실,노량진,신림 등 전국 40호점 국내최대 셜록 방탈출 카페">
     <meta property="og:description" content="강남,홍대,잠실,노량진,신림 등 전국 40호점 국내최대 셜록 방탈출 카페">
     <meta name="naver-site-verification" content="90315006b3ecb880974d00ad95d55b4518b7de7b">
         
     
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Cube Escape Game 카페">
+    <meta property="og:title" content="현생탈출 방탈출 카페">
  
     <link rel="stylesheet" href="css/main.css" type="text/css">
     <link rel="stylesheet" href="css/main.css" type="text/css">
@@ -27,25 +29,24 @@
         <header id="header">
             <div class="inner">
                 <div class="header_logo">
-                    <a href="/"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/logo.png"></a>
+                    <a href="main.php"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/logo.png"></a>
                 </div>
                 <nav class="header_nav">
                     <ul class="depth1">
                         <li class="theme">
-                            <a href="/theme">테마</a>
+                            <a href="theme.php">테마</a>
                         </li>
                        <li class="branch">
-                            <a href="/branch">지점소개</a>
+                            <a href="branch.php">지점소개</a>
                         </li>
                         <li class="board">
-                            <a href="/board/press.php">공지사항</a>
+                            <a href="board.php">공지사항</a>
                         </li>
                         <li class="reservation active">
-                            <a href="/reservation">예약하기</a>
+                            <a href="reservation.php">예약하기</a>
                         </li>
             </div>
         </header>
-    
 <div id="reservation" class="body">
     <section id="title_area">
         <div class="container">
@@ -300,8 +301,6 @@
 </div>
 
 <script type="text/javascript">
-
-
     
 
 
@@ -479,17 +478,7 @@ function cal_price(){
 		            </ul>
 		            <div class="copyright">Copyright ⓒ The Team Sherlock-Hormes. All rights reserved.</div>
 				</div>
-				<!-- <div class="bank_info">
-					<p>신한은행 / 예금주 : 권충도 </p>
-					<div class="acount_num">
-						<img src="/images/common/bank_logo.png">
-						1104470884800
-					</div>
-				</div> -->
-	         
 			</div>
 		</section>
 	</footer>
-
-
 </body></html>
