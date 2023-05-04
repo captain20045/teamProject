@@ -169,7 +169,7 @@
                             <th>가격</th>
                             <td>
 							
-				                <span id="vprice"><div class="aaa"></div></span>
+				                <span id="vprice"><div class="aaa"><?= $theme_price * 2 ?>원</div></span>
 			                    <span id="dc_str" style="display:none;"></span>
                             </td>
                         </tr>
