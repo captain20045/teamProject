@@ -86,10 +86,10 @@
            $branch_name = $data['branch_name'];
            $branch_phone_number = $data['branch_phone_number'];
         }
-    $result = mysqli_query($connect, "SELECT theme_name from p_theme where theme_number = $theme_number ");
+    $result = mysqli_query($connect, "SELECT theme_name ,theme_price from p_theme where theme_number = $theme_number ");
         if($data = mysqli_fetch_array($result)){
            $theme_name = $data['theme_name'];
-           
+           $theme_price = $data['theme_price'];
         }
 ?>
 
@@ -163,7 +163,7 @@
                         <tr>
                             <th>가격</th>
                             <td>
-				                <span id="vprice">44,000원</span>
+				                <span id="vprice"><?=$theme_price ?>원</span>
 			                    <span id="dc_str" style="display:none;"></span>
                             </td>
                         </tr>
