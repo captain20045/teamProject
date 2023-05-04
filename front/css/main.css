@@ -1791,7 +1791,7 @@ body.on{overflow:hidden;}
 .checktd .fr a{color: #fff;}
 
 .privacy .white_area .clear .fr{height:80px;}
-.privacy .white_area .clear .fr a{display:inline-block; background-image:url("images/close_btn.png"); background-position:center center; width:70px; height:70px; text-indent:100%; white-space:nowrap; overflow:hidden;}
+.privacy .white_area .clear .fr a{display:inline-block; background-image:url("https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/close_btn.png"); background-position:center center; width:70px; height:70px; text-indent:100%; white-space:nowrap; overflow:hidden;}
 .content0{padding:30px 20px;}
 /*개인정보취급방침*/
 .ml20{margin-left:20px;}
