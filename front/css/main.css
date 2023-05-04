@@ -299,32 +299,7 @@ select {
 select.black_trans { border: 1px solid #151515; color: #000; }
 select.gray { border-color: transparent; background-color: #d0d0d0; }
 
-/* Pagination */
-.pagination { padding: 25px 0; margin-top: 0px; text-align: center; }
-.pagination ul > li { display: inline; }
-.pagination ul > li > a,
-.pagination ul > li > span { font-size: 15px; line-height: 45px; width: 45px; height: 45px; color: #989898; border: 1px solid #989898; text-align: center; display: inline-block; margin: 0 2.5px; box-sizing: border-box; font-weight: bold; }
-.pagination ul > li.prev { margin-right: 20px; }
-.pagination ul > li.next { margin-left: 20px; }
-.pagination ul > li.prev a { background: url(../images/ico/ico_paging_prev.png) center no-repeat; text-indent: -9999px; }
-.pagination ul > li.next a { background: url(../images/ico/ico_paging_next.png) center no-repeat; text-indent: -9999px; }
-.pagination ul > li.prevpage a { background: url(../images/ico/ico_paging_prevpage.png) center no-repeat; text-indent: -9999px; }
-.pagination ul > li.nextpage a { background: url(../images/ico//ico_paging_nextpage.png) center no-repeat; text-indent: -9999px; }
-.pagination ul > li.active > a,
-.pagination ul > li > span { color: #1a1a1a; border: 1px solid #1a1a1a; }
-.pagination .mobile { text-align: right; display: none; }
-.pagination .mobile span { text-align: center; padding-right: 15px; vertical-align: middle; color: #989898; }
-.pagination .mobile .btn {vertical-align:middle; display: inline-block; width: 45px; height: 45px; border: 1px solid #989898; box-sizing: border-box; text-indent: -9999px; text-align: center; padding: 0; min-width: inherit;
- }
-.pagination .mobile .prev { background: url("../images/ico/ico_paging_prev.png") center no-repeat; }
-.pagination .mobile .next{ background: url("../images/ico/ico_paging_next.png") center no-repeat; }
-.pagination .mobile .now_page { padding: 0 10px; }
-.pagination .mobile .select_page { min-width: 80px; width: 80px; height: 45px; line-height: 45px; text-align: left; color: #989898; }
 
-.pagination.black ul > li > a,
-.pagination.black ul > li > span { color: #fff; border: 1px solid #080808; }
-.pagination.black ul > li.active > a,
-.pagination.black ul > li > span { color: #e6950c; border: 1px solid #6f4807; }
 
 /* Tables */
 .table { border-top: 1px solid #acacac; width: 100%; max-width: 100%; margin-bottom: 25px; }
@@ -1176,49 +1151,6 @@ button.ui-button::-moz-focus-inner {
 	background-position: 0 0;
 }
 
-/* support: IE8 - See #6727 */
-.ui-slider.ui-state-disabled .ui-slider-handle,
-.ui-slider.ui-state-disabled .ui-slider-range {
-	filter: inherit;
-}
-
-.ui-slider-horizontal {
-	height: .8em;
-}
-.ui-slider-horizontal .ui-slider-handle {
-	top: -.3em;
-	margin-left: -.6em;
-}
-.ui-slider-horizontal .ui-slider-range {
-	top: 0;
-	height: 100%;
-}
-.ui-slider-horizontal .ui-slider-range-min {
-	left: 0;
-}
-.ui-slider-horizontal .ui-slider-range-max {
-	right: 0;
-}
-
-.ui-slider-vertical {
-	width: .8em;
-	height: 100px;
-}
-.ui-slider-vertical .ui-slider-handle {
-	left: -.3em;
-	margin-left: 0;
-	margin-bottom: -.6em;
-}
-.ui-slider-vertical .ui-slider-range {
-	left: 0;
-	width: 100%;
-}
-.ui-slider-vertical .ui-slider-range-min {
-	bottom: 0;
-}
-.ui-slider-vertical .ui-slider-range-max {
-	top: 0;
-}
 .ui-spinner {
 	position: relative;
 	display: inline-block;
@@ -2496,6 +2428,7 @@ body { min-width:360px; background-color: #fff; color: #505050; position: relati
 	#footer .footer_bottom .site_info .footer_logo { position: static; margin-bottom: 30px; }
 	#footer .footer_bottom .site_info ul li { float: none; display: inline-block; }
 	#footer .footer_bottom .bank_info { position: static; text-align: center; margin-bottom: 30px; }
+
 
 	#main_intro .intro_logo img { max-width: 75%; }
 	#main_propos .tit_top .feature_desc br { display: none; }
