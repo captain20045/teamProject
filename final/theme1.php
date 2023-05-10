@@ -55,6 +55,9 @@
 
     $result = mysqli_query($connect,"SELECT * FROM p_theme GROUP by theme_number");
     while($data = mysqli_fetch_array($result)){
+        $branch_seq = $data['branch_seq'];
+        $result2 = mysqli_query($connect,"SELECT branch_name FROM p_branch where branch_seq = $branch_seq");
+        if($data2 = mysqli_fetch_array($result2)){
 ?>
 
                 <div class="row">
@@ -97,7 +100,7 @@
                                                             ?>
                                                             </div>
                                                         </td> 
-                                                        <td style="padding:5px 0 0; line-height:150%;">서울대</td>
+                                                        <td style="padding:5px 0 0; line-height:150%;"><?=$data2['branch_name']?></td>
                                                     </tr>                          
                                                 </tbody>
                                                         </table>
@@ -109,6 +112,7 @@
                     </div>
                 </div>
 <?php
+        }
     }
 ?>
                 
@@ -160,4 +164,4 @@
 <?php
     mysqli_close($connect); 
 ?>
-      </body></html>
+    </body></html>
