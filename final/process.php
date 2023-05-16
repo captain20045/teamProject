@@ -97,10 +97,12 @@
 ?>
 
 
-
+<script>
+    alert("예약이 완료되었습니다.");
+    location.href="reservation.php";
+</script>
 
 <?php
-	header("Location:reservation.php");
 
     mysqli_close($connect);
 
