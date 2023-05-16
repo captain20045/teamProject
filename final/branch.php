@@ -36,6 +36,20 @@ function change2(){
     }
   document.f3.submit();
 }
+
+    function goPage(selectedRegion, selectedBranch) {
+      var f = document.goRev;
+
+      f.selectedRegion.value = selectedRegion;
+      f.selectedBranch.value = selectedBranch;
+      f.action = "reservation.php"
+      f.method = "post"
+      
+      f.submit();
+    };
+
+
+
     </script>
 
   <body>
@@ -142,13 +156,13 @@ function change2(){
 	}
 ?>	
 	  </select> 
-		    <input type="hidden" name="selectedRegion">
-        <input type="hidden" name="selectedBranch">
+		    <input type="hidden" name="selectedRegion" />
+        <input type="hidden" name="selectedBranch" />
         </form>
         </div>
 
         <div class="row list">
-
+        
 <?php
         $result = mysqli_query($connect, "SELECT * FROM p_branch");
         while($data = mysqli_fetch_array($result)){
@@ -161,7 +175,7 @@ function change2(){
                <div class="tit"><?= $data['branch_name'] ?></div>
                  <div class="btns center">
                       <a href="branch_view.php?branch_seq=<?= $data['branch_seq'] ?>" class="btn"><i class="ico left zoom_black"></i>지점소개</a>          
-                      <a href="" class="btn"><i class="ico left cal_black"></i>예약하기</a>
+                      <a href="javascript:goPage(<?=$data['region_seq']?>,<?=$data['branch_seq']?>);" class="btn"><i class="ico left cal_black"></i>예약하기</a>
                       
                   </div>
             </div>
@@ -197,13 +211,15 @@ function change2(){
                   </div>
             </div>
 
-
 <?php
         }
       }
         }
 ?>
-        
+        <form name="goRev">
+            <input type="hidden" name="selectedRegion">
+            <input type="hidden" name="selectedBranch">
+        </form>
        
 
       
