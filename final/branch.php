@@ -44,7 +44,7 @@ function change2(){
       f.selectedBranch.value = selectedBranch;
       f.action = "reservation.php"
       f.method = "post"
-      
+
       f.submit();
     };
 
@@ -191,7 +191,7 @@ function change2(){
                <div class="tit"><?= $data['branch_name'] ?></div>
                  <div class="btns center">
                       <a href="branch_view.php?branch_seq=<?= $data['branch_seq'] ?>" class="btn"><i class="ico left zoom_black"></i>지점소개</a>          
-                      <a href="" class="btn"><i class="ico left cal_black"></i>예약하기</a>
+                      <a href="javascript:goPage(<?=$data['region_seq']?>,<?=$data['branch_seq']?>);" class="btn"><i class="ico left cal_black"></i>예약하기</a>
                       
                   </div>
             </div>
@@ -206,7 +206,7 @@ function change2(){
                <div class="tit"><?= $data['branch_name'] ?></div>
                  <div class="btns center">
                       <a href="branch_view.php?branch_seq=<?= $data['branch_seq'] ?>" class="btn"><i class="ico left zoom_black"></i>지점소개</a>          
-                      <a href="" class="btn"><i class="ico left cal_black"></i>예약하기</a>
+                      <a href="javascript:goPage(<?=$data['region_seq']?>,<?=$data['branch_seq']?>);" class="btn"><i class="ico left cal_black"></i>예약하기</a>
                       
                   </div>
             </div>
