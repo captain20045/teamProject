@@ -207,8 +207,6 @@
 ?>
 
 
-
-
 <?php
     $connect = mysqli_connect('localhost','root','','project3');
     if(mysqli_connect_error()) {
@@ -216,6 +214,9 @@
     }
     $result2 = mysqli_query($connect, "SELECT region_seq,region_name FROM p_region");
 ?>	
+
+
+
     <select name="selRegion" id="selRegion" onchange="change1()">
         <option value=0>----지역선택----</option>
 <?php
@@ -344,16 +345,16 @@
         $result3 = mysqli_query($connect, "SELECT DATE_FORMAT(theme_start,'%H:%i') as theme_start , theme_number FROM p_theme where branch_seq = $branch_seq and theme_number = $theme_number order by theme_start");
         
         $st = 0; 
-
+        ?>
+            <div class="row">
+<?php
         while($data = mysqli_fetch_array($result3)){
             $theme_number =  $data['theme_number'];
 
             for($i=0; $i<8;$i++){   //예약정보 없으면 예약 가능한 상태로 만든다
                 $r[$i] = "Y";
             }
-?>            
-            <div class="row">
-<?php
+
         $result4 = mysqli_query($connect, "SELECT * from p_reservation_status where reservation_status_date='$selectedDate' and branch_seq=$branch_seq and theme_number=$theme_number");
         while($data3 = mysqli_fetch_array($result4)){
 
