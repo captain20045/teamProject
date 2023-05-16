@@ -17,7 +17,6 @@
 	$customer_name = $_GET['name'];
 	$customer_phone_number = $_GET['phone1']."-".$_GET['phone2']."-".$_GET['phone3'];
 	$booked_member = $_GET['people'];
-	$total_price = 0;
 	$purchase_way = $_GET['pay_type'];
     if($purchase_way == 1){
         $purchase_way = "현장결제";
@@ -31,11 +30,12 @@
         if($data = mysqli_fetch_array($result)){
            $region_seq = $data['region_seq'];
         }
-    $result = mysqli_query($connect, "SELECT theme_name from p_theme where theme_number = $theme_number ");
+    $result = mysqli_query($connect, "SELECT theme_name,theme_price from p_theme where theme_number = $theme_number ");
         if($data = mysqli_fetch_array($result)){
            $theme_name = $data['theme_name'];
-           
+           $theme_price = $data['theme_price'];  
         }
+    $total_price = $theme_price*$booked_member;
     $st = $_GET['st'];
 
 
