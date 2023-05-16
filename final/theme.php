@@ -10,7 +10,7 @@
     <header id="header">
             <div class="inner">
                 <div class="header_logo">
-                    <a href="/"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/logo.png"></a>
+                    <a href="main.php"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/logo.png"></a>
                 </div>
                 <nav class="header_nav">
                     <ul class="depth1">
@@ -42,684 +42,85 @@
 
         <section class="feature03 black_body" id="theme_list">
             <div class="inner container">
-                <div class="pagination black">
-                    <ul class="pc">  
-                        <li class="num"><a href=""><</a></li>
-                        <li class="num"><a href="">1</a></li>
-                        <li class="num"><a href="">2</a></li>
-                        <li class="num"><a href="">3</a></li>
-                        <li class="num"><a href="">4</a></li>
-                        <li class="num"><a href="">5</a></li>
-                        <li class="num"><a href="">6</a></li>
-                        <li class="num"><a href="">7</a></li>
-                        <li class="num"><a href="">8</a></li>
-                        <li class="num"><a href="">9</a></li>
-                        <li class="num"><a href="">10</a></li>
-                        <li class="num"><a href="">></a></li>                     
-                    </ul>				
-            <div class="mobile">
-                <span>페이지</span>
-                    <select class="select_page select_link">
-                        <option value="" selected="">1</option>
-                        <option value="">2</option>
-                        <option value="">3</option>
-                        <option value="">4</option>
-                        <option value="">5</option>
-                        <option value="">6</option>
-                        <option value="">7</option>
-                        <option value="">8</option>
-                        <option value="">9</option>
-                        <option value="">10</option>
-                    </select>
-                <span> / 12</span>
-                    <a href="#nopage" class="btn prev">PREV</a>
-                    <span class="now_page">1</span>
-                    <a href="/theme/index.php?start=12&amp;" class="btn next">NEXT</a>
-                </div>
-            </div>
+                
 
 
-
+            <div class="row">
 <!-- 첫 번째 꺼 -->
+<?php
+    $connect = mysqli_connect('localhost','root','','project3');
+    if(mysqli_connect_error()) {
+        echo "데이터베이스 연결에 실패하였습니다.";
+    }
 
-
-                <div class="row">
+    $result = mysqli_query($connect,"SELECT * FROM p_theme GROUP by theme_number");
+    while($data = mysqli_fetch_array($result)){
+        $branch_seq = $data['branch_seq'];
+        $result2 = mysqli_query($connect,"SELECT branch_name FROM p_branch where branch_seq = $branch_seq");
+        if($data2 = mysqli_fetch_array($result2)){
+?>          
                     <div class="col s3">
                         <div class="img">
                                 <ul class="medal"></ul>
-                                    <img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme1.jpg">
+                                    <img src="<?=$data['theme_picture']?>">
                 	                    <div class="over">
                                             <div class="backgroundBlack"></div>
                                             <a href="" class="close">x</a>
                                                 <div class="inner">
-                                                    <div class="tit">4</div> 
-                                                    <div class="desc" style="height: 55%;">죽음을 부르는 숫자</div>
+                                                    <div class="tit"><?=$data['theme_name']?></div> 
+                                                    <div class="desc" style="height: 55%;"><?=$data['theme_description']?></div>
                                                     <div class="level" style="width:230px;">
                                                         <table class="level_inner">
                                                 <tbody>
                                                     <tr>
-                                                        <td>-</td>
+                                                        <td><?=$data['theme_jenre']?></td>
                                                         <td>난이도 
                                                             <div class="star_box">
+                                                        <?php
+                                                                for($i=0; $i<$data['theme_level'];$i++){
+                                                        ?>
                                                                 <i class="ico star"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/ico_star1.png"></i>
-                                                                <i class="ico star"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/ico_star1.png"></i>
-                                                                <i class="ico star"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/ico_star1.png"></i>
-                                                                
+                                                        <?php
+                                                            }
+                                                        ?>
                                                             </div>
                                                         </td>
                                                     </tr>
                                                     <tr>
                                                         <td>공포도 
                                                             <div class="star_box">
+                                                            <?php
+                                                                for($i=0; $i<$data['theme_scare'];$i++){
+                                                            ?>
                                                                 <i class="ico star"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/ico_star1.png"></i>
+                                                            <?php
+                                                                }
+                                                            ?>
                                                             </div>
                                                         </td> 
-                                                        <td style="padding:5px 0 0; line-height:150%;">서울대</td>
+                                                        <td style="padding:5px 0 0; line-height:150%;"><?=$data2['branch_name']?></td>
                                                     </tr>                          
                                                 </tbody>
                                                         </table>
                                                 </div>   
                                                     <div class="level">
-                                                        <a href="-"><span>-</span></a>&nbsp;
                                                     </div>                          
                                         </div> 
                         </div>
                     </div>
                 </div>
-    
+<?php
+        }
+    }
+?>
+                
 
 <!--  첫 번째 끝-->
 
 
 
-                    <div class="col s3">
-                        <div class="img">
-                <ul class="medal"></ul>
-                <img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme2.png">
-                	<div class="over">
-                    <div class="backgroundBlack"></div>
-                         <a href="" class="close">x</a>
-                            <div class="inner">
-                                 <div class="tit">더 헝거:욕망의 큐브</div> 
-                                 <div class="desc" style="height: 55%;">
-						            인간의 욕망이 커져 모든 것을 집어삼키고 마침내 세상에는 거대한 상자 하나만이 덩그러니 남겨졌다.
-                                    우리는 그것을 큐브라고 불렀다.					
-                                </div>
-                        
-                        <div class="level" style="width:230px;">
-                            <table class="level_inner">
-                            <tbody>
-                            <tr>
-                            <td>아케이드</td>
-                                <td>
-                                    난이도 
-                                    <div class="star_box">
-                                        <i class="ico star"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/ico_star1.png"></i>
-                                        <i class="ico star"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/ico_star1.png"></i>
-                                        <i class="ico star"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/ico_star1.png"></i>
-                                        <i class="ico star"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/ico_star1.png"></i>
-                                    </div>
-                                </td>
-                            </tr>                               
-                                <tr>
-                                <td>
-                                    공포도 
-                                    <div class="star_box">
-                                        <i class="ico star"></i>
-                                    </div>
-                                </td>
-                                
-                                
-                            <td style="padding:5px 0 0; line-height:150%;">서울대</td>
-                                </tr>
-                            
-                            </tbody></table>
-                        </div>
-                        
-                        <div class="level">
-                            <a href="-"><span>-</span></a>&nbsp;
-                        </div>
-                                            
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-
-                    <div class="col s3">
-                        <div class="img">
-                <ul class="medal"></ul>
-                <img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme3.png">
-                	<div class="over">
-                        <div class="backgroundBlack"></div>
-                         <a href="" class="close">x</a>
-                            <div class="inner">
-                                 <div class="tit">[프리미엄] 펜타킬(70분)</div> 
-                                 <div class="desc" style="height: 55%;">
-                                    죽이는게 있는데...들어볼래요?					
-                                </div>
-                        
-                        <div class="level" style="width:230px;">
-                            <table class="level_inner">
-                            <tbody>
-                            <tr>
-                            <td>스릴러</td>
-                                <td>
-                                    난이도 
-                                    <div class="star_box">
-                                    <i class="ico star"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/ico_star1.png"></i>
-                                    <i class="ico star"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/ico_star1.png"></i>
-                                    <i class="ico star"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/ico_star1.png"></i>
-                                    <i class="ico star"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/ico_star1.png"></i>
-                                    </div>
-                                </td>
-                            </tr>                               
-                                <tr>
-                                <td>
-                                    공포도 
-                                    <div class="star_box">
-                                        <i class="ico star"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/ico_star1.png"></i>
-                                        <i class="ico star"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/ico_star1.png"></i>
-                                    </div>
-                                </td>
-                                
-                                
-                            <td style="padding:5px 0 0; line-height:150%;">부평점</td>
-                                </tr>
-                            
-                            </tbody></table>
-                        </div>
-                        
-                        <div class="level">
-                            <a href="-"><span>-</span></a>&nbsp;
-                        </div>
-                                            
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-
-
-                    <div class="col s3">
-                        <div class="img">
-                <ul class="medal"></ul>
-                <img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme4.png">
-                	<div class="over">
-                        <div class="backgroundBlack"></div>
-                         <a href="" class="close">close</a>
-                            <div class="inner">
-                                <div class="tit">무인도</div> 
-                                <div class="desc" style="height: 55%;">
-                                    불시착한 이곳에는 사람이 살지않는다..
-                                    그런데 누군가의 흔적이 느껴진다.
-                                </div>
-                        
-                        <div class="level" style="width:230px;">
-                            <table class="level_inner">
-                            <tbody>
-                            <tr>
-                            <td>어드벤처</td>
-                                <td>
-                                    난이도 
-                                    <div class="star_box">
-                                        <i class="ico star"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/ico_star1.png"></i>
-                                        <i class="ico star"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/ico_star1.png"></i>
-                                    </div>
-                                </td>
-                            </tr>                               
-                                <tr>
-                                <td>
-                                    공포도 
-                                    <div class="star_box">
-                                        <i class="ico star"></i>
-                                    </div>
-                                </td>
-                                
-                                
-                            <td style="padding:5px 0 0; line-height:150%;">서울대</td>
-                                </tr>
-                            
-                            </tbody></table>
-                        </div>
-                        
-                        <div class="level">
-                            <a href="-"><span>-</span></a>&nbsp;
-                        </div>
-                                            
-                            </div>
-                        </div>
-                    </div>
-                </div>   
-                
-                
-                <div class="col s3">
-                        <div class="img">
-                <ul class="medal"></ul>
-                <img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme5.png">
-                	<div class="over">
-                    <div class="backgroundBlack"></div>
-                         <a href="" class="close">close</a>
-                            <div class="inner">
-                                <div class="tit">201호 202호</div> 
-                                <div class="desc" style="height: 55%;">
-                                        셜록아파트 201호에 살고 있는 신두호는 
-                                        오랜만에 친구와 술을 진탕 마시고 
-                                        다음날 아침 깨어납니다.						
-                                </div>
-                        
-                        <div class="level" style="width:230px;">
-                            <table class="level_inner">
-                            <tbody>
-                            <tr>
-                            <td>스릴러</td>
-                                <td>
-                                    난이도 
-                                    <div class="star_box">
-                                    <i class="ico star"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/ico_star1.png"></i>
-                                    <i class="ico star"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/ico_star1.png"></i>
-                                    <i class="ico star"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/ico_star1.png"></i>
-                                    </div>
-                                </td>
-                            </tr>                               
-                                <tr>
-                                <td>
-                                    공포도 
-                                    <div class="star_box">
-                                        <i class="ico star"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/ico_star1.png"></i>
-                                    </div>
-                                </td>
-                                
-                                
-                            <td style="padding:5px 0 0; line-height:150%;">서울대</td>
-                                </tr>
-                            
-                            </tbody></table>
-                        </div>
-                        
-                        <div class="level">
-                            <a href="-"><span>-</span></a>&nbsp;
-                        </div>
-                                            
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-
-                    <div class="col s3">
-                        <div class="img">
-                <ul class="medal"></ul>
-                <img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme6.png">
-                	<div class="over">
-                        <div class="backgroundBlack"></div>
-                         <a href="" class="close">close</a>
-                            <div class="inner">
-                                <div class="tit">괴담수집가</div> 
-                                <div class="desc" style="height: 55%;">
-                                        당신은 딸의 생일선물을 살 돈을 마련하기 위해 괴담수집상에 당신의 이야기를 팔러 왔다. 물론 이곳 상점은 평범한 곳은 아니다.					
-                                </div>
-                        
-                        <div class="level" style="width:230px;">
-                            <table class="level_inner">
-                            <tbody>
-                            <tr>
-                            <td>-</td>
-                                <td>
-                                    난이도 
-                                    <div class="star_box">
-                                        <i class="ico star"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/ico_star1.png"></i>
-                                        <i class="ico star"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/ico_star1.png"></i>
-                                        <i class="ico star"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/ico_star1.png"></i>
-                                        <i class="ico star"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/ico_star1.png"></i>
-                                        <i class="ico star"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/ico_star1.png"></i>
-                                    </div>
-                                </td>
-                            </tr>                               
-                                <tr>
-                                <td>
-                                    공포도 
-                                    <div class="star_box">
-                                        <i class="ico star"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/ico_star1.png"></i>
-                                        <i class="ico star"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/ico_star1.png"></i>
-                                    </div>
-                                </td>
-                                
-                                
-                            <td style="padding:5px 0 0; line-height:150%;">서울대</td>
-                                </tr>
-                            
-                            </tbody></table>
-                        </div>
-                        
-                        <div class="level">
-                            <a href="-"><span>-</span></a>&nbsp;
-                        </div>
-                                            
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-
-                    <div class="col s3">
-                        <div class="img">
-                <ul class="medal"></ul>
-                <img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme7.png">
-                	<div class="over">
-                         <a href="" class="close">close</a>
-                         <div class="backgroundBlack"></div>
-                            <div class="inner">
-                                <div class="tit">디스트로이드</div> 
-                                <div class="desc" style="height: 55%;">
-                                            AI로봇수칙
-                                        1.로봇은 인간을 죽일 수 없다.
-                                        2.로봇은 감정을 가질수 없고 꿈을 꿀수 없다.
-                                        3.로봇은 절대 거짓말을 할 수 없다.
-                                </div>
-                        
-                        <div class="level" style="width:230px;">
-                            <table class="level_inner">
-                            <tbody>
-                            <tr>
-                            <td>스릴러/SF</td>
-                                <td>
-                                    난이도 
-                                    <div class="star_box">
-                                        <i class="ico star"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/ico_star1.png"></i>
-                                        <i class="ico star"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/ico_star1.png"></i>
-                                        <i class="ico star"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/ico_star1.png"></i>
-                                    </div>
-                                </td>
-                            </tr>                               
-                                <tr>
-                                <td>
-                                    공포도 
-                                    <div class="star_box">
-                                        <i class="ico star"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/ico_star1.png"></i>
-                                    </div>
-                                </td>
-                                
-                                
-                            <td style="padding:5px 0 0; line-height:150%;">서현점</td>
-                                </tr>
-                            
-                            </tbody></table>
-                        </div>
-                        
-                        <div class="level">
-                            <a href="-"><span>-</span></a>&nbsp;
-                        </div>
-                                            
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-
-                    <div class="col s3">
-                        <div class="img">
-                <ul class="medal"></ul>
-                <img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme8.png">
-                	<div class="over">
-                    <div class="backgroundBlack"></div>
-                         <a href="" class="close">close</a>
-                            <div class="inner">
-                                <div class="tit">대영어시대</div> 
-                                <div class="desc" style="height: 55%;">
-                                    대항해시대. 교역을 위해 나섰지만, 폭풍에 휘말려 어딘지도 모를 곳에 떨어졌다.
-                                    그런 내게 찾아온 동포...
-                                    그런데 이 남자 하는 말이 이상하다.
-                                    “Nice to meet you. Uh..umm..거.. 어데 하씬교?”
-                                    “What????”
-                                </div>
-                        
-                        <div class="level" style="width:230px;">
-                            <table class="level_inner">
-                            <tbody>
-                            <tr>
-                            <td>코믹</td>
-                                <td>
-                                    난이도 
-                                    <div class="star_box">
-                                        <i class="ico star"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/ico_star1.png"></i>
-                                        <i class="ico star"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/ico_star1.png"></i>
-                                        <i class="ico star"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/ico_star1.png"></i>
-                                        <i class="ico star"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/ico_star1.png"></i>
-                                    </div>
-                                </td>
-                            </tr>                               
-                                <tr>
-                                <td>
-                                    공포도 
-                                    <div class="star_box">
-                                        <i class="ico star"></i>
-                                    </div>
-                                </td>
-                                
-                                
-                            <td style="padding:5px 0 0; line-height:150%;">서현점</td>
-                                </tr>
-                            
-                            </tbody></table>
-                        </div>
-                        
-                        <div class="level">
-                            <a href="-"><span>-</span></a>&nbsp;
-                        </div>
-                                            
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-
-                    <div class="col s3">
-                        <div class="img">
-                <ul class="medal"></ul>
-                <img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme9.png">
-                	<div class="over">
-                    <div class="backgroundBlack"></div>
-                         <a href="" class="close">close</a>
-                            <div class="inner">
-                                 <div class="tit">Below:성 안 이야기</div> 
-                                <div class="desc" style="height: 55%;">          
-						            “성에 들어오려는 수많은 사람들... 나와는 반대야.”
-                                    여자는 그렇게 움직이기 시작했다.										
-                                </div>
-                        
-                        <div class="level" style="width:230px;">
-                            <table class="level_inner">
-                            <tbody>
-                            <tr>
-                            <td>판타지</td>
-                                <td>
-                                    난이도 
-                                    <div class="star_box">
-                                        <i class="ico star"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/ico_star1.png"></i>
-                                        <i class="ico star"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/ico_star1.png"></i>
-                                        <i class="ico star"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/ico_star1.png"></i>
-                                    </div>
-                                </td>
-                            </tr>                               
-                                <tr>
-                                <td>
-                                    공포도 
-                                    <div class="star_box">
-                                        <i class="ico star"></i>
-                                    </div>
-                                </td>
-                                
-                                
-                            <td style="padding:5px 0 0; line-height:150%;">서현점</td>
-                                </tr>
-                            
-                            </tbody></table>
-                        </div>
-                        
-                        <div class="level">
-                            <a href="-"><span>-</span></a>&nbsp;
-                        </div>
-                                            
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-
-                    <div class="col s3">
-                        <div class="img">
-                <ul class="medal"></ul>
-                <img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme10.png">
-                	<div class="over">
-                    <div class="backgroundBlack"></div>
-                         <a href="" class="close">close</a>
-                            <div class="inner">
-                                <div class="tit">Molaq : 성 밖 이야기</div> 
-                                <div class="desc" style="height: 55%;">
-						            “기필코 The Castle에 들어가서 왕위를 쟁취하리라!”
-                                    남자는 그렇게 움직이기 시작했다.					
-                                </div>
-                        
-                        <div class="level" style="width:230px;">
-                            <table class="level_inner">
-                            <tbody>
-                            <tr>
-                            <td>판타지</td>
-                                <td>
-                                    난이도 
-                                    <div class="star_box">
-                                        <i class="ico star"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/ico_star1.png"></i>
-                                        <i class="ico star"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/ico_star1.png"></i>
-                                        <i class="ico star"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/ico_star1.png"></i>
-                                        <i class="ico star"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/ico_star1.png"></i>
-                                    </div>
-                                </td>
-                            </tr>                               
-                                <tr>
-                                <td>
-                                    공포도 
-                                    <div class="star_box">
-                                        <i class="ico star"></i>
-                                    </div>
-                                </td>
-                                
-                                
-                            <td style="padding:5px 0 0; line-height:150%;">서현점</td>
-                                </tr>
-                            
-                            </tbody></table>
-                        </div>
-                        
-                        <div class="level">
-                            <a href="-"><span>-</span></a>&nbsp;
-                        </div>
-                                            
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-
-                    <div class="col s3">
-                        <div class="img">
-                <ul class="medal"></ul>
-                <img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme11.png">
-                	<div class="over">
-                    <div class="backgroundBlack"></div>
-                         <a href="" class="close">close</a>
-                            <div class="inner">
-                                <div class="tit">[프리미엄]귀로여관 (70분)</div> 
-                                <div class="desc" style="height: 55%;">
-						            누군가를 죽인 경험이 있습니까? 그 경험을 나누고 싶습니다. 귀로 여관에서 기다리겠습니다.
-                                </div>
-                        
-                        <div class="level" style="width:230px;">
-                            <table class="level_inner">
-                            <tbody>
-                            <tr>
-                            <td>-</td>
-                                <td>
-                                    난이도 
-                                    <div class="star_box">
-                                        <i class="ico star"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/ico_star1.png"></i>
-                                        <i class="ico star"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/ico_star1.png"></i>
-                                        <i class="ico star"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/ico_star1.png"></i>
-                                        <i class="ico star"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/ico_star1.png"></i>
-                                    </div>
-                                </td>
-                            </tr>                               
-                                <tr>
-                                <td>
-                                    공포도 
-                                    <div class="star_box">
-                                        <i class="ico star"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/ico_star1.png"></i>
-                                        <i class="ico star"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/ico_star1.png"></i>
-                                        <i class="ico star"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/ico_star1.png"></i>
-                                        <i class="ico star"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/ico_star1.png"></i>
-                                    </div>
-                                </td>
-                                
-                                
-                            <td style="padding:5px 0 0; line-height:150%;">아산점</td>
-                                </tr>
-                            
-                            </tbody></table>
-                        </div>
-                        
-                        <div class="level">
-                            <a href="-"><span>-</span></a>&nbsp;
-                        </div>
-                                            
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-
-                    <div class="col s3">
-                        <div class="img">
-                <ul class="medal"></ul>
-                <img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme12.png">
-                	<div class="over">
-                    <div class="backgroundBlack"></div>
-                         <a href="" class="close">close</a>
-                            <div class="inner">
-                                <div class="tit">악마를 보았다</div> 
-                                <div class="desc" style="height: 55%;">
-						            낯선 창고, 익숙하지 않은 공기 사이로 미세하게 위험한 냄새가 풍겨나왔다... 
-                                    여기서 무슨 일이 벌어지고 있는 걸까?					
-                                </div>
-                        
-                        <div class="level" style="width:230px;">
-                            <table class="level_inner">
-                            <tbody>
-                            <tr>
-                            <td>-</td>
-                                <td>
-                                    난이도 
-                                    <div class="star_box">
-                                        <i class="ico star"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/ico_star1.png"></i>
-                                        <i class="ico star"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/ico_star1.png"></i>
-                                        <i class="ico star"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/ico_star1.png"></i>
-                                        <i class="ico star"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/ico_star1.png"></i>
-                                    </div>
-                                </td>
-                            </tr>                               
-                                <tr>
-                                <td>
-                                    공포도 
-                                    <div class="star_box">
-                                        <i class="ico star"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/ico_star1.png"></i>
-                                    </div>
-                                </td>
-                                
-                                
-                            <td style="padding:5px 0 0; line-height:150%;">아산점</td>
-                                </tr>
-                            
-                            </tbody></table>
-                        </div>
-                        
-                        <div class="level">
-                            <a href="-"><span>-</span></a>&nbsp;
-                        </div>
-                                            
-                            </div>
-                        </div>
-                        </div>
-                    </div>
+                    
+                    
 
 
             </div>
@@ -757,4 +158,8 @@
                     </div>
                 </section>
             </footer>
+
+<?php
+    mysqli_close($connect); 
+?>
     </body></html>
