@@ -5,11 +5,44 @@
   document.title="SHERLOCK HOLMES - 셜록홈즈 방탈출 게임";
   </script>
   <link rel="stylesheet" href="css/point.css">
-  <!-- <link rel="stylesheet" href="css/main.css"> -->
-  <!-- <link rel="stylesheet" href="style.css"> -->
-  <!-- <script  src="http://code.jquery.com/jquery-latest.min.js"></script> -->
+  <link rel="stylesheet" href="css/main.css">
   </head>
+
+  <script>
+
+function change1(){
+  var obj = document.getElementById("selRegion");
+  for (i=0;i<obj.length;i++ ){
+    if(obj[i].selected){
+      document.f3.selectedRegion.value = obj[i].value;
+      }
+    }
+  document.f3.submit();
+}
+
+function change2(){
+  var obj = document.getElementById("selRegion");
+  for (i=0;i<obj.length;i++ ){
+    if(obj[i].selected){
+      document.f3.selectedRegion.value= obj[i].value;
+      }
+    }
+
+  var obj2 = document.getElementById("selBranch");
+  for (i=0;i<obj2.length;i++ ){
+    if(obj2[i].selected){
+      document.f3.selectedBranch.value= obj2[i].value;
+      }
+    }
+  document.f3.submit();
+}
+    </script>
+
   <body>
+  <?php  
+       $_POST['selectedRegion'] =  isset($_POST['selectedRegion']) ? $_POST['selectedRegion'] : '';
+       $_POST['selectedBranch'] =  isset($_POST['selectedBranch']) ? $_POST['selectedBranch'] : '';
+	?>
 
   <header id="header">
             <div class="inner">
@@ -46,272 +79,145 @@
     <section class="branch_list">
       <div class="inner container">
         <div class="selectArea">
-        <form method="get" action="" name="frm" id="frm">
-           <select id="selectArea">
-            <option value="">지역선택</option>
-                        <option value="1">서울특별시</option>
-                        <option value="9">경기도</option>
-                        <option value="4">인천광역시</option>
-                        <option value="12">충청 대전 세종</option>
-                        <option value="13">전라 광주</option>
-                        <option value="17">제주 강원</option>
-                        <option value="15">경상도</option>
-                    </select>
-          <select name="s_no" id="s_no" class="jumpselect">
-            <option value="">지점선택</option>
-            <script>
-   
+        <form method="POST" action="branch.php" name="f3">
 
-           
-        </script>
+<?php
+	$region_seq = $_POST['selectedRegion'];
+	if(strlen($region_seq) == 0){	
+		$region_seq = 0;
+	}else{
+		$region_seq = $_POST['selectedRegion'];
+	}
+	
+	$branch_seq = $_POST['selectedBranch'];
+	if(strlen($branch_seq) == 0){	
+		$branch_seq = 0;
+	}else{
+		$branch_seq = $_POST['selectedBranch'];
+	}
+?>
 
-          </select>
+
+
+
+<?php
+    $connect = mysqli_connect('localhost','root','','project3');
+    if(mysqli_connect_error()) {
+        echo "데이터베이스 연결에 실패하였습니다.";
+    }
+    $result2 = mysqli_query($connect, "SELECT region_seq,region_name FROM p_region");
+?>	
+    <select name="selRegion" id="selRegion" onchange="change1()">
+        <option value=0>----지역선택----</option>
+<?php
+    while($data = mysqli_fetch_array($result2)){
+		if($data['region_seq'] == $region_seq){
+?>
+		    <option value="<?= $data['region_seq'] ?>"selected><?= $data['region_name'] ?>
+<?php
+        }else{
+?>
+		    <option value="<?= $data['region_seq'] ?>"><?= $data['region_name'] ?>
+<?php		
+		}
+	}
+?>	
+	</select>
+  <?php	
+	$result3 = mysqli_query($connect, "SELECT branch_seq, region_seq, branch_name FROM p_branch where region_seq=$region_seq");
+?>	
+    <select name="selBranch" id="selBranch" onchange="change2()">
+        <option value=0>----지점선택----</option>
+<?php
+    while($data = mysqli_fetch_array($result3)){
+		if($data['branch_seq'] == $branch_seq){
+?>
+		    <option value="<?php echo $data['branch_seq']; ?>" selected><?php echo $data['branch_name']; ?>
+<?php
+        }else{
+?>
+		    <option value="<?php echo $data['branch_seq']; ?>"><?php echo $data['branch_name']; ?>
+<?php		
+		}
+	}
+?>	
+	  </select> 
+		    <input type="hidden" name="selectedRegion">
+        <input type="hidden" name="selectedBranch">
         </form>
         </div>
 
         <div class="row list">
+
+<?php
+        $result = mysqli_query($connect, "SELECT * FROM p_branch");
+        while($data = mysqli_fetch_array($result)){
+          if($region_seq == 0){
+?>
             <div class="col s3">
                <div class="img">
-                <img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/branch1.jpg">             
+                <img src="<?= $data['branch_picture'] ?>">             
               </div>
-               <div class="tit">구리점</div>
+               <div class="tit"><?= $data['branch_name'] ?></div>
                  <div class="btns center">
-                      <a href="branch1.php?branch_seq=1" class="btn"><i class="ico left zoom_black"></i>지점소개</a>          
+                      <a href="branch_view.php?branch_seq=<?= $data['branch_seq'] ?>" class="btn"><i class="ico left zoom_black"></i>지점소개</a>          
+                      <a href="" class="btn"><i class="ico left cal_black"></i>예약하기</a>
+                      
+                  </div>
+            </div>
+<?php
+          }
+          else if($region_seq == $data['region_seq']){
+            if($branch_seq == 0){
+?>
+            <div class="col s3">
+               <div class="img">
+                <img src="<?= $data['branch_picture'] ?>">             
+              </div>
+               <div class="tit"><?= $data['branch_name'] ?></div>
+                 <div class="btns center">
+                      <a href="branch_view.php?branch_seq=<?= $data['branch_seq'] ?>" class="btn"><i class="ico left zoom_black"></i>지점소개</a>          
+                      <a href="" class="btn"><i class="ico left cal_black"></i>예약하기</a>
+                      
+                  </div>
+            </div>
+<?php
+					}
+				else if($branch_seq == $data['branch_seq']){
+?>
+          <div class="col s3">
+               <div class="img">
+                <img src="<?= $data['branch_picture'] ?>">             
+              </div>
+               <div class="tit"><?= $data['branch_name'] ?></div>
+                 <div class="btns center">
+                      <a href="branch_view.php?branch_seq=<?= $data['branch_seq'] ?>" class="btn"><i class="ico left zoom_black"></i>지점소개</a>          
                       <a href="" class="btn"><i class="ico left cal_black"></i>예약하기</a>
                       
                   </div>
             </div>
 
-        <div class="col s3">
-               <div class="img"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/branch2.jpg"></div>
-               <div class="tit">구월인천점</div>
-                 <div class="btns center">
-                      <a href="branch1.php?branch_seq=2" class="btn"><i class="ico left zoom_black"></i>지점소개</a>          
-                      <a href="" class="btn"><i class="ico left cal_black"></i>예약하기</a>
-                  </div>
-            </div>
 
-        <div class="col s3">
-               <div class="img"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/branch3.png"></div>
-               <div class="tit">노량진점</div>
-                 <div class="btns center">
-                      <a href="branch1.php?branch_seq=3" class="btn"><i class="ico left zoom_black"></i>지점소개</a>          
-                      <a href="" class="btn"><i class="ico left cal_black"></i>예약하기</a>
-                  </div>
-            </div>
+<?php
+        }
+      }
+        }
+?>
+        
+       
+
+      
+
             
-            <div class="col s3">
-              <div class="img"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/branch4.jpg"></div>
-              <div class="tit">노원점</div>
-                <div class="btns center">
-                     <a href="branch1.php?branch_seq=4" class="btn"><i class="ico left zoom_black"></i>지점소개</a>          
-                     <a href="" class="btn"><i class="ico left cal_black"></i>예약하기</a>
-                 </div>
-           </div>
-
-        <div class="col s3">
-               <div class="img"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/branch5.png"></div>
-               <div class="tit">안양점</div>
-                 <div class="btns center">
-                      <a href="branch1.php?branch_seq=5" class="btn"><i class="ico left zoom_black"></i>지점소개</a>          
-                      <a href="" class="btn"><i class="ico left cal_black"></i>예약하기</a>
-                  </div>
-            </div>
-
-       <div class="col s3">
-               <div class="img"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/branch6.jpg"></div>
-               <div class="tit">대구동성로점</div>
-                 <div class="btns center">
-                      <a href="branch1.php?branch_seq=6" class="btn"><i class="ico left zoom_black"></i>지점소개</a>          
-                      <a href="" class="btn"><i class="ico left cal_black"></i>예약하기</a>
-                  </div>
-            </div>
-
-       <div class="col s3">
-               <div class="img"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/branch7.jpg"></div>
-               <div class="tit">대전 신세계백화점</div>
-                 <div class="btns center">
-                      <a href="branch1.php?branch_seq=7" class="btn"><i class="ico left zoom_black"></i>지점소개</a>          
-                      <a href="" class="btn"><i class="ico left cal_black"></i>예약하기</a>
-                  </div>
-            </div>
-
-        <div class="col s3">
-               <div class="img"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/branch8.jpg"></div>
-               <div class="tit">대학로점</div>
-                 <div class="btns center">
-                      <a href="branch1.php?branch_seq=8" class="btn"><i class="ico left zoom_black"></i>지점소개</a>          
-                      <a href="" class="btn"><i class="ico left cal_black"></i>예약하기</a>
-                  </div>
-            </div>
-
-        <div class="col s3">
-               <div class="img"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/branch9.jpg"></div>
-               <div class="tit">동탄점</div>
-                 <div class="btns center">
-                      <a href="branch1.php?branch_seq=9" class="btn"><i class="ico left zoom_black"></i>지점소개</a>          
-                      <a href="" class="btn"><i class="ico left cal_black"></i>예약하기</a>
-                  </div>
-            </div>
-
-        <div class="col s3">
-               <div class="img"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/branch10.jpg"></div>
-               <div class="tit">부천점</div>
-                 <div class="btns center">
-                      <a href="branch1.php?branch_seq=10" class="btn"><i class="ico left zoom_black"></i>지점소개</a>          
-                      <a href="" class="btn"><i class="ico left cal_black"></i>예약하기</a>
-                  </div>
-            </div>
-
-        <div class="col s3">
-               <div class="img"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/branch11.jpg"></div>
-               <div class="tit">부평점</div>
-                 <div class="btns center">
-                      <a href="branch1.php?branch_seq=11" class="btn"><i class="ico left zoom_black"></i>지점소개</a>          
-                      <a href="" class="btn"><i class="ico left cal_black"></i>예약하기</a>
-                  </div>
-            </div>
-
-        <div class="col s3">
-               <div class="img"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/branch12.jpg"></div>
-               <div class="tit">구분당야탑점</div>
-                 <div class="btns center">
-                      <a href="branch1.php?branch_seq=12" class="btn"><i class="ico left zoom_black"></i>지점소개</a>          
-                      <a href="" class="btn"><i class="ico left cal_black"></i>예약하기</a>
-                  </div>
-            </div>
-       <!-- sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss-->
-            <div class="col s3">
-               <div class="img"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/branch13.jpg"></div>
-               <div class="tit">서울대압구정점</div>
-                 <div class="btns center">
-                      <a href="branch1.php?branch_seq=13" class="btn"><i class="ico left zoom_black"></i>지점소개</a>          
-                      <a href="" class="btn"><i class="ico left cal_black"></i>예약하기</a>
-                  </div>
-            </div>
-
-            <div class="col s3">
-               <div class="img"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/branch14.jpg"></div>
-               <div class="tit">성신여대점</div>
-                 <div class="btns center">
-                      <a href="branch1.php?branch_seq=14" class="btn"><i class="ico left zoom_black"></i>지점소개</a>          
-                      <a href="" class="btn"><i class="ico left cal_black"></i>예약하기</a>
-                  </div>
-            </div>
-
-
-            <div class="col s3">
-               <div class="img"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/branch15.jpg"></div>
-               <div class="tit">신림2호점</div>
-                 <div class="btns center">
-                      <a href="branch1.php?branch_seq=15" class="btn"><i class="ico left zoom_black"></i>지점소개</a>          
-                      <a href="" class="btn"><i class="ico left cal_black"></i>예약하기</a>
-                  </div>
-            </div>
-
-            <div class="col s3">
-               <div class="img"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/branch16.jpg"></div>
-               <div class="tit">잠실1호점</div>
-                 <div class="btns center">
-                      <a href="branch1.php?branch_seq=16" class="btn"><i class="ico left zoom_black"></i>지점소개</a>          
-                      <a href="" class="btn"><i class="ico left cal_black"></i>예약하기</a>
-                  </div>
-            </div>
-
-            <div class="col s3">
-               <div class="img"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/branch17.jpg"></div>
-               <div class="tit">잠실2호점</div>
-                 <div class="btns center">
-                      <a href="branch1.php?branch_seq=17" class="btn"><i class="ico left zoom_black"></i>지점소개</a>          
-                      <a href="" class="btn"><i class="ico left cal_black"></i>예약하기</a>
-                  </div>
-            </div>
-
-            <div class="col s3">
-               <div class="img"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/branch18.jpg"></div>
-               <div class="tit">종각점</div>
-                 <div class="btns center">
-                      <a href="branch1.php?branch_seq=18" class="btn"><i class="ico left zoom_black"></i>지점소개</a>          
-                      <a href="" class="btn"><i class="ico left cal_black"></i>예약하기</a>
-                  </div>
-            </div>
-
-            <div class="col s3">
-               <div class="img"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/branch19.jpg"></div>
-               <div class="tit">서현점</div>
-                 <div class="btns center">
-                      <a href="branch1.php?branch_seq=19" class="btn"><i class="ico left zoom_black"></i>지점소개</a>          
-                      <a href="" class="btn"><i class="ico left cal_black"></i>예약하기</a>
-                  </div>
-            </div>
-
-            <div class="col s3">
-               <div class="img"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/branch20.jpg"></div>
-               <div class="tit">의정부점</div>
-                 <div class="btns center">
-                      <a href="branch1.php?branch_seq=20" class="btn"><i class="ico left zoom_black"></i>지점소개</a>          
-                      <a href="" class="btn"><i class="ico left cal_black"></i>예약하기</a>
-                  </div>
-            </div>
-
-            <div class="col s3">
-               <div class="img"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/branch21.jpg"></div>
-               <div class="tit">평택점</div>
-                 <div class="btns center">
-                      <a href="branch1.php?branch_seq=21" class="btn"><i class="ico left zoom_black"></i>지점소개</a>          
-                      <a href="" class="btn"><i class="ico left cal_black"></i>예약하기</a>
-                  </div>
-            </div>
-
-            <div class="col s3">
-               <div class="img"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/branch22.jpg"></div>
-               <div class="tit">아산점</div>
-                 <div class="btns center">
-                      <a href="branch1.php?branch_seq=22" class="btn"><i class="ico left zoom_black"></i>지점소개</a>          
-                      <a href="" class="btn"><i class="ico left cal_black"></i>예약하기</a>
-                  </div>
-            </div>
-
-            <div class="col s3">
-               <div class="img"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/branch23.jpg"></div>
-               <div class="tit">천안1호점</div>
-                 <div class="btns center">
-                      <a href="branch1.php?branch_seq=23" class="btn"><i class="ico left zoom_black"></i>지점소개</a>          
-                      <a href="" class="btn"><i class="ico left cal_black"></i>예약하기</a>
-                  </div>
-            </div>
-
-            <div class="col s3">
-               <div class="img"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/branch24.jpg"></div>
-               <div class="tit">천안2호점</div>
-                 <div class="btns center">
-                      <a href="branch1.php?branch_seq=24" class="btn"><i class="ico left zoom_black"></i>지점소개</a>          
-                      <a href="" class="btn"><i class="ico left cal_black"></i>예약하기</a>
-                  </div>
-            </div>
-
-            <div class="col s3">
-               <div class="img"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/branch25.jpg"></div>
-               <div class="tit">청주점</div>
-                 <div class="btns center">
-                      <a href="branch1.php?branch_seq=25" class="btn"><i class="ico left zoom_black"></i>지점소개</a>          
-                      <a href="" class="btn"><i class="ico left cal_black"></i>예약하기</a>
-                  </div>
-            </div>
-
-            <div class="col s3">
-               <div class="img"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/branch26.jpg"></div>
-               <div class="tit">여수점</div>
-                 <div class="btns center">
-                      <a href="branch1.php?branch_seq=2" class="btn"><i class="ico left zoom_black"></i>지점소개</a>          
-                      <a href="" class="btn"><i class="ico left cal_black"></i>예약하기</a>
-                  </div>
-            </div>
              </div>
           </div>
         </div>
     </section>
   </div>
+
+  <?php
+        mysqli_close($connect); 
+  ?>
   <footer id="footer">
                 <section class="footer_top">
                     <div class="inner container">
