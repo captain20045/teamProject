@@ -29,7 +29,7 @@ $connect = mysqli_connect('localhost','root','','project3');
 </head>
 <body>
 
-<header id="header">
+	<header id="header">
             <div class="inner">
                 <div class="header_logo">
                     <a href="main.php"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/logo.png"></a>
