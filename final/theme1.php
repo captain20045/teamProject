@@ -45,7 +45,7 @@
                 
 
 
-
+            <div class="row">
 <!-- 첫 번째 꺼 -->
 <?php
     $connect = mysqli_connect('localhost','root','','project3');
@@ -58,9 +58,7 @@
         $branch_seq = $data['branch_seq'];
         $result2 = mysqli_query($connect,"SELECT branch_name FROM p_branch where branch_seq = $branch_seq");
         if($data2 = mysqli_fetch_array($result2)){
-?>
-
-                <div class="row">
+?>          
                     <div class="col s3">
                         <div class="img">
                                 <ul class="medal"></ul>
