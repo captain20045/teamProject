@@ -6,7 +6,7 @@ $connect = mysqli_connect('localhost','root','','project3');
     if(mysqli_connect_error()) {
         echo "데이터베이스 연결에 실패하였습니다.";
     }
-    $result = mysqli_query($connect, "SELECT branch_seq,branch_name,branch_address,branch_phone_number,branch_map FROM p_branch");
+    $result = mysqli_query($connect, "SELECT branch_seq,branch_name,branch_address,branch_phone_number,branch_map, branch_picture FROM p_branch");
 	
 	    while($data = mysqli_fetch_array($result)){
 			if($data['branch_seq'] == $branch_seq){
@@ -14,6 +14,7 @@ $connect = mysqli_connect('localhost','root','','project3');
 				$branch_address=$data['branch_address'];
 				$branch_phone_number=$data['branch_phone_number'];
 				$branch_map=$data['branch_map'];
+				$branch_picture=$data['branch_picture'];
 			}
 		}
 ?>
@@ -81,7 +82,7 @@ $connect = mysqli_connect('localhost','root','','project3');
 						<div aria-live="polite" class="slick-list draggable">
                              <div class="slick-track" role="listbox" style="opacity: 1; width: 350px;">
                                  <div class="item slick-slide slick-current slick-active" data-slick-index="0" aria-hidden="false" tabindex="-1" role="option" aria-describedby="slick-slide00" style="width: 350px; position: relative; left: 0px; top: 0px;  opacity: 1;">
-                                      <img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/branch1.jpg">
+                                      <img src="<?=$branch_picture;?>">
                                  </div>
                                </div>
                         </div>
