@@ -99,67 +99,26 @@
 
 
 
-        <header id="header">
+    <header id="header">
             <div class="inner">
                 <div class="header_logo">
-                    <a href="/"><img src="/images/common/header_logo.png"></a>
+                    <a href="main.php"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/logo.png"></a>
                 </div>
-                <nav class="header_nav">
+                    <nav class="header_nav">
                     <ul class="depth1">
                         <li class="theme">
-                            <a href="/theme">테마</a>
+                            <a href="theme.php">테마</a>
                         </li>
-                                            <li class="activity">
-                            <a href="/activity/activity.php">Activity</a>
-                        </li>
-                                            <li class="branch">
-                            <a href="/branch">지점소개</a>
+                        <li class="branch">
+                            <a href="branch.php">지점소개</a>
                         </li>
                         <li class="board">
-                            <a href="/board/press.php">게시판</a>
-                            <ul class="depth2">
-                                <li><a href="/board/press.php">언론속의 셜록홈즈</a></li>
-                                <li><a href="/board/event.php">이벤트</a></li>
-                                <li><a href="/board/qna.php">지점질문</a></li>
-                                <li><a href="/contact">가맹문의</a></li>
-                            </ul>
+                            <a href="board.php">공지사항</a>
                         </li>
-                        
-                        <li class="franchise">
-                            <!-- <a href="/franchise">프랜차이즈</a> -->
-                            <a href="http://unreal-company.co.kr" title="새 창 열기" target="_blank">프랜차이즈</a>
-                             <!-- <ul class="depth2">
-                                <li><a href="#">Team unreal company</a></li>
-                                <li><a href="#">셜록홈즈 가맹본부</a></li>
-                                <li><a href="#">About us</a></li>
-                            </ul>  -->
-                        </li>
-                        
                         <li class="reservation active">
-                            <a href="/reservation">예약하기</a>
-                        </li>
-                        <li class="unreal">
-                            <a href="http://www.unrealcompany.co.kr" title="새 창 열기" target="_blank">언리얼 컴퍼니</a>
-                        </li>
-                        <li class="lang">
-                            <a href="javascript:void(0);">KOR</a>
-                            <ul>
-                                <li><a href="#">KOR</a></li>
-                                <li><a href="#none">ENG</a></li>
-                            </ul>
+                            <a href="reservation.php">예약하기</a>
                         </li>
                     </ul>
-                </nav>
-                <div class="m_util">
-                    <ul class="lang">
-                        <li class="active"><a href="#">KOR</a></li>
-                        <li><a href="#none">ENG</a></li>
-                    </ul>
-                    <div class="m_btns">
-                        <a href="javascript:void(0);" class="menu_open">open</a>
-                        <a href="javascript:void(0);" class="menu_close">close</a>
-                    </div>
-                </div>
             </div>
         </header>
     
@@ -385,7 +344,7 @@
 
                           
                                     <div class="col true">
-                                                <a href="rev3.php?branch_seq=<?=$branch_seq?>&theme_number=<?=$theme_number?>&selectedDate=<?=$selectedDate?>&theme_start=<?=$data['theme_start']?>&st=<?= $st ?>">
+                                                <a href="rev.php?branch_seq=<?=$branch_seq?>&theme_number=<?=$theme_number?>&selectedDate=<?=$selectedDate?>&theme_start=<?=$data['theme_start']?>&st=<?= $st ?>">
                                             
                                             <p class="time"><?= $data['theme_start'] ?></p>
                                             <p class="state">예약가능</p>
@@ -439,52 +398,36 @@
 
 
        
-            <footer id="footer">
-            <section class="footer_top">
-                <div class="inner container">
-                    <ul class="footer_list">
-                        <li><a href="/privacy/personal.php">개인정보취급방침</a></li>
-                        <li><a href="/privacy/agreement.php">이용약관</a></li>
-                        <li><a href="/branch">지점소개</a></li>
-                        <li><a href="http://unreal-company.co.kr">프랜차이즈 가맹문의</a></li>
-                    </ul>
-                    <button type="button" class="btn_top" style="visibility: hidden;">BACK TO TOP</button>
-                </div>
-            </section>
-            <section class="footer_bottom">
-                <div class="inner container">
-                    <div class="site_info">
-                        <a href="/" class="footer_logo"><img src="/images/common/footer_logo.png"></a>
-                        <ul class="site_info_1">
-                            <li><span>상호명</span> 셜록홈즈</li>
-                            <li><span>주소</span> 경기도 안양시 동안구 시민대로327번길 11-41 언리얼컴퍼니</li>
+        <footer id="footer">
+                <section class="footer_top">
+                    <div class="inner container">
+                        <ul class="footer_list">
+                            <li><a href="/privacy/personal.php">개인정보취급방침</a></li>
+                            <li><a href="/privacy/agreement.php">이용약관</a></li>
+                            <li><a href="/branch">지점소개</a></li>
+                            <li><a href="http://unreal-company.co.kr">프랜차이즈 가맹문의</a></li>
                         </ul>
-                        <ul class="site_info_2">
-                           <li><span>(주)언리얼컴퍼니</span> </li>
-                           <li><span> 사업자등록번호</span> 848-81-00487</li>
-                           <li><span> 통신판매업 신고 </span> 2022-안양동안-1103호 </li>
-                           <!-- 190926 요청에 따라 연락 이메일 교체 -->
-                            <li><span>대표전화</span> 1800.6777  &nbsp;&nbsp;  / &nbsp;&nbsp;  E-mail unrealcompany@naver.com<!--info@unrealcompany.co.kr--></li>
-                        </ul>
-                        <div class="copyright">Copyright ⓒ The Team Sherlock-Hormes. All rights reserved.</div>
-                    </div>
-                    <!-- <div class="bank_info">
-                        <p>신한은행 / 예금주 : 권충도 </p>
-                        <div class="acount_num">
-                            <img src="/images/common/bank_logo.png">
-                            1104470884800
                         </div>
-                    </div> -->
-                    <ul class="sns">
-                        <li><a href="#"><img src="/images/common/ico_facebook.png" alt="facebook"></a></li>
-                        <li><a href="#"><img src="/images/common/ico_blogger.png" alt="blogger"></a></li>
-                        <li><a href="#"><img src="/images/common/ico_twitter.png" alt="twitter"></a></li>
-                        <li><a href="#"><img src="/images/common/ico_youtube.png" alt="youtube"></a></li>
-                        <li><a href="#"><img src="/images/common/ico_instagram.png" alt="instagram"></a></li>
-                    </ul>
-                </div>
-            </section>
-        </footer>
+                </section>
+                <section class="footer_bottom">
+                    <div class="inner container">
+                        <div class="site_info"> 
+                            <ul class="site_info_1">
+                                <li><span>상호명</span> 현생탈출</li>
+                                <li><span>주소</span> 경기도 성남시 중원구 광명로 377</li>
+                            </ul>
+                            <ul class="site_info_2">
+                               <li><span>(주)현생탈출컴퍼니</span> </li>
+                               <li><span> 사업자등록번호</span> 111-22-33333</li>
+                               <li><span> 통신판매업 신고 </span> 2023-신구대-412호 </li>
+                               <!-- 190926 요청에 따라 연락 이메일 교체 -->
+                                <li><span>대표전화</span> 1800.6777  &nbsp;&nbsp;  / &nbsp;&nbsp;  E-mail shingucompany@naver.com<!--info@shingucompany.co.kr--></li>
+                            </ul>
+                            <div class="copyright">Copyright ⓒ Escape from the Present. All rights reserved.</div>
+                        </div>
+                    </div>
+                </section>
+            </footer>
     
     
     <div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"><div class="ui-datepicker-header ui-widget-header ui-helper-clearfix ui-corner-all"><a class="ui-datepicker-prev ui-corner-all ui-state-disabled" title="Prev"><span class="ui-icon ui-icon-circle-triangle-w">Prev</span></a><a class="ui-datepicker-next ui-corner-all" data-handler="next" data-event="click" title="Next"><span class="ui-icon ui-icon-circle-triangle-e">Next</span></a><div class="ui-datepicker-title"><span class="ui-datepicker-month">April</span>&nbsp;<span class="ui-datepicker-year">2023</span></div></div><table class="ui-datepicker-calendar"><thead><tr><th scope="col" class="ui-datepicker-week-end"><span title="Sunday">Su</span></th><th scope="col"><span title="Monday">Mo</span></th><th scope="col"><span title="Tuesday">Tu</span></th><th scope="col"><span title="Wednesday">We</span></th><th scope="col"><span title="Thursday">Th</span></th><th scope="col"><span title="Friday">Fr</span></th><th scope="col" class="ui-datepicker-week-end"><span title="Saturday">Sa</span></th></tr></thead><tbody><tr><td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">1</span></td></tr><tr><td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">2</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">3</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">4</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">5</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">6</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">7</span></td><td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">8</span></td></tr><tr><td class=" ui-datepicker-week-end ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">9</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">10</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">11</span></td><td class=" ui-datepicker-unselectable ui-state-disabled "><span class="ui-state-default">12</span></td><td class=" ui-datepicker-days-cell-over  ui-datepicker-current-day ui-datepicker-today" data-handler="selectDay" data-event="click" data-month="3" data-year="2023"><a class="ui-state-default ui-state-highlight ui-state-active ui-state-hover" href="#">13</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="3" data-year="2023"><a class="ui-state-default" href="#">14</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="3" data-year="2023"><a class="ui-state-default" href="#">15</a></td></tr><tr><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="3" data-year="2023"><a class="ui-state-default" href="#">16</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="3" data-year="2023"><a class="ui-state-default" href="#">17</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="3" data-year="2023"><a class="ui-state-default" href="#">18</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="3" data-year="2023"><a class="ui-state-default" href="#">19</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="3" data-year="2023"><a class="ui-state-default" href="#">20</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="3" data-year="2023"><a class="ui-state-default" href="#">21</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="3" data-year="2023"><a class="ui-state-default" href="#">22</a></td></tr><tr><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="3" data-year="2023"><a class="ui-state-default" href="#">23</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="3" data-year="2023"><a class="ui-state-default" href="#">24</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="3" data-year="2023"><a class="ui-state-default" href="#">25</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="3" data-year="2023"><a class="ui-state-default" href="#">26</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="3" data-year="2023"><a class="ui-state-default" href="#">27</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="3" data-year="2023"><a class="ui-state-default" href="#">28</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="3" data-year="2023"><a class="ui-state-default" href="#">29</a></td></tr><tr><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="3" data-year="2023"><a class="ui-state-default" href="#">30</a></td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td></tr></tbody></table></div></body></html>
