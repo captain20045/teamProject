@@ -404,7 +404,7 @@
                                             <a href="#">
                                             
                                             <p class="time"><?= $data['theme_start'] ?></p>
-                                            <p class="state">예약불가능-------</p>
+                                            <p class="state">예약불가</p>
                                             <?php $st++?>
                                         </a>
                                     </div>
