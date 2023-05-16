@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- 생성 시간: 23-05-16 14:40
+-- 생성 시간: 23-05-16 23:10
 -- 서버 버전: 10.4.27-MariaDB
 -- PHP 버전: 8.2.0
 
@@ -45,9 +45,9 @@ CREATE TABLE `p_branch` (
 INSERT INTO `p_branch` (`branch_seq`, `region_seq`, `branch_name`, `branch_address`, `branch_phone_number`, `branch_picture`, `branch_sales`, `branch_map`) VALUES
 (1, 1, '노량진점', '서울특별시 동작구 노량진동 118-8, 지하1층 셜록홈즈 노량진점', '02.827.0054', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/branch1.jpg', 200000, 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3164.806064367405!2d126.94193881202207!3d37.512491971936086!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357c9f67c6d76753%3A0x54897c1fae804a36!2z7IWc66Gd7ZmI7KaI64W465-J7KeE7KCQ!5e0!3m2!1sko!2skr!4v1682516670775!5m2!1sko!2skr'),
 (2, 1, '노원점', '서울특별시 노원구 노해로81길 12-20 민진빌딩 5층', '02.951.0522', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/branch2.jpg', 300000, 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d789.6820255151879!2d127.06334272855065!3d37.65559589824366!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357cb915289e39c9%3A0xc5e5ba976c876663!2z7ISc7Jq47Yq567OE7IucIOuFuOybkOq1rCDrhbjtlbTroZw4Meq4uCAxMi0yMA!5e0!3m2!1sko!2skr!4v1682650412218!5m2!1sko!2skr'),
-(3, 1, '대학로점', '서울특별시 종로구 대학로 10길 5 4층(동숭동)', '02.2277.0198', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/branch3.jpg', 400000, 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d790.4660037293401!2d127.0019144285505!3d37.58181969824487!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca32c75117f2b%3A0xb6b4c1862dba46f6!2z7IWc66Gd7ZmI7KaI64yA7ZWZ66Gc7KCQ!5e0!3m2!1sko!2skr!4v1682651329227!5m2!1sko!2skr'),
+(3, 1, '대학로점', '서울특별시 종로구 대학로 10길 5 4층(동숭동)', '02.2277.0198', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/branch3.png', 400000, 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d790.4660037293401!2d127.0019144285505!3d37.58181969824487!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca32c75117f2b%3A0xb6b4c1862dba46f6!2z7IWc66Gd7ZmI7KaI64yA7ZWZ66Gc7KCQ!5e0!3m2!1sko!2skr!4v1682651329227!5m2!1sko!2skr'),
 (4, 1, '서울대압구정점', '서울특별시 관악구 관악로16길 13 4층', '02.000.0000', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/branch4.jpg', 500000, 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d197.88512050567164!2d126.95349892100432!3d37.480505007882606!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357c9f89d1fd5da9%3A0x8181897a8451b67f!2z7ISc7Jq47Yq567OE7IucIOq0gOyVheq1rCDqtIDslYXroZwxNuq4uCAxMw!5e0!3m2!1sko!2skr!4v1683546591946!5m2!1sko!2skr'),
-(5, 1, '성신여대점', '서울 성북구 동선동1가 87 4층 셜록홈즈', '02.929.8870', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/branch5.jpg', 600000, 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d197.5883614957966!2d127.01756070142667!3d37.59241951911088!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357cbcc742a2d78f%3A0x8df89e77288893f9!2z7ISc7Jq47Yq567OE7IucIOyEseu2geq1rCDrj5nshKDrj5kx6rCAIDg3!5e0!3m2!1sko!2skr!4v1683546678496!5m2!1sko!2skr'),
+(5, 1, '성신여대점', '서울 성북구 동선동1가 87 4층 셜록홈즈', '02.929.8870', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/branch5.png', 600000, 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d197.5883614957966!2d127.01756070142667!3d37.59241951911088!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357cbcc742a2d78f%3A0x8df89e77288893f9!2z7ISc7Jq47Yq567OE7IucIOyEseu2geq1rCDrj5nshKDrj5kx6rCAIDg3!5e0!3m2!1sko!2skr!4v1683546678496!5m2!1sko!2skr'),
 (6, 1, '신림2호점', '서울특별시 관악구 신림로 327, 지하1층(신림동) 셜록홈즈 신림2호점 3번출구 도보20초', '02.889.6558', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/branch6.jpg', 700000, 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d197.87718369460555!2d126.92932432503109!3d37.48350186641283!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357c9fbf73a1ad13%3A0xf20b72a9252c8230!2z7ISc7Jq47Yq567OE7IucIOq0gOyVheq1rCDsi6DrprzroZwgMzI3!5e0!3m2!1sko!2skr!4v1683546743982!5m2!1sko!2skr'),
 (7, 1, '잠실1호점', '서울특별시 송파구 백제고분로 7길 19 3,4층(잠실동)', '02.422.0053', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/branch7.jpg', 800000, 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d324.9277144109302!2d127.08088182274213!3d37.510855619197386!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca45283323b41%3A0x7d73b298445c74f7!2z7IWc66Gd7ZmI7KaIIOyeoOyLpOygkA!5e0!3m2!1sko!2skr!4v1683546782650!5m2!1sko!2skr'),
 (8, 1, '잠실2호점', '서울특별시 송파구 백제고분로 7길 31(잠실동 182-5) 4층 셜록홈즈 잠실2호점', '02.418.0153', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/branch8.jpg', 900000, 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3164.8735270042034!2d127.07983151202197!3d37.5109009719364!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca452b70fefff%3A0xb727a74bca4f885f!2z7IWc66Gd7ZmI7KaI7J6g7IukMu2YuOygkA!5e0!3m2!1sko!2skr!4v1683546815267!5m2!1sko!2skr'),
@@ -174,7 +174,14 @@ INSERT INTO `p_reservation` (`reservation_seq`, `region_seq`, `branch_seq`, `the
 (70, 3, 18, 12, '악마를 보았다', '2023-05-10', '10:20', '', '010--', 2, 51000, '현장결제', '', '2023-05-04'),
 (71, 3, 18, 12, '악마를 보았다', '2023-05-10', '10:20', '', '010--', 2, 51000, '현장결제', '', '2023-05-04'),
 (72, 3, 18, 12, '악마를 보았다', '2023-05-10', '10:20', '', '010--', 2, 51000, '현장결제', '', '2023-05-04'),
-(73, 3, 18, 12, '악마를 보았다', '2023-05-10', '10:20', '', '010--', 2, 51000, '현장결제', '', '2023-05-04');
+(73, 3, 18, 12, '악마를 보았다', '2023-05-10', '10:20', '', '010--', 2, 51000, '현장결제', '', '2023-05-04'),
+(74, 1, 1, 1, '4', '2023-05-17', '13:00', '', '010--', 2, 0, '현장결제', '', '2023-05-16'),
+(75, 1, 1, 1, '4', '2023-05-24', '13:00', '', '010--', 2, 0, '현장결제', '', '2023-05-16'),
+(76, 1, 1, 1, '4', '2023-05-17', '13:00', '11', '010-22-22', 3, 0, '현장결제', '', '2023-05-16'),
+(77, 1, 1, 1, '4', '2023-05-24', '12:00', 'a', '010-a-a', 2, 0, '현장결제', '', '2023-05-16'),
+(78, 1, 1, 1, '4', '2023-05-24', '18:00', 'ww', '010-1234-1234', 2, 0, '현장결제', '', '2023-05-16'),
+(79, 2, 10, 8, '대영어시대 : Age of English', '2023-05-26', '12:30', 'aaa', '010-1234-1234', 2, 0, '무통장결제(신구은행 111-222222-33-444 정의표)', 'zxc', '2023-05-16'),
+(80, 2, 12, 17, '언더월드', '2023-05-18', '12:40', '32', '010-22-22', 4, 92000, '현장결제', '', '2023-05-16');
 
 -- --------------------------------------------------------
 
@@ -221,7 +228,11 @@ INSERT INTO `p_reservation_status` (`reservation_status_seq`, `reservation_statu
 (29, '2023-05-10', 1, 2, 3, 'Y', 'N', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y'),
 (30, '2023-05-10', 2, 10, 8, 'Y', 'Y', 'N', 'N', 'Y', 'Y', 'Y', 'Y'),
 (31, '2023-05-10', 3, 18, 12, 'Y', 'N', 'Y', 'Y', 'N', 'Y', 'Y', 'Y'),
-(32, '2023-05-09', 2, 11, 9, 'Y', 'Y', 'Y', 'Y', 'N', 'Y', 'Y', 'Y');
+(32, '2023-05-09', 2, 11, 9, 'Y', 'Y', 'Y', 'Y', 'N', 'Y', 'Y', 'Y'),
+(33, '2023-05-17', 1, 1, 1, 'Y', 'Y', 'N', 'Y', 'Y', 'Y', 'Y', 'Y'),
+(34, '2023-05-24', 1, 1, 1, 'Y', 'N', 'N', 'Y', 'Y', 'Y', 'Y', 'N'),
+(35, '2023-05-26', 2, 10, 8, 'Y', 'Y', 'N', 'Y', 'Y', 'Y', 'Y', 'Y'),
+(36, '2023-05-18', 2, 12, 17, 'Y', 'Y', 'N', 'Y', 'Y', 'Y', 'Y', 'Y');
 
 -- --------------------------------------------------------
 
@@ -469,13 +480,13 @@ ALTER TABLE `p_region`
 -- 테이블의 AUTO_INCREMENT `p_reservation`
 --
 ALTER TABLE `p_reservation`
-  MODIFY `reservation_seq` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
+  MODIFY `reservation_seq` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
 
 --
 -- 테이블의 AUTO_INCREMENT `p_reservation_status`
 --
 ALTER TABLE `p_reservation_status`
-  MODIFY `reservation_status_seq` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `reservation_status_seq` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- 테이블의 AUTO_INCREMENT `p_theme`
