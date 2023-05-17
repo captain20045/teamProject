@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- 생성 시간: 23-05-16 23:10
+-- 생성 시간: 23-05-17 16:06
 -- 서버 버전: 10.4.27-MariaDB
 -- PHP 버전: 8.2.0
 
@@ -81,7 +81,8 @@ CREATE TABLE `p_notice` (
   `notice_title` varchar(50) NOT NULL,
   `notice_writer` varchar(20) DEFAULT NULL,
   `notice_date` date DEFAULT NULL,
-  `notice_contents` varchar(255) DEFAULT NULL
+  `notice_contents` varchar(255) DEFAULT NULL,
+  `hits` int(5) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- --------------------------------------------------------
@@ -181,7 +182,10 @@ INSERT INTO `p_reservation` (`reservation_seq`, `region_seq`, `branch_seq`, `the
 (77, 1, 1, 1, '4', '2023-05-24', '12:00', 'a', '010-a-a', 2, 0, '현장결제', '', '2023-05-16'),
 (78, 1, 1, 1, '4', '2023-05-24', '18:00', 'ww', '010-1234-1234', 2, 0, '현장결제', '', '2023-05-16'),
 (79, 2, 10, 8, '대영어시대 : Age of English', '2023-05-26', '12:30', 'aaa', '010-1234-1234', 2, 0, '무통장결제(신구은행 111-222222-33-444 정의표)', 'zxc', '2023-05-16'),
-(80, 2, 12, 17, '언더월드', '2023-05-18', '12:40', '32', '010-22-22', 4, 92000, '현장결제', '', '2023-05-16');
+(80, 2, 12, 17, '언더월드', '2023-05-18', '12:40', '32', '010-22-22', 4, 92000, '현장결제', '', '2023-05-16'),
+(81, 3, 18, 12, '악마를 보았다', '2023-05-17', '12:40', '2', '010-2-2', 6, 153000, '현장결제', '', '2023-05-17'),
+(82, 1, 1, 1, '4', '2023-05-25', '17:00', 'ㅁㅁ', '010-123-123', 3, 60000, '현장결제', '', '2023-05-17'),
+(83, 1, 1, 2, '더 헝거:욕망의 큐브', '2023-05-25', '15:00', '33', '010-33-33', 5, 105000, '무통장결제(신구은행 111-222222-33-444 정의표)', '', '2023-05-17');
 
 -- --------------------------------------------------------
 
@@ -232,7 +236,10 @@ INSERT INTO `p_reservation_status` (`reservation_status_seq`, `reservation_statu
 (33, '2023-05-17', 1, 1, 1, 'Y', 'Y', 'N', 'Y', 'Y', 'Y', 'Y', 'Y'),
 (34, '2023-05-24', 1, 1, 1, 'Y', 'N', 'N', 'Y', 'Y', 'Y', 'Y', 'N'),
 (35, '2023-05-26', 2, 10, 8, 'Y', 'Y', 'N', 'Y', 'Y', 'Y', 'Y', 'Y'),
-(36, '2023-05-18', 2, 12, 17, 'Y', 'Y', 'N', 'Y', 'Y', 'Y', 'Y', 'Y');
+(36, '2023-05-18', 2, 12, 17, 'Y', 'Y', 'N', 'Y', 'Y', 'Y', 'Y', 'Y'),
+(37, '2023-05-17', 3, 18, 12, 'Y', 'Y', 'Y', 'N', 'Y', 'Y', 'Y', 'Y'),
+(38, '2023-05-25', 1, 1, 1, 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'N', 'Y'),
+(39, '2023-05-25', 1, 1, 2, 'Y', 'Y', 'Y', 'Y', 'N', 'Y', 'Y', 'Y');
 
 -- --------------------------------------------------------
 
@@ -480,13 +487,13 @@ ALTER TABLE `p_region`
 -- 테이블의 AUTO_INCREMENT `p_reservation`
 --
 ALTER TABLE `p_reservation`
-  MODIFY `reservation_seq` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
+  MODIFY `reservation_seq` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
 
 --
 -- 테이블의 AUTO_INCREMENT `p_reservation_status`
 --
 ALTER TABLE `p_reservation_status`
-  MODIFY `reservation_status_seq` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `reservation_status_seq` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- 테이블의 AUTO_INCREMENT `p_theme`
