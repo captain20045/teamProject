@@ -130,8 +130,8 @@
                 <div class="line"></div>
     
                 <ul class="linkArea">
-                    <li><a href="/reservation/res_info.php">예약확인</a></li>
-                    <li><a href="/reservation/res_info.php">예약취소</a></li>
+                    <li><a href="rev_check.php">예약확인</a></li>
+                    <li><a href="rev_check.php">예약취소</a></li>
                 </ul>
 
                 
@@ -244,7 +244,6 @@
         
         <div class="info_box">
             <h5>이벤트</h5>
-            <div class="inner"><p><img src="/attach/plupload/o_1euhrue1c15a11bfj1khsc5muh2a.jpg" alt="노량진점-이벤트-수정.jpg" class="txc-image" style="font-size: 9pt; clear: none; float: none;"></p><p></p><p></p></div>
         </div>
 
 
