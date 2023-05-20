@@ -83,7 +83,7 @@ $connect = mysqli_connect('localhost','root','','project3');
 				<div class="col s7 map_area">
 				
 					<div id="map">
-				      <iframe src="<?= $branch_map ?>" style="width:100%; height:400px">
+				      <iframe src="<?= $branch_map ?>" style="width:100%; height:360px">
                       </iframe>
 					</div>
 					
