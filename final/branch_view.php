@@ -6,10 +6,11 @@ $connect = mysqli_connect('localhost','root','','project3');
     if(mysqli_connect_error()) {
         echo "데이터베이스 연결에 실패하였습니다.";
     }
-    $result = mysqli_query($connect, "SELECT branch_seq,branch_name,branch_address,branch_phone_number,branch_map, branch_picture FROM p_branch");
+    $result = mysqli_query($connect, "SELECT region_seq,branch_seq,branch_name,branch_address,branch_phone_number,branch_map, branch_picture FROM p_branch where branch_seq=$branch_seq");
 	
 	    while($data = mysqli_fetch_array($result)){
 			if($data['branch_seq'] == $branch_seq){
+				$region_seq=$data['region_seq'];
 				$branch_name=$data['branch_name'];
 				$branch_address=$data['branch_address'];
 				$branch_phone_number=$data['branch_phone_number'];
@@ -18,6 +19,20 @@ $connect = mysqli_connect('localhost','root','','project3');
 			}
 		}
 ?>
+
+<script>
+	    function goPage(selectedRegion, selectedBranch) {
+      var f = document.goRev;
+
+      f.selectedRegion.value = selectedRegion;
+      f.selectedBranch.value = selectedBranch;
+      f.action = "reservation.php"
+      f.method = "post"
+
+      f.submit();
+    };
+
+</script>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -94,14 +109,18 @@ $connect = mysqli_connect('localhost','root','','project3');
 			<div class="desc">
 			</div>
 			<div class="btn_group right">
-				<a href="" class="btn black"><i class="ico left cal"></i>예약하기</a>
-				<a href="" class="btn black"><i class="ico left list"></i>목록</a>
+				<a href="javascript:goPage(<?=$region_seq?>,<?=$branch_seq?>);" class="btn black"><i class="ico left cal"></i>예약하기</a>
+				<a href="branch.php" class="btn black"><i class="ico left list"></i>목록</a>
 			</div>
 		</div>
 	</section>
 	
 </div>
 
+<form name="goRev">
+            <input type="hidden" name="selectedRegion">
+            <input type="hidden" name="selectedBranch">
+</form>
 
 
 	<footer id="footer">
