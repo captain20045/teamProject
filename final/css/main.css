@@ -4311,7 +4311,10 @@ body {
 #reservation section.res_info_confirm {
   padding-bottom: 200px;
 }
-
+.first {
+  background-color: black;
+  color: white;
+}
 #affiliated section.affiliated {
   padding-bottom: 200px;
 }
