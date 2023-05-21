@@ -60,7 +60,7 @@
 				<p>( 입금 후 카카오톡, 게시판, 전화 등으로 지점별 입금확인 요청 부탁드립니다. )</p>
 			</div>
 
-			<form method="post" action="process.php" name="reservationConfirmForm" id="reservationConfirmForm">
+			<form method="post" action="rev_checked.php" name="reservationConfirmForm" id="reservationConfirmForm">
 			<input type="hidden" name="Mode" value="confirmReservation">
 			<div class="write_form">
 				<table>
