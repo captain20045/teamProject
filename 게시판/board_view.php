@@ -1,156 +1,123 @@
-<?php
-$bno = $_GET['bno'];
-$page = $_GET['page'];
-$id = $_GET['id'];
-$pw = $_GET['pw'];
-$connect = mysqli_connect('localhost','root','','project3');
-if(mysqli_connect_error()) {
-    echo "데이터베이스 연결에 실패하였습니다.";
-}
-/*--- 테이블의 일련번호(bno) 필드명으로 조회  ---*/
-$sql = "select name,title_board,write_board,count_board from freeboard_tbl where bno = '$bno' ";
-$res = mysqli_query($connect,$sql);
-
-while($row = mysqli_fetch_row($res)){
-	$name = $row[0];
-    $title_board = $row[1];
-	$write_board = $row[2];
-	$count_board = $row[3];
-}
-
-//역슬래시 제거
-$name = stripslashes($name);
-$title_board = stripslashes($title_board); 
-$write_board = stripslashes($write_board); 
-
-// 특수문자를 html태그로 변환
-$name = htmlspecialchars($name);
-$title_board = htmlspecialchars($title_board);
-$write_board = htmlspecialchars($write_board);
-
-$write_board = nl2br($write_board);   //줄바꿈을 <br> 처리
-
-//조회 카운터 증가
-$sql2 = "update freeboard_tbl set count_board = count_board + 1 where bno = '$bno' ";
-mysqli_query($connect,$sql2);
-mysqli_close($connect);
-?>
-
-<!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title> 글 내용 보기 </title>
-    <script>
-    function godelete(){
-		if(confirm("정말 삭제하시겠습니까?")==true){
-			location.href="http://localhost/board/delete_db.php?bno=<?php echo $_GET['bno']?>&page=<?php echo $_GET['page']?>&id=<?php echo $_GET['id']?>&pw=<?php echo $_GET['pw']?>"
-		}else{
-			return;
-		}
-    }
-  </script>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+<link rel="stylesheet" href="css/board_view.css" type="text/css">
+<link rel="stylesheet" href="css/board_view1.css" type="text/css">
+
 </head>
-<br><center><font size=5><b> 글 내용 보기 </b></font><hr>
-<table width="775" border="0" cellspacing="0" cellpadding="0">
-	<tr>
-		<td colspan="5" align="right"> 공지사항>글 내용 보기</a>&nbsp; </td>
-	</tr>
-	<tr>
-		<td colspan="5" height="5"></td>
-	</tr>
-<form name="list_move" method="get" action="board_list.php">
-	<tr bgcolor="#3300CC">
-		<td colspan="4" height="2"></td>
-	</tr>
-	<tr>
-		<td colspan="4" height="2"></td>
-	</tr>
-	<tr  height="30" bgcolor="#3300CC">
-		<td colspan="2"><font color="#FFFFFF">
-		<b> &nbsp;※ 글 내용 보기  </b></font></td> 
-		<td colspan="2" align="right">
-		<input type="submit" value="목록보기">&nbsp;&nbsp;
-		</td>
-	</tr>
-	<input type="hidden" name="id" value="<?php echo $id; ?>">
-	<input type="hidden" name="pw" value="<?php echo $pw; ?>">
-</form>
-	<tr>
-		<td colspan="4" height="2"></td>
-	</tr>
-	<tr bgcolor="#3300CC">
-		<td colspan="4" height="1"></td>
-	</tr>
-	<tr height="30">
-		<td width="80" align="right"><b> 이 름 : &nbsp;</b></td>
-		<td width="200">
-			<?php echo $name; ?></td>
-		<td width="400" align="right"><b> 조회수 : &nbsp;</b></td>
-		<td width="195">
-			<?php echo $count_board; ?></td>
-	</tr>
-	<tr bgcolor="#3300CC">
-		<td colspan="4" height="1"></td>
-	</tr>
-	<tr height="30">
-		<td width="80" align="right"><b> 제 목 : &nbsp;</b></td>
-		<td colspan="3">
-			<?php echo $title_board; ?></td>
-	</tr>
-	<tr>
-		<td colspan="4" height="1"></td>
-	</tr>
-	<tr bgcolor="#3300CC">
-		<td colspan="4" height="1"></td>
-	</tr>
-	<tr>
-		<td colspan="4" height="5"></td>
-	</tr>
-	<tr height="30" valign="top">
-		<td width="80" align="right">
-			<b> 내 용 : &nbsp;</b></td>
-		<td colspan="3">
-			<?php echo $write_board; ?></td>
-	</tr>
-	<tr>
-		<td colspan="4" height="10"></td>
-	</tr>
-	<tr>
-		<td colspan="4" height="2"></td>
-	</tr>
-	<tr bgcolor="#3300CC">
-		<td colspan="4" height="1"></td>
-	</tr>
-	<tr>
-		<td colspan="4" height="10"></td>
-	</tr>
-</table>
-<table width="775" height="20" border="0" cellspacing="0" cellpadding="0">
-<form name="btn_form">
-	<tr align="center">
-		<td>
-<?php
-if($id=="admin"&&$pw=="1234"){
-?>		
-		<input type="button" name="btn_update" class="ahnbutton" value=" 글수정 "
-		onclick="location.href='update_form.php?bno= <?php echo $bno; ?>
-		&page=<?php echo $page; ?>&id=<?php echo $id; ?>&pw=<?php echo $pw; ?>' ">
+<body>
+
+        <header id="header">
+            <div class="inner">
+                <div class="header_logo">
+                    <a href="main.php"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/logo.png"></a>
+                </div>
+                    <nav class="header_nav">
+                    <ul class="depth1">
+                        <li class="theme">
+                            <a href="theme.php">테마</a>
+                        </li>
+                       <li class="branch">
+                            <a href="branch.php">지점소개</a>
+                        </li>
+                        <li class="board">
+                            <a href="board.php">공지사항</a>
+                        </li>
+                        <li class="reservation active">
+                            <a href="reservation.php">예약하기</a>
+                        </li>
+                    </ul>
+            </div>
+        </header>
+
+<div id="board" class="body">
+	<section id="title_area">
+		<div class="container">
+			<h1>게시판</h1>
+			<h4>board</h4>
+			<div class="line"></div>
+		</div>
+	</section>
+
+	<section class="board_view">
+		<div class="inner container">
+			<div id="board_view">
+				<table class="table">
+					
+						<tbody>
+                        <tr>
+                            <td class="left view_title">지점: ㅁㅁㅁ</td>    
+                        </tr>
+                        <tr>
+							<td class="left view_title">제목: 공지사항 글</td>
+						</tr>
+						<tr>
+							<td class="left view_info">
+								<ul>
+									<li><span>글쓴이:</span> 관리자</li>
+									<li><span>등록일:</span> 2000.00.00</li>
+									<li><span>파일:</span> 
+                                    <li><span>조회수:</span></li>
+																																																																																					</li>
+								</ul>
+							</td>
+						</tr>
+						<tr>
+							<!-- <td class="left view_contants"><p><br></p><p style="text-align: left;"><img src="/attach/plupload/o_1clge9of1di313jc19luk3ikada.jpg" alt="삼국지 본문.jpg" class="txc-image" style="clear:none;float:none;" /></p><p><br></p></td> -->
+							<td class="left"><p><br></p><p style="text-align: left;"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/qwer.png" alt="삼국지 본문.jpg" class="txc-image" style="clear:none;float:none;"></p><p><br></p></td>
+						</tr>
+					
+				</tbody></table>
+			</div>
+			<div class="btn_group right">
+				
+									<a href="" class="btn gray2"><i class="ico left prev_w"></i>이전</a>
+				
+									<a href="" class="btn gray2">다음<i class="ico right next_w"></i></a>
+								    <a href="board.php" class="btn gray">목록</a>
+			</div>
+		</div>
+	</section>
+	<footer id="footer">
+                <section class="footer_top">
+                    <div class="inner container">
+                        <ul class="footer_list">
+                            <li><a href="/privacy/personal.php">개인정보취급방침</a></li>
+                            <li><a href="/privacy/agreement.php">이용약관</a></li>
+                            <li><a href="/branch">지점소개</a></li>
+                            <li><a href="http://unreal-company.co.kr">프랜차이즈 가맹문의</a></li>
+                        </ul>
+                        </div>
+                </section>
+                <section class="footer_bottom">
+                    <div class="inner container">
+                        <div class="site_info"> 
+                            <ul class="site_info_1">
+                                <li><span>상호명</span> 현생탈출</li>
+                                <li><span>주소</span> 경기도 성남시 중원구 광명로 377</li>
+                            </ul>
+                            <ul class="site_info_2">
+                               <li><span>(주)현생탈출컴퍼니</span> </li>
+                               <li><span> 사업자등록번호</span> 111-22-33333</li>
+                               <li><span> 통신판매업 신고 </span> 2023-신구대-412호 </li>
+                               <!-- 190926 요청에 따라 연락 이메일 교체 -->
+                                <li><span>대표전화</span> 1800.6777  &nbsp;&nbsp;  / &nbsp;&nbsp;  E-mail shingucompany@naver.com<!--info@shingucompany.co.kr--></li>
+                            </ul>
+                            <div class="copyright">Copyright ⓒ Escape from the Present. All rights reserved.</div>
+                        </div>
+                    </div>
+                </section>
+            </footer>
+	</div>
+
+<script type="text/javascript">
+	$(function(){
 		
-		<input type="button" name="btn_del" class="ahnbutton" value=" 글삭제 "
-		onclick="godelete()">
-<?php
-}
-?>		
-		</td>
-	</tr>
-	<tr>
-		<td colspan="2" height="10"></td>
-	</tr>
-	<tr bgcolor="#3300CC">
-		<td  colspan="2" height="2"></td>
-	</tr>
-</form>
-</table>
+	});
+</script>
+
+	
 </body>
 </html>
