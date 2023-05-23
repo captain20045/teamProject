@@ -39,16 +39,7 @@
     $st = $_GET['st'];
 
 
-    //값 받아와서 p_reservation 테이블에 생성
-	$sql = "insert into p_reservation(region_seq,branch_seq,theme_number,theme_name,reservation_date,reservation_time,customer_name,customer_phone_number,booked_member,price,purchase_way,memo,register_date) values($region_seq,$branch_seq,$theme_number,'$theme_name','$selectedDate','$theme_start','$customer_name','$customer_phone_number',$booked_member,$total_price,'$purchase_way','$memo','$reservationDate')";	
-    $result = mysqli_query($connect,$sql);
 
-
-	if($result){
-		echo "데이터 등록 성공<br>";
-	}else{
-		echo "데이터 등록 실패<br>";
-	}
 
 
     // 위는 예약 정보 DB에 담기
@@ -67,13 +58,34 @@
         $r[6] = $data['booking_possibility_7'];
         $r[7] = $data['booking_possibility_8'];
 
+        
+        if($r[$st] == "N"){     // 이미 예약이 되어있으면
+?>
+
+        <script>
+            alert("이미 예약이 있어 예약이 불가능합니다.");
+            location.href="reservation.php";
+        </script>
+
+<?php
+        }else if ($r[$st] !== "N"){  // 이미 예약이 없으면
         $r[$st]='N'; //예약한 시간 N값 주기
 
         $sql = "UPDATE p_reservation_status set booking_possibility_".($st+1)." = 'N' where branch_seq=$branch_seq and theme_number=$theme_number and reservation_status_date='$selectedDate'" ;
         echo $sql."<br>";
         $result = mysqli_query($connect,$sql);
 
+        //값 받아와서 p_reservation 테이블에 생성
+    	$sql = "insert into p_reservation(region_seq,branch_seq,theme_number,theme_name,reservation_date,reservation_time,customer_name,customer_phone_number,booked_member,price,purchase_way,memo,register_date) values($region_seq,$branch_seq,$theme_number,'$theme_name','$selectedDate','$theme_start','$customer_name','$customer_phone_number',$booked_member,$total_price,'$purchase_way','$memo','$reservationDate')";	
+        $result = mysqli_query($connect,$sql);
+
+        }
     }else{ //데이터 값이 없으면
+
+        //값 받아와서 p_reservation 테이블에 생성
+    	$sql = "insert into p_reservation(region_seq,branch_seq,theme_number,theme_name,reservation_date,reservation_time,customer_name,customer_phone_number,booked_member,price,purchase_way,memo,register_date) values($region_seq,$branch_seq,$theme_number,'$theme_name','$selectedDate','$theme_start','$customer_name','$customer_phone_number',$booked_member,$total_price,'$purchase_way','$memo','$reservationDate')";	
+        $result = mysqli_query($connect,$sql);
+        
         $sql2 = "INSERT into p_reservation_status(reservation_status_date,region_seq,branch_seq,theme_number,booking_possibility_1,booking_possibility_2,booking_possibility_3,booking_possibility_4,booking_possibility_5,booking_possibility_6,booking_possibility_7,booking_possibility_8) values ('$selectedDate',$region_seq,$branch_seq,$theme_number,'Y','Y','Y','Y','Y','Y','Y','Y')";
         $result = mysqli_query($connect,$sql2);
 
