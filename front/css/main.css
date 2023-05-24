@@ -1903,8 +1903,6 @@ body { min-width:360px; background-color: #fff; color: #505050; position: relati
 #header .m_util > .lang li a{color: #b8b8b8; font-size: 20px; line-height: 60px; display: block; padding: 10px 0;}
 #header .m_util > .lang li.active a { color: #f9c059; }
 #header .m_util > .m_btns { overflow: hidden; float: left; width: 48px; height: 35px; margin-left: 20px; padding: 22.5px 0; }
-#header .m_util > .m_btns a.menu_open { width: 47px; height: 29px; background: url('../images/common/menu_open.png') center no-repeat; text-indent: -9999px; display: block; }
-#header .m_util > .m_btns a.menu_close { width: 30px; height: 30px; background: url('../images/common/menu_close.png') center no-repeat; text-indent: -9999px; display: none; }
 #header .m_util > .m_btns.active a.menu_open { display: none; }
 #header .m_util > .m_btns.active a.menu_close { display: block; }
 
@@ -1946,7 +1944,7 @@ body { min-width:360px; background-color: #fff; color: #505050; position: relati
 #footer .footer_bottom .sns li a { opacity: 0.5; }
 #footer .footer_bottom .sns li a:hover { opacity: 1; }
 
-.body { padding-top: 80px; width: 100%; min-height: 800px; display: inline-block; background: url('../images/common/bg_w.jpg') center no-repeat; background-size: cover; }
+.body { padding-top: 80px; width: 100%; min-height: 800px; display: inline-block; background: url('') center no-repeat; background-size: cover; }
 .black_body { padding: 100px 0; background-color: #313131; background-color: rgba(0,0,0,0.8); }
 .main_body { min-height: 800px; }
 
@@ -1964,8 +1962,9 @@ body { min-width:360px; background-color: #fff; color: #505050; position: relati
 #main > section > .container > .middle { display: table-cell; vertical-align: middle; position: relative; padding: 70px 0; }
 #main > section > .container > .top { display: table-cell; vertical-align: top; }
 #main > section > .container .feature_title { text-transform: uppercase; }
-#main_intro { background: #1a1a1a url('img/bg_main_intro.jpg') center no-repeat; background-size: cover; }
-#main_intro .intro_logo img 
+#main_intro { background: #1a1a1a url('https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/background.jpg') center no-repeat; background-size: cover; }
+#main_intro .intro_logo img {  animation: rotate_image 6s linear infinite, scale1 6s linear infinite;
+	transform-origin: 50% 50%;}
 #main_intro .btn { border:1px solid #b4b4b4; color: #b4b4b4; font-size: 15px; margin-top: 5%; width: 210px; height: 55px; line-height: 55px; font-weight: bold; }
 #main_intro .btn:hover { border:1px solid #fff; color: #fff; }
 
