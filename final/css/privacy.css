@@ -51,7 +51,7 @@ table {
 a { color: initial; }
 
 
-img { max-width: 100%; }
+/* img { max-width: 100%; } */
 img:hover > .over {visibility: visible;}
 
 
@@ -187,7 +187,7 @@ a.btn{display: inline-block;}
 .ico.cal { background: url(../images/ico/ico_cal.png) center no-repeat; }
 .ico.cal_w { background: url(../images/ico/ico_cal_white.png) center no-repeat; }
 .ico.cal_black { background: url(../images/ico/ico_cal_black.png) center no-repeat; }
-.ico.star { background: url(../images/ico/ico_star.png) no-repeat 0 7px/contain; margin-bottom:-3px;}
+.ico.star { background: url(https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/ico_star1.png) no-repeat 0 7px/contain; margin-bottom:-3px;}
 .ico.star_black { background: url(../images/ico/ico_star_black.png) center no-repeat; }
 .ico.zoom_black { background: url(../images/ico/ico_zoom_black.png) center no-repeat; }
 .ico.list { background: url(../images/ico/ico_list.png) center no-repeat; }
