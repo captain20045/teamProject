@@ -10,7 +10,7 @@
     <header id="header">
             <div class="inner">
                 <div class="header_logo">
-                    <a href="main.php"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/logo.png"></a>
+                    <a href="/"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/logo.png"></a>
                 </div>
                 <nav class="header_nav">
                     <ul class="depth1">
@@ -79,7 +79,7 @@
                                                         <?php
                                                                 for($i=0; $i<$data['theme_level'];$i++){
                                                         ?>
-                                                                <i class="ico star"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/ico_star1.png"></i>
+                                                                <i class="ico star"></i>
                                                         <?php
                                                             }
                                                         ?>
@@ -92,7 +92,7 @@
                                                             <?php
                                                                 for($i=0; $i<$data['theme_scare'];$i++){
                                                             ?>
-                                                                <i class="ico star"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/ico_star1.png"></i>
+                                                                <i class="ico star"></i>
                                                             <?php
                                                                 }
                                                             ?>
