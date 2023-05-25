@@ -88,11 +88,14 @@
            $branch_name = $data['branch_name'];
            $branch_phone_number = $data['branch_phone_number'];
         }
-    $result = mysqli_query($connect, "SELECT theme_name, theme_price from p_theme where theme_number = $theme_number ");
+    $result = mysqli_query($connect, "SELECT theme_name, theme_price,right(theme_people,1) as theme_people from p_theme where theme_number = $theme_number ");
         if($data = mysqli_fetch_array($result)){
            $theme_name = $data['theme_name'];
 		   $theme_price = $data['theme_price'];
-        }
+           $theme_people = $data['theme_people'];   // String 타입
+         }
+         $max_people = (int) $theme_people;
+
 ?>
 
 
@@ -154,11 +157,15 @@
                             <th>인원</th>
                             <td>
                                 <select class="gray" name="people" id="inwon_" onchange="showValue(this)">
-								    <option value="2">2명</option>
-                                    <option value="3">3명</option>
-                                    <option value="4">4명</option>
-                                    <option value="5">5명</option>
-                                    <option value="6">6명</option>	
+<?php
+                                for($i=2; $i<=$max_people; $i ++){
+?>
+                                    <option value="<?= $i ?>"><?= $i ?>명</option>
+<?php
+                                }
+?>
+
+
                                 </select>
                             </td>
                         </tr>
