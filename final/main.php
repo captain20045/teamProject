@@ -8,9 +8,8 @@
     </script>
     <link rel="stylesheet" href="css/main.css">
     
-        <meta name="keywords" content="신천 방탈출카페,신림 방탈출카페,홍대 방탈출카페,잠실 방탈출카페,강남 방탈출카페,방탈출카페">
     <meta name="description" content="강남,홍대,잠실,노량진,신림 등 전국 40호점 국내최대 큐브 방탈출 카페">
-    <meta property="og:description" content="강남,홍대,잠실,노량진,신림 등 전국 40호점 국내최대 셜록 방탈출 카페">
+    <meta property="og:description" content="강남,홍대,잠실,노량진,신림 등 전국 40호점 국내최대 큐브 방탈출 카페">
     <meta name="naver-site-verification" content="90315006b3ecb880974d00ad95d55b4518b7de7b">
         
     
@@ -23,7 +22,7 @@
         <header id="header">
             <div class="inner">
                 <div class="header_logo">
-                    <a href="/"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/logo.png"></a>
+                    <a href="main.php"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/logo.png"></a>
                 </div>
                 <nav class="header_nav">
                     <ul class="depth1">
@@ -42,7 +41,7 @@
 </ul>
 </div>
             </div>
-        </header>
+        </header> 
     
     
     <div id="main" class="main_body">
@@ -50,7 +49,7 @@
             <div class="container">
                 <div class="middle">
                     <div class="intro_logo"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/main.png" class="paraShowing show" data-dirc="s" data-dura="1.5" style="opacity: 1;"></div>
-                    <button type="button" class="btn white_trans paraShowing show" data-dirc="s" data-delay="0.5" onclick="window.location.href='/reservation'" style="opacity: 1;">예약하기</button>
+                    <button type="button" class="btn white_trans paraShowing show" data-dirc="s" data-delay="0.5" onclick="window.location.href='reservation.php'" style="opacity: 1;">예약하기</button>
                     <div class="scroll_down" data-delay="1" data-dist="0">
                        
                     </div>
@@ -149,10 +148,9 @@
                 <section class="footer_top">
                     <div class="inner container">
                         <ul class="footer_list">
-                            <li><a href="/privacy/personal.php">개인정보취급방침</a></li>
-                            <li><a href="/privacy/agreement.php">이용약관</a></li>
-                            <li><a href="/branch">지점소개</a></li>
-                            <li><a href="http://unreal-company.co.kr">프랜차이즈 가맹문의</a></li>
+                            <li><a href="#">개인정보취급방침</a></li>
+                            <li><a href="#">이용약관</a></li>
+                            <li><a href="branch.php">지점소개</a></li>
                         </ul>
                         </div>
                 </section>
@@ -167,9 +165,9 @@
                             <ul class="site_info_2">
                                <li><span>(주)현생탈출컴퍼니</span> </li>
                                <li><span> 사업자등록번호</span> 111-22-33333</li>
-                               <li><span> 통신판매업 신고 </span> 2023-신구대-412호 </li>
+                               <li><span> 통신판매업 신고 </span> 2023-신구대-212호 </li>
                                <!-- 190926 요청에 따라 연락 이메일 교체 -->
-                                <li><span>대표전화</span> 1800.6777  &nbsp;&nbsp;  / &nbsp;&nbsp;  E-mail shingucompany@naver.com<!--info@shingucompany.co.kr--></li>
+                                <li><span>대표전화</span> 1111.2222  &nbsp;&nbsp;  / &nbsp;&nbsp;  E-mail shingucompany@naver.com<!--info@shingucompany.co.kr--></li>
                             </ul>
                             <div class="copyright">Copyright ⓒ Escape from the Present. All rights reserved.</div>
                         </div>
