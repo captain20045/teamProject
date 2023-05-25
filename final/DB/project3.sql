@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- 생성 시간: 23-05-23 13:03
+-- 생성 시간: 23-05-25 15:16
 -- 서버 버전: 10.4.27-MariaDB
 -- PHP 버전: 8.2.0
 
@@ -139,30 +139,12 @@ CREATE TABLE `p_reservation` (
 --
 
 INSERT INTO `p_reservation` (`reservation_seq`, `region_seq`, `branch_seq`, `theme_number`, `theme_name`, `reservation_date`, `reservation_time`, `customer_name`, `customer_phone_number`, `booked_member`, `price`, `purchase_way`, `memo`, `register_date`) VALUES
-(75, 1, 1, 1, '4', '2023-05-24', '13:00', '', '010--', 2, 0, '현장결제', '', '2023-05-16'),
-(78, 1, 1, 1, '4', '2023-05-24', '18:00', 'ww', '010-1234-1234', 2, 0, '현장결제', '', '2023-05-16'),
-(79, 2, 10, 8, '대영어시대 : Age of English', '2023-05-26', '12:30', 'aaa', '010-1234-1234', 2, 0, '무통장결제(신구은행 111-222222-33-444 정의표)', 'zxc', '2023-05-16'),
-(82, 1, 1, 1, '4', '2023-05-25', '17:00', 'ㅁㅁ', '010-123-123', 3, 60000, '현장결제', '', '2023-05-17'),
-(83, 1, 1, 2, '더 헝거:욕망의 큐브', '2023-05-25', '15:00', '33', '010-33-33', 5, 105000, '무통장결제(신구은행 111-222222-33-444 정의표)', '', '2023-05-17'),
-(88, 1, 3, 6, '괴담수집가', '2023-05-24', '13:20', 'a', '010-1234-1234', 3, 61500, '현장결제', '', '2023-05-22'),
-(89, 1, 3, 6, '괴담수집가', '2023-05-24', '13:20', 'ab', '010-1234-1234', 3, 61500, '현장결제', '', '2023-05-22'),
-(90, 1, 3, 6, '괴담수집가', '2023-05-24', '09:20', '1234', '010-22-33', 2, 41000, '현장결제', '', '2023-05-22'),
-(91, 1, 3, 6, '괴담수집가', '2023-05-24', '13:20', '1', '010-1-1', 2, 41000, '현장결제', '', '2023-05-22'),
-(92, 3, 18, 12, '악마를 보았다', '2023-06-02', '11:30', 'aa', '010-1-1', 2, 51000, '현장결제', '', '2023-05-22'),
-(93, 1, 3, 6, '괴담수집가', '2023-05-24', '13:20', '1', '010-1-1', 2, 41000, '현장결제', '', '2023-05-22'),
-(94, 1, 3, 6, '괴담수집가', '2023-05-24', '13:20', '1', '010-1-1', 2, 41000, '현장결제', '', '2023-05-22'),
-(95, 1, 3, 6, '괴담수집가', '2023-05-24', '13:20', '1', '010-1-1', 2, 41000, '현장결제', '', '2023-05-22'),
-(96, 1, 3, 6, '괴담수집가', '2023-05-24', '13:20', '1', '010-1-1', 2, 41000, '현장결제', '', '2023-05-22'),
-(97, 1, 3, 6, '괴담수집가', '2023-05-24', '13:20', '1', '010-1-1', 2, 41000, '현장결제', '', '2023-05-22'),
-(98, 1, 3, 6, '괴담수집가', '2023-05-24', '13:20', '1', '010-1-1', 2, 41000, '현장결제', '', '2023-05-22'),
-(99, 1, 3, 6, '괴담수집가', '2023-05-24', '13:20', '1', '010-1-1', 2, 41000, '현장결제', '', '2023-05-22'),
-(100, 1, 3, 6, '괴담수집가', '2023-05-24', '13:20', '1', '010-1-1', 2, 41000, '현장결제', '', '2023-05-22'),
-(101, 1, 3, 6, '괴담수집가', '2023-05-24', '13:20', '1', '010-1-1', 2, 41000, '현장결제', '', '2023-05-22'),
-(102, 1, 3, 6, '괴담수집가', '2023-05-24', '13:20', '1', '010-1-1', 2, 41000, '현장결제', '', '2023-05-22'),
-(103, 1, 3, 6, '괴담수집가', '2023-05-24', '13:20', '1', '010-1-1', 2, 41000, '현장결제', '', '2023-05-22'),
-(104, 1, 3, 6, '괴담수집가', '2023-05-24', '13:20', '1', '010-1-1', 2, 41000, '현장결제', '', '2023-05-22'),
-(105, 1, 3, 6, '괴담수집가', '2023-05-24', '13:20', '1', '010-1-1', 2, 41000, '현장결제', '', '2023-05-22'),
-(106, 1, 3, 6, '괴담수집가', '2023-05-24', '13:20', '1', '010-1-1', 2, 41000, '현장결제', '', '2023-05-22');
+(117, 1, 2, 3, '[프리미엄]펜타킬', '2023-05-25', '17:00', '2', '010-2-2', 2, 44000, '현장결제', '', '2023-05-25'),
+(118, 3, 19, 23, '황금 감옥 : 와캄', '2023-05-25', '15:00', 'a', '010-3-3', 4, 80000, '현장결제', '', '2023-05-25'),
+(120, 4, 20, 24, '지프리트의 심장', '2023-05-25', '15:50', 'test2', '010-1-1', 2, 44000, '현장결제', 'test2', '2023-05-25'),
+(121, 4, 20, 25, '거짓말', '2023-05-25', '16:00', 'test3', '010-3-3', 4, 76000, '현장결제', '', '2023-05-25'),
+(122, 4, 20, 24, '지프리트의 심장', '2023-05-25', '17:30', 'test4', '010-4-4', 4, 88000, '현장결제', '', '2023-05-25'),
+(123, 4, 20, 25, '거짓말', '2023-05-25', '14:30', 'a', '010-1-1', 4, 76000, '현장결제', '', '2023-05-25');
 
 -- --------------------------------------------------------
 
@@ -183,23 +165,23 @@ CREATE TABLE `p_reservation_status` (
   `booking_possibility_5` varchar(1) DEFAULT NULL,
   `booking_possibility_6` varchar(1) DEFAULT NULL,
   `booking_possibility_7` varchar(1) DEFAULT NULL,
-  `booking_possibility_8` varchar(1) DEFAULT NULL
+  `booking_possibility_8` varchar(1) DEFAULT NULL,
+  `booking_possibility_9` varchar(1) DEFAULT NULL,
+  `booking_possibility_10` varchar(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- 테이블의 덤프 데이터 `p_reservation_status`
 --
 
-INSERT INTO `p_reservation_status` (`reservation_status_seq`, `reservation_status_date`, `region_seq`, `branch_seq`, `theme_number`, `booking_possibility_1`, `booking_possibility_2`, `booking_possibility_3`, `booking_possibility_4`, `booking_possibility_5`, `booking_possibility_6`, `booking_possibility_7`, `booking_possibility_8`) VALUES
-(34, '2023-05-24', 1, 1, 1, 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'N'),
-(35, '2023-05-26', 2, 10, 8, 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y'),
-(38, '2023-05-25', 1, 1, 1, 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'N', 'Y'),
-(39, '2023-05-25', 1, 1, 2, 'Y', 'Y', 'Y', 'Y', 'N', 'Y', 'Y', 'Y'),
-(40, '2023-05-29', 1, 1, 1, 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y'),
-(41, '2023-05-31', 2, 10, 8, 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y'),
-(42, '2023-05-30', 1, 1, 2, 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y'),
-(43, '2023-05-24', 1, 3, 6, 'N', 'Y', 'N', 'Y', 'Y', 'Y', 'Y', 'Y'),
-(44, '2023-06-02', 3, 18, 12, 'Y', 'Y', 'N', 'Y', 'Y', 'Y', 'Y', 'Y');
+INSERT INTO `p_reservation_status` (`reservation_status_seq`, `reservation_status_date`, `region_seq`, `branch_seq`, `theme_number`, `booking_possibility_1`, `booking_possibility_2`, `booking_possibility_3`, `booking_possibility_4`, `booking_possibility_5`, `booking_possibility_6`, `booking_possibility_7`, `booking_possibility_8`, `booking_possibility_9`, `booking_possibility_10`) VALUES
+(47, '2023-05-23', 1, 2, 3, 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', NULL),
+(48, '2023-05-25', 1, 1, 1, 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', NULL),
+(49, '2023-05-24', 1, 1, 1, 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', NULL),
+(50, '2023-05-25', 1, 2, 3, 'Y', 'Y', 'N', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', NULL),
+(51, '2023-05-25', 3, 19, 23, 'Y', 'Y', 'Y', 'N', 'Y', 'Y', 'Y', 'Y', 'Y', NULL),
+(53, '2023-05-25', 4, 20, 25, 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'N', 'Y', 'Y', 'Y'),
+(54, '2023-05-25', 4, 20, 24, 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'N');
 
 -- --------------------------------------------------------
 
@@ -379,7 +361,132 @@ INSERT INTO `p_theme` (`theme_seq`, `branch_seq`, `theme_number`, `theme_name`, 
 (151, 19, 23, '황금 감옥 : 와캄', '지금까지 봐왔던 감옥들과는 사뭇 다른 분위기의 낯선 감옥. 그 안에서 펼쳐진 끝을 알 수 없는 새로운 이야기. 이전까지 경험할 수 없었던 색다른 테마가 당신을 기다립니다.\r\n', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme23.jpg', 20000, 3, 0, '-', '13:40:00', '2~4'),
 (152, 19, 23, '황금 감옥 : 와캄', '지금까지 봐왔던 감옥들과는 사뭇 다른 분위기의 낯선 감옥. 그 안에서 펼쳐진 끝을 알 수 없는 새로운 이야기. 이전까지 경험할 수 없었던 색다른 테마가 당신을 기다립니다.\r\n', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme23.jpg', 20000, 3, 0, '-', '15:00:00', '2~4'),
 (153, 19, 23, '황금 감옥 : 와캄', '지금까지 봐왔던 감옥들과는 사뭇 다른 분위기의 낯선 감옥. 그 안에서 펼쳐진 끝을 알 수 없는 새로운 이야기. 이전까지 경험할 수 없었던 색다른 테마가 당신을 기다립니다.\r\n', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme23.jpg', 20000, 3, 0, '-', '16:30:00', '2~4'),
-(154, 19, 23, '황금 감옥 : 와캄', '지금까지 봐왔던 감옥들과는 사뭇 다른 분위기의 낯선 감옥. 그 안에서 펼쳐진 끝을 알 수 없는 새로운 이야기. 이전까지 경험할 수 없었던 색다른 테마가 당신을 기다립니다.\r\n', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme23.jpg', 20000, 3, 0, '-', '18:00:00', '2~4');
+(154, 19, 23, '황금 감옥 : 와캄', '지금까지 봐왔던 감옥들과는 사뭇 다른 분위기의 낯선 감옥. 그 안에서 펼쳐진 끝을 알 수 없는 새로운 이야기. 이전까지 경험할 수 없었던 색다른 테마가 당신을 기다립니다.\r\n', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme23.jpg', 20000, 3, 0, '-', '18:00:00', '2~4'),
+(155, 20, 24, '지프리트의 심장', '[플리퍼 시티 에피소드 01] 잊혀진 이야기 속에 전해지는 순수 에너지의 결정체 \"지프리트의 심장\"을 찾기 위해 플리퍼 시티를 헤매던 일행. 마을 외곽의 한 골동품 점에서 가고자 하는 곳의 좌표를 알려준다는 검은 주사위를 얻는다. 검은 주사위가 만들어 준 좌표를 통해 도착한 곳은 알 수 없는 낡은 기관실. 그곳의 수수께끼를 풀고 지프리트의 심장을 찾아낼 수 있을까', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme24.jpg', 22000, 4, 0, '판타지', '10:00:00', '2~4'),
+(156, 20, 24, '지프리트의 심장', '[플리퍼 시티 에피소드 01] 잊혀진 이야기 속에 전해지는 순수 에너지의 결정체 \"지프리트의 심장\"을 찾기 위해 플리퍼 시티를 헤매던 일행. 마을 외곽의 한 골동품 점에서 가고자 하는 곳의 좌표를 알려준다는 검은 주사위를 얻는다. 검은 주사위가 만들어 준 좌표를 통해 도착한 곳은 알 수 없는 낡은 기관실. 그곳의 수수께끼를 풀고 지프리트의 심장을 찾아낼 수 있을까', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme24.jpg', 22000, 4, 0, '판타지', '10:50:00', '2~4'),
+(157, 20, 24, '지프리트의 심장', '[플리퍼 시티 에피소드 01] 잊혀진 이야기 속에 전해지는 순수 에너지의 결정체 \"지프리트의 심장\"을 찾기 위해 플리퍼 시티를 헤매던 일행. 마을 외곽의 한 골동품 점에서 가고자 하는 곳의 좌표를 알려준다는 검은 주사위를 얻는다. 검은 주사위가 만들어 준 좌표를 통해 도착한 곳은 알 수 없는 낡은 기관실. 그곳의 수수께끼를 풀고 지프리트의 심장을 찾아낼 수 있을까', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme24.jpg', 22000, 4, 0, '판타지', '11:40:00', '2~4'),
+(158, 20, 24, '지프리트의 심장', '[플리퍼 시티 에피소드 01] 잊혀진 이야기 속에 전해지는 순수 에너지의 결정체 \"지프리트의 심장\"을 찾기 위해 플리퍼 시티를 헤매던 일행. 마을 외곽의 한 골동품 점에서 가고자 하는 곳의 좌표를 알려준다는 검은 주사위를 얻는다. 검은 주사위가 만들어 준 좌표를 통해 도착한 곳은 알 수 없는 낡은 기관실. 그곳의 수수께끼를 풀고 지프리트의 심장을 찾아낼 수 있을까', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme24.jpg', 22000, 4, 0, '판타지', '12:30:00', '2~4'),
+(159, 20, 24, '지프리트의 심장', '[플리퍼 시티 에피소드 01] 잊혀진 이야기 속에 전해지는 순수 에너지의 결정체 \"지프리트의 심장\"을 찾기 위해 플리퍼 시티를 헤매던 일행. 마을 외곽의 한 골동품 점에서 가고자 하는 곳의 좌표를 알려준다는 검은 주사위를 얻는다. 검은 주사위가 만들어 준 좌표를 통해 도착한 곳은 알 수 없는 낡은 기관실. 그곳의 수수께끼를 풀고 지프리트의 심장을 찾아낼 수 있을까', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme24.jpg', 22000, 4, 0, '판타지', '13:20:00', '2~4'),
+(160, 20, 24, '지프리트의 심장', '[플리퍼 시티 에피소드 01] 잊혀진 이야기 속에 전해지는 순수 에너지의 결정체 \"지프리트의 심장\"을 찾기 위해 플리퍼 시티를 헤매던 일행. 마을 외곽의 한 골동품 점에서 가고자 하는 곳의 좌표를 알려준다는 검은 주사위를 얻는다. 검은 주사위가 만들어 준 좌표를 통해 도착한 곳은 알 수 없는 낡은 기관실. 그곳의 수수께끼를 풀고 지프리트의 심장을 찾아낼 수 있을까', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme24.jpg', 22000, 4, 0, '판타지', '14:10:00', '2~4'),
+(161, 20, 24, '지프리트의 심장', '[플리퍼 시티 에피소드 01] 잊혀진 이야기 속에 전해지는 순수 에너지의 결정체 \"지프리트의 심장\"을 찾기 위해 플리퍼 시티를 헤매던 일행. 마을 외곽의 한 골동품 점에서 가고자 하는 곳의 좌표를 알려준다는 검은 주사위를 얻는다. 검은 주사위가 만들어 준 좌표를 통해 도착한 곳은 알 수 없는 낡은 기관실. 그곳의 수수께끼를 풀고 지프리트의 심장을 찾아낼 수 있을까', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme24.jpg', 22000, 4, 0, '판타지', '15:00:00', '2~4'),
+(162, 20, 24, '지프리트의 심장', '[플리퍼 시티 에피소드 01] 잊혀진 이야기 속에 전해지는 순수 에너지의 결정체 \"지프리트의 심장\"을 찾기 위해 플리퍼 시티를 헤매던 일행. 마을 외곽의 한 골동품 점에서 가고자 하는 곳의 좌표를 알려준다는 검은 주사위를 얻는다. 검은 주사위가 만들어 준 좌표를 통해 도착한 곳은 알 수 없는 낡은 기관실. 그곳의 수수께끼를 풀고 지프리트의 심장을 찾아낼 수 있을까', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme24.jpg', 22000, 4, 0, '판타지', '15:50:00', '2~4'),
+(163, 20, 24, '지프리트의 심장', '[플리퍼 시티 에피소드 01] 잊혀진 이야기 속에 전해지는 순수 에너지의 결정체 \"지프리트의 심장\"을 찾기 위해 플리퍼 시티를 헤매던 일행. 마을 외곽의 한 골동품 점에서 가고자 하는 곳의 좌표를 알려준다는 검은 주사위를 얻는다. 검은 주사위가 만들어 준 좌표를 통해 도착한 곳은 알 수 없는 낡은 기관실. 그곳의 수수께끼를 풀고 지프리트의 심장을 찾아낼 수 있을까', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme24.jpg', 22000, 4, 0, '판타지', '16:40:00', '2~4'),
+(164, 20, 25, '거짓말', '한적한 오후, 맑은 공기를 마시며 여유롭게 공원에 산책을 나온 당신. 곳곳엔 데이트 하는 연인들, 반려동물과 산책하는 사람들. 이 곳에 혼자 있는 건 당신뿐이었지만 이내 곧 벤치에 앉아 있는 그녀를 만날 수 있었다.', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme25.jpg', 19000, 3, 0, '감성테마', '10:00:00', '2~6'),
+(165, 20, 25, '거짓말', '한적한 오후, 맑은 공기를 마시며 여유롭게 공원에 산책을 나온 당신. 곳곳엔 데이트 하는 연인들, 반려동물과 산책하는 사람들. 이 곳에 혼자 있는 건 당신뿐이었지만 이내 곧 벤치에 앉아 있는 그녀를 만날 수 있었다.', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme25.jpg', 19000, 3, 0, '감성테마', '10:45:00', '2~6'),
+(166, 20, 25, '거짓말', '한적한 오후, 맑은 공기를 마시며 여유롭게 공원에 산책을 나온 당신. 곳곳엔 데이트 하는 연인들, 반려동물과 산책하는 사람들. 이 곳에 혼자 있는 건 당신뿐이었지만 이내 곧 벤치에 앉아 있는 그녀를 만날 수 있었다.', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme25.jpg', 19000, 3, 0, '감성테마', '11:30:00', '2~6'),
+(167, 20, 25, '거짓말', '한적한 오후, 맑은 공기를 마시며 여유롭게 공원에 산책을 나온 당신. 곳곳엔 데이트 하는 연인들, 반려동물과 산책하는 사람들. 이 곳에 혼자 있는 건 당신뿐이었지만 이내 곧 벤치에 앉아 있는 그녀를 만날 수 있었다.', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme25.jpg', 19000, 3, 0, '감성테마', '12:15:00', '2~6'),
+(168, 20, 25, '거짓말', '한적한 오후, 맑은 공기를 마시며 여유롭게 공원에 산책을 나온 당신. 곳곳엔 데이트 하는 연인들, 반려동물과 산책하는 사람들. 이 곳에 혼자 있는 건 당신뿐이었지만 이내 곧 벤치에 앉아 있는 그녀를 만날 수 있었다.', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme25.jpg', 19000, 3, 0, '감성테마', '13:00:00', '2~6'),
+(169, 20, 25, '거짓말', '한적한 오후, 맑은 공기를 마시며 여유롭게 공원에 산책을 나온 당신. 곳곳엔 데이트 하는 연인들, 반려동물과 산책하는 사람들. 이 곳에 혼자 있는 건 당신뿐이었지만 이내 곧 벤치에 앉아 있는 그녀를 만날 수 있었다.', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme25.jpg', 19000, 3, 0, '감성테마', '13:45:00', '2~6'),
+(170, 20, 25, '거짓말', '한적한 오후, 맑은 공기를 마시며 여유롭게 공원에 산책을 나온 당신. 곳곳엔 데이트 하는 연인들, 반려동물과 산책하는 사람들. 이 곳에 혼자 있는 건 당신뿐이었지만 이내 곧 벤치에 앉아 있는 그녀를 만날 수 있었다.', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme25.jpg', 19000, 3, 0, '감성테마', '14:30:00', '2~6'),
+(171, 20, 25, '거짓말', '한적한 오후, 맑은 공기를 마시며 여유롭게 공원에 산책을 나온 당신. 곳곳엔 데이트 하는 연인들, 반려동물과 산책하는 사람들. 이 곳에 혼자 있는 건 당신뿐이었지만 이내 곧 벤치에 앉아 있는 그녀를 만날 수 있었다.', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme25.jpg', 19000, 3, 0, '감성테마', '15:15:00', '2~6'),
+(172, 20, 25, '거짓말', '한적한 오후, 맑은 공기를 마시며 여유롭게 공원에 산책을 나온 당신. 곳곳엔 데이트 하는 연인들, 반려동물과 산책하는 사람들. 이 곳에 혼자 있는 건 당신뿐이었지만 이내 곧 벤치에 앉아 있는 그녀를 만날 수 있었다.', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme25.jpg', 19000, 3, 0, '감성테마', '16:00:00', '2~6'),
+(173, 20, 25, '거짓말', '한적한 오후, 맑은 공기를 마시며 여유롭게 공원에 산책을 나온 당신. 곳곳엔 데이트 하는 연인들, 반려동물과 산책하는 사람들. 이 곳에 혼자 있는 건 당신뿐이었지만 이내 곧 벤치에 앉아 있는 그녀를 만날 수 있었다.', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme25.jpg', 19000, 3, 0, '감성테마', '16:45:00', '2~6'),
+(174, 20, 24, '지프리트의 심장', '[플리퍼 시티 에피소드 01] 잊혀진 이야기 속에 전해지는 순수 에너지의 결정체 \"지프리트의 심장\"을 찾기 위해 플리퍼 시티를 헤매던 일행. 마을 외곽의 한 골동품 점에서 가고자 하는 곳의 좌표를 알려준다는 검은 주사위를 얻는다. 검은 주사위가 만들어 준 좌표를 통해 도착한 곳은 알 수 없는 낡은 기관실. 그곳의 수수께끼를 풀고 지프리트의 심장을 찾아낼 수 있을까', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme24.jpg', 22000, 4, 0, '판타지', '17:30:00', '2~4'),
+(175, 21, 26, '귀신이 산다', '커뮤니티 사이트에서 귀신구경이라는 제목의 글을 본 당신. 귀신을 믿진 않지만 호기심이 들어 친구들과 함께 문제의 집을 방문하게 되는데..', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme26.jpg', 20000, 4, 2, '공포체험', '09:20:00', '2~8'),
+(176, 21, 26, '귀신이 산다', '커뮤니티 사이트에서 귀신구경이라는 제목의 글을 본 당신. 귀신을 믿진 않지만 호기심이 들어 친구들과 함께 문제의 집을 방문하게 되는데..', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme26.jpg', 20000, 4, 2, '공포체험', '10:30:00', '2~8'),
+(177, 21, 26, '귀신이 산다', '커뮤니티 사이트에서 귀신구경이라는 제목의 글을 본 당신. 귀신을 믿진 않지만 호기심이 들어 친구들과 함께 문제의 집을 방문하게 되는데..', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme26.jpg', 20000, 4, 2, '공포체험', '11:40:00', '2~8'),
+(178, 21, 26, '귀신이 산다', '커뮤니티 사이트에서 귀신구경이라는 제목의 글을 본 당신. 귀신을 믿진 않지만 호기심이 들어 친구들과 함께 문제의 집을 방문하게 되는데..', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme26.jpg', 20000, 4, 2, '공포체험', '12:50:00', '2~8'),
+(179, 21, 26, '귀신이 산다', '커뮤니티 사이트에서 귀신구경이라는 제목의 글을 본 당신. 귀신을 믿진 않지만 호기심이 들어 친구들과 함께 문제의 집을 방문하게 되는데..', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme26.jpg', 20000, 4, 2, '공포체험', '14:00:00', '2~8'),
+(180, 21, 26, '귀신이 산다', '커뮤니티 사이트에서 귀신구경이라는 제목의 글을 본 당신. 귀신을 믿진 않지만 호기심이 들어 친구들과 함께 문제의 집을 방문하게 되는데..', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme26.jpg', 20000, 4, 2, '공포체험', '15:10:00', '2~8'),
+(181, 21, 26, '귀신이 산다', '커뮤니티 사이트에서 귀신구경이라는 제목의 글을 본 당신. 귀신을 믿진 않지만 호기심이 들어 친구들과 함께 문제의 집을 방문하게 되는데..', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme26.jpg', 20000, 4, 2, '공포체험', '16:20:00', '2~8'),
+(182, 21, 26, '귀신이 산다', '커뮤니티 사이트에서 귀신구경이라는 제목의 글을 본 당신. 귀신을 믿진 않지만 호기심이 들어 친구들과 함께 문제의 집을 방문하게 되는데..', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme26.jpg', 20000, 4, 2, '공포체험', '17:30:00', '2~8'),
+(183, 21, 26, '귀신이 산다', '커뮤니티 사이트에서 귀신구경이라는 제목의 글을 본 당신. 귀신을 믿진 않지만 호기심이 들어 친구들과 함께 문제의 집을 방문하게 되는데..', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme26.jpg', 20000, 4, 2, '공포체험', '18:40:00', '2~8'),
+(184, 22, 27, '던전:비밀의문', '길을 걷다 우연히 발견한 빨간 우체통의 편지 한통... 편지에 이끌려 마을에 도착하게 된 당신!! 드디어 비밀의 문을 열게 되는데....', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme27.jpg', 21000, 4, 0, '공포체험', '09:30:00', '2~4'),
+(185, 22, 27, '던전:비밀의문', '길을 걷다 우연히 발견한 빨간 우체통의 편지 한통... 편지에 이끌려 마을에 도착하게 된 당신!! 드디어 비밀의 문을 열게 되는데....', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme27.jpg', 21000, 4, 0, '공포체험', '10:30:00', '2~4'),
+(186, 22, 27, '던전:비밀의문', '길을 걷다 우연히 발견한 빨간 우체통의 편지 한통... 편지에 이끌려 마을에 도착하게 된 당신!! 드디어 비밀의 문을 열게 되는데....', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme27.jpg', 21000, 4, 0, '공포체험', '11:30:00', '2~4'),
+(187, 22, 27, '던전:비밀의문', '길을 걷다 우연히 발견한 빨간 우체통의 편지 한통... 편지에 이끌려 마을에 도착하게 된 당신!! 드디어 비밀의 문을 열게 되는데....', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme27.jpg', 21000, 4, 0, '공포체험', '12:30:00', '2~4'),
+(188, 22, 27, '던전:비밀의문', '길을 걷다 우연히 발견한 빨간 우체통의 편지 한통... 편지에 이끌려 마을에 도착하게 된 당신!! 드디어 비밀의 문을 열게 되는데....', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme27.jpg', 21000, 4, 0, '공포체험', '13:30:00', '2~4'),
+(189, 22, 27, '던전:비밀의문', '길을 걷다 우연히 발견한 빨간 우체통의 편지 한통... 편지에 이끌려 마을에 도착하게 된 당신!! 드디어 비밀의 문을 열게 되는데....', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme27.jpg', 21000, 4, 0, '공포체험', '14:30:00', '2~4'),
+(190, 22, 27, '던전:비밀의문', '길을 걷다 우연히 발견한 빨간 우체통의 편지 한통... 편지에 이끌려 마을에 도착하게 된 당신!! 드디어 비밀의 문을 열게 되는데....', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme27.jpg', 21000, 4, 0, '공포체험', '15:30:00', '2~4'),
+(191, 22, 27, '던전:비밀의문', '길을 걷다 우연히 발견한 빨간 우체통의 편지 한통... 편지에 이끌려 마을에 도착하게 된 당신!! 드디어 비밀의 문을 열게 되는데....', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme27.jpg', 21000, 4, 0, '공포체험', '16:30:00', '2~4'),
+(192, 22, 27, '던전:비밀의문', '길을 걷다 우연히 발견한 빨간 우체통의 편지 한통... 편지에 이끌려 마을에 도착하게 된 당신!! 드디어 비밀의 문을 열게 되는데....', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme27.jpg', 21000, 4, 0, '공포체험', '17:30:00', '2~4'),
+(193, 23, 28, '꽃길', '꿈만 같던 나의 결혼식이 코앞으로 다가왔다. 난 평생 혼자 살다가 대마법사가 될 줄 알았는데...ㅇㅅㅇ;; 맨날 친구들 결혼식에서 또 다른 친구의 청첩장을 받아오고 명절마다 \"넌 언제 시집가니?\" 잔소리 듣는것도 이젠 끝이다!!! 나에게도 이런 날이 오다니 ㅠㅠ 너무 감격스럽다!!! 그런데 결혼 준비하다가 싸우고 헤어지는 사람이 있다고 할 정도로 준비할 것이 엄청나다던데 ㅠㅠ ... 상견례, 웨딩홀 예약, 스드메 계약, 예물, 웨딩 촬영, 나... 잘 할 수 있을까?? 까짓거 남들 다 하는 결혼, 나도 멋지게 보란듯이 해보자!!!', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme28.jpg', 20000, 3, 0, '-', '10:00:00', '2~4'),
+(194, 23, 28, '꽃길', '꿈만 같던 나의 결혼식이 코앞으로 다가왔다. 난 평생 혼자 살다가 대마법사가 될 줄 알았는데...ㅇㅅㅇ;; 맨날 친구들 결혼식에서 또 다른 친구의 청첩장을 받아오고 명절마다 \"넌 언제 시집가니?\" 잔소리 듣는것도 이젠 끝이다!!! 나에게도 이런 날이 오다니 ㅠㅠ 너무 감격스럽다!!! 그런데 결혼 준비하다가 싸우고 헤어지는 사람이 있다고 할 정도로 준비할 것이 엄청나다던데 ㅠㅠ ... 상견례, 웨딩홀 예약, 스드메 계약, 예물, 웨딩 촬영, 나... 잘 할 수 있을까?? 까짓거 남들 다 하는 결혼, 나도 멋지게 보란듯이 해보자!!!', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme28.jpg', 20000, 3, 0, '-', '11:00:00', '2~4'),
+(195, 23, 28, '꽃길', '꿈만 같던 나의 결혼식이 코앞으로 다가왔다. 난 평생 혼자 살다가 대마법사가 될 줄 알았는데...ㅇㅅㅇ;; 맨날 친구들 결혼식에서 또 다른 친구의 청첩장을 받아오고 명절마다 \"넌 언제 시집가니?\" 잔소리 듣는것도 이젠 끝이다!!! 나에게도 이런 날이 오다니 ㅠㅠ 너무 감격스럽다!!! 그런데 결혼 준비하다가 싸우고 헤어지는 사람이 있다고 할 정도로 준비할 것이 엄청나다던데 ㅠㅠ ... 상견례, 웨딩홀 예약, 스드메 계약, 예물, 웨딩 촬영, 나... 잘 할 수 있을까?? 까짓거 남들 다 하는 결혼, 나도 멋지게 보란듯이 해보자!!!', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme28.jpg', 20000, 3, 0, '-', '12:00:00', '2~4'),
+(196, 23, 28, '꽃길', '꿈만 같던 나의 결혼식이 코앞으로 다가왔다. 난 평생 혼자 살다가 대마법사가 될 줄 알았는데...ㅇㅅㅇ;; 맨날 친구들 결혼식에서 또 다른 친구의 청첩장을 받아오고 명절마다 \"넌 언제 시집가니?\" 잔소리 듣는것도 이젠 끝이다!!! 나에게도 이런 날이 오다니 ㅠㅠ 너무 감격스럽다!!! 그런데 결혼 준비하다가 싸우고 헤어지는 사람이 있다고 할 정도로 준비할 것이 엄청나다던데 ㅠㅠ ... 상견례, 웨딩홀 예약, 스드메 계약, 예물, 웨딩 촬영, 나... 잘 할 수 있을까?? 까짓거 남들 다 하는 결혼, 나도 멋지게 보란듯이 해보자!!!', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme28.jpg', 20000, 3, 0, '-', '13:00:00', '2~4'),
+(197, 23, 28, '꽃길', '꿈만 같던 나의 결혼식이 코앞으로 다가왔다. 난 평생 혼자 살다가 대마법사가 될 줄 알았는데...ㅇㅅㅇ;; 맨날 친구들 결혼식에서 또 다른 친구의 청첩장을 받아오고 명절마다 \"넌 언제 시집가니?\" 잔소리 듣는것도 이젠 끝이다!!! 나에게도 이런 날이 오다니 ㅠㅠ 너무 감격스럽다!!! 그런데 결혼 준비하다가 싸우고 헤어지는 사람이 있다고 할 정도로 준비할 것이 엄청나다던데 ㅠㅠ ... 상견례, 웨딩홀 예약, 스드메 계약, 예물, 웨딩 촬영, 나... 잘 할 수 있을까?? 까짓거 남들 다 하는 결혼, 나도 멋지게 보란듯이 해보자!!!', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme28.jpg', 20000, 3, 0, '-', '14:00:00', '2~4'),
+(198, 23, 28, '꽃길', '꿈만 같던 나의 결혼식이 코앞으로 다가왔다. 난 평생 혼자 살다가 대마법사가 될 줄 알았는데...ㅇㅅㅇ;; 맨날 친구들 결혼식에서 또 다른 친구의 청첩장을 받아오고 명절마다 \"넌 언제 시집가니?\" 잔소리 듣는것도 이젠 끝이다!!! 나에게도 이런 날이 오다니 ㅠㅠ 너무 감격스럽다!!! 그런데 결혼 준비하다가 싸우고 헤어지는 사람이 있다고 할 정도로 준비할 것이 엄청나다던데 ㅠㅠ ... 상견례, 웨딩홀 예약, 스드메 계약, 예물, 웨딩 촬영, 나... 잘 할 수 있을까?? 까짓거 남들 다 하는 결혼, 나도 멋지게 보란듯이 해보자!!!', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme28.jpg', 20000, 3, 0, '-', '15:00:00', '2~4'),
+(199, 23, 28, '꽃길', '꿈만 같던 나의 결혼식이 코앞으로 다가왔다. 난 평생 혼자 살다가 대마법사가 될 줄 알았는데...ㅇㅅㅇ;; 맨날 친구들 결혼식에서 또 다른 친구의 청첩장을 받아오고 명절마다 \"넌 언제 시집가니?\" 잔소리 듣는것도 이젠 끝이다!!! 나에게도 이런 날이 오다니 ㅠㅠ 너무 감격스럽다!!! 그런데 결혼 준비하다가 싸우고 헤어지는 사람이 있다고 할 정도로 준비할 것이 엄청나다던데 ㅠㅠ ... 상견례, 웨딩홀 예약, 스드메 계약, 예물, 웨딩 촬영, 나... 잘 할 수 있을까?? 까짓거 남들 다 하는 결혼, 나도 멋지게 보란듯이 해보자!!!', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme28.jpg', 20000, 3, 0, '-', '16:00:00', '2~4'),
+(200, 23, 28, '꽃길', '꿈만 같던 나의 결혼식이 코앞으로 다가왔다. 난 평생 혼자 살다가 대마법사가 될 줄 알았는데...ㅇㅅㅇ;; 맨날 친구들 결혼식에서 또 다른 친구의 청첩장을 받아오고 명절마다 \"넌 언제 시집가니?\" 잔소리 듣는것도 이젠 끝이다!!! 나에게도 이런 날이 오다니 ㅠㅠ 너무 감격스럽다!!! 그런데 결혼 준비하다가 싸우고 헤어지는 사람이 있다고 할 정도로 준비할 것이 엄청나다던데 ㅠㅠ ... 상견례, 웨딩홀 예약, 스드메 계약, 예물, 웨딩 촬영, 나... 잘 할 수 있을까?? 까짓거 남들 다 하는 결혼, 나도 멋지게 보란듯이 해보자!!!', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme28.jpg', 20000, 3, 0, '-', '17:00:00', '2~4'),
+(201, 24, 29, '파노라마', 'panorama [-ˈræmə] : 1. 전경 2. 파노라마(특정 주제·사건 등을 한 눈에 보여주는 묘사·연구·그림들)', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme29.jpg', 19000, 4, 0, '드라마', '09:40:00', '2~6'),
+(202, 24, 29, '파노라마', 'panorama [-ˈræmə] : 1. 전경 2. 파노라마(특정 주제·사건 등을 한 눈에 보여주는 묘사·연구·그림들)', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme29.jpg', 19000, 4, 0, '드라마', '10:40:00', '2~6'),
+(203, 24, 29, '파노라마', 'panorama [-ˈræmə] : 1. 전경 2. 파노라마(특정 주제·사건 등을 한 눈에 보여주는 묘사·연구·그림들)', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme29.jpg', 19000, 4, 0, '드라마', '11:40:00', '2~6'),
+(204, 24, 29, '파노라마', 'panorama [-ˈræmə] : 1. 전경 2. 파노라마(특정 주제·사건 등을 한 눈에 보여주는 묘사·연구·그림들)', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme29.jpg', 19000, 4, 0, '드라마', '12:40:00', '2~6'),
+(205, 24, 29, '파노라마', 'panorama [-ˈræmə] : 1. 전경 2. 파노라마(특정 주제·사건 등을 한 눈에 보여주는 묘사·연구·그림들)', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme29.jpg', 19000, 4, 0, '드라마', '13:40:00', '2~6'),
+(206, 24, 29, '파노라마', 'panorama [-ˈræmə] : 1. 전경 2. 파노라마(특정 주제·사건 등을 한 눈에 보여주는 묘사·연구·그림들)', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme29.jpg', 19000, 4, 0, '드라마', '14:40:00', '2~6'),
+(207, 24, 29, '파노라마', 'panorama [-ˈræmə] : 1. 전경 2. 파노라마(특정 주제·사건 등을 한 눈에 보여주는 묘사·연구·그림들)', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme29.jpg', 19000, 4, 0, '드라마', '15:40:00', '2~6'),
+(208, 24, 29, '파노라마', 'panorama [-ˈræmə] : 1. 전경 2. 파노라마(특정 주제·사건 등을 한 눈에 보여주는 묘사·연구·그림들)', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme29.jpg', 19000, 4, 0, '드라마', '16:40:00', '2~6');
+INSERT INTO `p_theme` (`theme_seq`, `branch_seq`, `theme_number`, `theme_name`, `theme_description`, `theme_picture`, `theme_price`, `theme_level`, `theme_scare`, `theme_jenre`, `theme_start`, `theme_people`) VALUES
+(209, 24, 29, '파노라마', 'panorama [-ˈræmə] : 1. 전경 2. 파노라마(특정 주제·사건 등을 한 눈에 보여주는 묘사·연구·그림들)', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme29.jpg', 19000, 4, 0, '드라마', '17:40:00', '2~6'),
+(210, 25, 30, '[50분]문제방 매운맛', '방탈출 최소 50회 이상의 숙련자에게만 추천합니다!', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme30.jpg', 10000, 5, 0, '드라마', '09:30:00', '2~4'),
+(211, 25, 30, '[50분]문제방 매운맛', '방탈출 최소 50회 이상의 숙련자에게만 추천합니다!', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme30.jpg', 10000, 5, 0, '드라마', '10:20:00', '2~4'),
+(212, 25, 30, '[50분]문제방 매운맛', '방탈출 최소 50회 이상의 숙련자에게만 추천합니다!', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme30.jpg', 10000, 5, 0, '드라마', '11:10:00', '2~4'),
+(213, 25, 30, '[50분]문제방 매운맛', '방탈출 최소 50회 이상의 숙련자에게만 추천합니다!', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme30.jpg', 10000, 5, 0, '드라마', '12:00:00', '2~4'),
+(214, 25, 30, '[50분]문제방 매운맛', '방탈출 최소 50회 이상의 숙련자에게만 추천합니다!', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme30.jpg', 10000, 5, 0, '드라마', '12:50:00', '2~4'),
+(215, 25, 30, '[50분]문제방 매운맛', '방탈출 최소 50회 이상의 숙련자에게만 추천합니다!', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme30.jpg', 10000, 5, 0, '드라마', '13:40:00', '2~4'),
+(216, 25, 30, '[50분]문제방 매운맛', '방탈출 최소 50회 이상의 숙련자에게만 추천합니다!', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme30.jpg', 10000, 5, 0, '드라마', '14:30:00', '2~4'),
+(217, 25, 30, '[50분]문제방 매운맛', '방탈출 최소 50회 이상의 숙련자에게만 추천합니다!', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme30.jpg', 10000, 5, 0, '드라마', '15:20:00', '2~4'),
+(218, 25, 30, '[50분]문제방 매운맛', '방탈출 최소 50회 이상의 숙련자에게만 추천합니다!', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme30.jpg', 10000, 5, 0, '드라마', '16:10:00', '2~4'),
+(219, 25, 30, '[50분]문제방 매운맛', '방탈출 최소 50회 이상의 숙련자에게만 추천합니다!', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme30.jpg', 10000, 5, 0, '드라마', '17:00:00', '2~4'),
+(220, 26, 31, '인생은 실전이다 종만아', '게임을 좋아하는 종만이는 오늘도 게임만 한다.\"이세상 모든게 게임이었으면 좋겠다\"', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme31.jpg', 19000, 3, 3, '스릴러', '10:00:00', '2~6'),
+(221, 26, 31, '인생은 실전이다 종만아', '게임을 좋아하는 종만이는 오늘도 게임만 한다.\"이세상 모든게 게임이었으면 좋겠다\"', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme31.jpg', 19000, 3, 3, '스릴러', '11:10:00', '2~6'),
+(222, 26, 31, '인생은 실전이다 종만아', '게임을 좋아하는 종만이는 오늘도 게임만 한다.\"이세상 모든게 게임이었으면 좋겠다\"', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme31.jpg', 19000, 3, 3, '스릴러', '12:20:00', '2~6'),
+(223, 26, 31, '인생은 실전이다 종만아', '게임을 좋아하는 종만이는 오늘도 게임만 한다.\"이세상 모든게 게임이었으면 좋겠다\"', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme31.jpg', 19000, 3, 3, '스릴러', '13:30:00', '2~6'),
+(224, 26, 31, '인생은 실전이다 종만아', '게임을 좋아하는 종만이는 오늘도 게임만 한다.\"이세상 모든게 게임이었으면 좋겠다\"', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme31.jpg', 19000, 3, 3, '스릴러', '14:40:00', '2~6'),
+(225, 26, 31, '인생은 실전이다 종만아', '게임을 좋아하는 종만이는 오늘도 게임만 한다.\"이세상 모든게 게임이었으면 좋겠다\"', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme31.jpg', 19000, 3, 3, '스릴러', '15:50:00', '2~6'),
+(226, 26, 31, '인생은 실전이다 종만아', '게임을 좋아하는 종만이는 오늘도 게임만 한다.\"이세상 모든게 게임이었으면 좋겠다\"', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme31.jpg', 19000, 3, 3, '스릴러', '17:00:00', '2~6'),
+(227, 26, 31, '인생은 실전이다 종만아', '게임을 좋아하는 종만이는 오늘도 게임만 한다.\"이세상 모든게 게임이었으면 좋겠다\"', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme31.jpg', 19000, 3, 3, '스릴러', '18:10:00', '2~6'),
+(228, 26, 31, '인생은 실전이다 종만아', '게임을 좋아하는 종만이는 오늘도 게임만 한다.\"이세상 모든게 게임이었으면 좋겠다\"', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme31.jpg', 19000, 3, 3, '스릴러', '19:20:00', '2~6'),
+(229, 2, 3, '[프리미엄]펜타킬', '죽이는 게 있는데... 들어볼래요?', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme3.png', 22000, 4, 2, '스릴러', '14:00:00', '2~4'),
+(230, 2, 3, '[프리미엄]펜타킬', '죽이는 게 있는데... 들어볼래요?', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme3.png', 22000, 4, 2, '스릴러', '13:00:00', '2~4'),
+(231, 2, 3, '[프리미엄]펜타킬', '죽이는 게 있는데... 들어볼래요?', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme3.png', 22000, 4, 2, '스릴러', '12:00:00', '2~4'),
+(232, 3, 32, '[웹툰원작] 타인은 지옥이다', '인간은 사실 공존할수 없는 동물일수도 있어, 서로 필요때문에 어쩔수없이 사는거야. 여기다 쓰는말인지 모르겠는데 ‘타인은 지옥이다’라는 말이 있잖아요..?', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme32.jpg', 22000, 3, 2, '스릴러', '10:00:00', '2~4'),
+(233, 3, 32, '[웹툰원작] 타인은 지옥이다', '인간은 사실 공존할수 없는 동물일수도 있어, 서로 필요때문에 어쩔수없이 사는거야. 여기다 쓰는말인지 모르겠는데 ‘타인은 지옥이다’라는 말이 있잖아요..?', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme32.jpg', 22000, 3, 2, '스릴러', '11:00:00', '2~4'),
+(234, 3, 32, '[웹툰원작] 타인은 지옥이다', '인간은 사실 공존할수 없는 동물일수도 있어, 서로 필요때문에 어쩔수없이 사는거야. 여기다 쓰는말인지 모르겠는데 ‘타인은 지옥이다’라는 말이 있잖아요..?', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme32.jpg', 22000, 3, 2, '스릴러', '12:00:00', '2~4'),
+(235, 3, 32, '[웹툰원작] 타인은 지옥이다', '인간은 사실 공존할수 없는 동물일수도 있어, 서로 필요때문에 어쩔수없이 사는거야. 여기다 쓰는말인지 모르겠는데 ‘타인은 지옥이다’라는 말이 있잖아요..?', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme32.jpg', 22000, 3, 2, '스릴러', '13:00:00', '2~4'),
+(236, 3, 32, '[웹툰원작] 타인은 지옥이다', '인간은 사실 공존할수 없는 동물일수도 있어, 서로 필요때문에 어쩔수없이 사는거야. 여기다 쓰는말인지 모르겠는데 ‘타인은 지옥이다’라는 말이 있잖아요..?', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme32.jpg', 22000, 3, 2, '스릴러', '14:00:00', '2~4'),
+(237, 3, 32, '[웹툰원작] 타인은 지옥이다', '인간은 사실 공존할수 없는 동물일수도 있어, 서로 필요때문에 어쩔수없이 사는거야. 여기다 쓰는말인지 모르겠는데 ‘타인은 지옥이다’라는 말이 있잖아요..?', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme32.jpg', 22000, 3, 2, '스릴러', '15:00:00', '2~4'),
+(238, 3, 32, '[웹툰원작] 타인은 지옥이다', '인간은 사실 공존할수 없는 동물일수도 있어, 서로 필요때문에 어쩔수없이 사는거야. 여기다 쓰는말인지 모르겠는데 ‘타인은 지옥이다’라는 말이 있잖아요..?', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme32.jpg', 22000, 3, 2, '스릴러', '16:00:00', '2~4'),
+(239, 3, 32, '[웹툰원작] 타인은 지옥이다', '인간은 사실 공존할수 없는 동물일수도 있어, 서로 필요때문에 어쩔수없이 사는거야. 여기다 쓰는말인지 모르겠는데 ‘타인은 지옥이다’라는 말이 있잖아요..?', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme32.jpg', 22000, 3, 2, '스릴러', '17:00:00', '2~4'),
+(240, 3, 32, '[웹툰원작] 타인은 지옥이다', '인간은 사실 공존할수 없는 동물일수도 있어, 서로 필요때문에 어쩔수없이 사는거야. 여기다 쓰는말인지 모르겠는데 ‘타인은 지옥이다’라는 말이 있잖아요..?', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme32.jpg', 22000, 3, 2, '스릴러', '18:00:00', '2~4'),
+(241, 4, 33, '[프리미엄 테마]미즈몰리아와 수수께끼의 책', '무슨 책을 찾고있니 꼬마야.유쾌한책 유익한책. 감동적이거나 슬픈책. 그게 아니면 ...수수께끼의 책을 찾고있니?', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme33.jpg', 22000, 3, 0, '판타지', '09:00:00', '2~4'),
+(242, 4, 33, '[프리미엄 테마]미즈몰리아와 수수께끼의 책', '무슨 책을 찾고있니 꼬마야.유쾌한책 유익한책. 감동적이거나 슬픈책. 그게 아니면 ...수수께끼의 책을 찾고있니?', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme33.jpg', 22000, 3, 0, '판타지', '10:10:00', '2~4'),
+(243, 4, 33, '[프리미엄 테마]미즈몰리아와 수수께끼의 책', '무슨 책을 찾고있니 꼬마야.유쾌한책 유익한책. 감동적이거나 슬픈책. 그게 아니면 ...수수께끼의 책을 찾고있니?', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme33.jpg', 22000, 3, 0, '판타지', '11:20:00', '2~4'),
+(244, 4, 33, '[프리미엄 테마]미즈몰리아와 수수께끼의 책', '무슨 책을 찾고있니 꼬마야.유쾌한책 유익한책. 감동적이거나 슬픈책. 그게 아니면 ...수수께끼의 책을 찾고있니?', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme33.jpg', 22000, 3, 0, '판타지', '12:30:00', '2~4'),
+(245, 4, 33, '[프리미엄 테마]미즈몰리아와 수수께끼의 책', '무슨 책을 찾고있니 꼬마야.유쾌한책 유익한책. 감동적이거나 슬픈책. 그게 아니면 ...수수께끼의 책을 찾고있니?', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme33.jpg', 22000, 3, 0, '판타지', '13:40:00', '2~4'),
+(246, 4, 33, '[프리미엄 테마]미즈몰리아와 수수께끼의 책', '무슨 책을 찾고있니 꼬마야.유쾌한책 유익한책. 감동적이거나 슬픈책. 그게 아니면 ...수수께끼의 책을 찾고있니?', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme33.jpg', 22000, 3, 0, '판타지', '14:50:00', '2~4'),
+(247, 4, 33, '[프리미엄 테마]미즈몰리아와 수수께끼의 책', '무슨 책을 찾고있니 꼬마야.유쾌한책 유익한책. 감동적이거나 슬픈책. 그게 아니면 ...수수께끼의 책을 찾고있니?', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme33.jpg', 22000, 3, 0, '판타지', '16:00:00', '2~4'),
+(248, 4, 33, '[프리미엄 테마]미즈몰리아와 수수께끼의 책', '무슨 책을 찾고있니 꼬마야.유쾌한책 유익한책. 감동적이거나 슬픈책. 그게 아니면 ...수수께끼의 책을 찾고있니?', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme33.jpg', 22000, 3, 0, '판타지', '17:10:00', '2~4'),
+(249, 4, 33, '[프리미엄 테마]미즈몰리아와 수수께끼의 책', '무슨 책을 찾고있니 꼬마야.유쾌한책 유익한책. 감동적이거나 슬픈책. 그게 아니면 ...수수께끼의 책을 찾고있니?', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme33.jpg', 22000, 3, 0, '판타지', '18:20:00', '2~4'),
+(250, 5, 34, 'TIED', '국민톱스타 방수지양을 무려 20년간 스토킹해온 범인이 마침내 경찰에 붙잡혔다. 극악무도한 범인에게 사형을 요구한다는 국민청원이 20만명을 넘었으며 이에 국회는 방수지특별법을 발의했다.', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme34.jpg', 20000, 3, 0, '드라마', '09:30:00', '2~6'),
+(251, 5, 34, 'TIED', '국민톱스타 방수지양을 무려 20년간 스토킹해온 범인이 마침내 경찰에 붙잡혔다. 극악무도한 범인에게 사형을 요구한다는 국민청원이 20만명을 넘었으며 이에 국회는 방수지특별법을 발의했다.', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme34.jpg', 20000, 3, 0, '드라마', '10:30:00', '2~6'),
+(252, 5, 34, 'TIED', '국민톱스타 방수지양을 무려 20년간 스토킹해온 범인이 마침내 경찰에 붙잡혔다. 극악무도한 범인에게 사형을 요구한다는 국민청원이 20만명을 넘었으며 이에 국회는 방수지특별법을 발의했다.', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme34.jpg', 20000, 3, 0, '드라마', '11:30:00', '2~6'),
+(253, 5, 34, 'TIED', '국민톱스타 방수지양을 무려 20년간 스토킹해온 범인이 마침내 경찰에 붙잡혔다. 극악무도한 범인에게 사형을 요구한다는 국민청원이 20만명을 넘었으며 이에 국회는 방수지특별법을 발의했다.', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme34.jpg', 20000, 3, 0, '드라마', '12:30:00', '2~6'),
+(254, 5, 34, 'TIED', '국민톱스타 방수지양을 무려 20년간 스토킹해온 범인이 마침내 경찰에 붙잡혔다. 극악무도한 범인에게 사형을 요구한다는 국민청원이 20만명을 넘었으며 이에 국회는 방수지특별법을 발의했다.', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme34.jpg', 20000, 3, 0, '드라마', '13:30:00', '2~6'),
+(255, 5, 34, 'TIED', '국민톱스타 방수지양을 무려 20년간 스토킹해온 범인이 마침내 경찰에 붙잡혔다. 극악무도한 범인에게 사형을 요구한다는 국민청원이 20만명을 넘었으며 이에 국회는 방수지특별법을 발의했다.', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme34.jpg', 20000, 3, 0, '드라마', '14:30:00', '2~6'),
+(256, 5, 34, 'TIED', '국민톱스타 방수지양을 무려 20년간 스토킹해온 범인이 마침내 경찰에 붙잡혔다. 극악무도한 범인에게 사형을 요구한다는 국민청원이 20만명을 넘었으며 이에 국회는 방수지특별법을 발의했다.', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme34.jpg', 20000, 3, 0, '드라마', '15:40:00', '2~6'),
+(257, 5, 34, 'TIED', '국민톱스타 방수지양을 무려 20년간 스토킹해온 범인이 마침내 경찰에 붙잡혔다. 극악무도한 범인에게 사형을 요구한다는 국민청원이 20만명을 넘었으며 이에 국회는 방수지특별법을 발의했다.', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme34.jpg', 20000, 3, 0, '드라마', '16:40:00', '2~6'),
+(258, 5, 34, 'TIED', '국민톱스타 방수지양을 무려 20년간 스토킹해온 범인이 마침내 경찰에 붙잡혔다. 극악무도한 범인에게 사형을 요구한다는 국민청원이 20만명을 넘었으며 이에 국회는 방수지특별법을 발의했다.', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme34.jpg', 20000, 3, 0, '드라마', '17:40:00', '2~6'),
+(259, 5, 34, 'TIED', '국민톱스타 방수지양을 무려 20년간 스토킹해온 범인이 마침내 경찰에 붙잡혔다. 극악무도한 범인에게 사형을 요구한다는 국민청원이 20만명을 넘었으며 이에 국회는 방수지특별법을 발의했다.', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme34.jpg', 20000, 3, 0, '드라마', '18:40:00', '2~6'),
+(260, 6, 35, '기억을 걷는 시간', '어느날 갑자기 이별을 고하고 떠난 여친.왜 인지 그 이유는 알수 없고, 그런 그에게 전해지는 추억을 판매하는 카페 , 기억을 걷는 시간. 그 곳을 찾아가는데... (야외 방탈출로 진행됩니다)', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme35.png', 20000, 4, 0, '감성', '10:00:00', '2~4'),
+(261, 6, 35, '기억을 걷는 시간', '어느날 갑자기 이별을 고하고 떠난 여친.왜 인지 그 이유는 알수 없고, 그런 그에게 전해지는 추억을 판매하는 카페 , 기억을 걷는 시간. 그 곳을 찾아가는데... (야외 방탈출로 진행됩니다)', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme35.png', 20000, 4, 0, '감성', '11:10:00', '2~4'),
+(262, 6, 35, '기억을 걷는 시간', '어느날 갑자기 이별을 고하고 떠난 여친.왜 인지 그 이유는 알수 없고, 그런 그에게 전해지는 추억을 판매하는 카페 , 기억을 걷는 시간. 그 곳을 찾아가는데... (야외 방탈출로 진행됩니다)', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme35.png', 20000, 4, 0, '감성', '12:20:00', '2~4'),
+(263, 6, 35, '기억을 걷는 시간', '어느날 갑자기 이별을 고하고 떠난 여친.왜 인지 그 이유는 알수 없고, 그런 그에게 전해지는 추억을 판매하는 카페 , 기억을 걷는 시간. 그 곳을 찾아가는데... (야외 방탈출로 진행됩니다)', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme35.png', 20000, 4, 0, '감성', '13:30:00', '2~4'),
+(264, 6, 35, '기억을 걷는 시간', '어느날 갑자기 이별을 고하고 떠난 여친.왜 인지 그 이유는 알수 없고, 그런 그에게 전해지는 추억을 판매하는 카페 , 기억을 걷는 시간. 그 곳을 찾아가는데... (야외 방탈출로 진행됩니다)', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme35.png', 20000, 4, 0, '감성', '14:40:00', '2~4'),
+(265, 6, 35, '기억을 걷는 시간', '어느날 갑자기 이별을 고하고 떠난 여친.왜 인지 그 이유는 알수 없고, 그런 그에게 전해지는 추억을 판매하는 카페 , 기억을 걷는 시간. 그 곳을 찾아가는데... (야외 방탈출로 진행됩니다)', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme35.png', 20000, 4, 0, '감성', '15:50:00', '2~4'),
+(266, 6, 35, '기억을 걷는 시간', '어느날 갑자기 이별을 고하고 떠난 여친.왜 인지 그 이유는 알수 없고, 그런 그에게 전해지는 추억을 판매하는 카페 , 기억을 걷는 시간. 그 곳을 찾아가는데... (야외 방탈출로 진행됩니다)', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme35.png', 20000, 4, 0, '감성', '17:00:00', '2~4'),
+(267, 6, 35, '기억을 걷는 시간', '어느날 갑자기 이별을 고하고 떠난 여친.왜 인지 그 이유는 알수 없고, 그런 그에게 전해지는 추억을 판매하는 카페 , 기억을 걷는 시간. 그 곳을 찾아가는데... (야외 방탈출로 진행됩니다)', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme35.png', 20000, 4, 0, '감성', '18:10:00', '2~4'),
+(268, 6, 35, '기억을 걷는 시간', '어느날 갑자기 이별을 고하고 떠난 여친.왜 인지 그 이유는 알수 없고, 그런 그에게 전해지는 추억을 판매하는 카페 , 기억을 걷는 시간. 그 곳을 찾아가는데... (야외 방탈출로 진행됩니다)', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme35.png', 20000, 4, 0, '감성', '19:20:00', '2~4'),
+(269, 6, 35, '기억을 걷는 시간', '어느날 갑자기 이별을 고하고 떠난 여친.왜 인지 그 이유는 알수 없고, 그런 그에게 전해지는 추억을 판매하는 카페 , 기억을 걷는 시간. 그 곳을 찾아가는데... (야외 방탈출로 진행됩니다)', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme35.png', 20000, 4, 0, '감성', '20:30:00', '2~4'),
+(270, 7, 36, '죽음의 신', '오늘의 마지막 손님을 모시러 갑니다', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme36.jpg', 21000, 5, 0, '-', '09:00:00', '2~6'),
+(271, 7, 36, '죽음의 신', '오늘의 마지막 손님을 모시러 갑니다', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme36.jpg', 21000, 5, 0, '-', '10:10:00', '2~6'),
+(272, 7, 36, '죽음의 신', '오늘의 마지막 손님을 모시러 갑니다', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme36.jpg', 21000, 5, 0, '-', '11:20:00', '2~6'),
+(273, 7, 36, '죽음의 신', '오늘의 마지막 손님을 모시러 갑니다', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme36.jpg', 21000, 5, 0, '-', '12:30:00', '2~6'),
+(274, 7, 36, '죽음의 신', '오늘의 마지막 손님을 모시러 갑니다', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme36.jpg', 21000, 5, 0, '-', '13:40:00', '2~6'),
+(275, 7, 36, '죽음의 신', '오늘의 마지막 손님을 모시러 갑니다', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme36.jpg', 21000, 5, 0, '-', '14:50:00', '2~6'),
+(276, 7, 36, '죽음의 신', '오늘의 마지막 손님을 모시러 갑니다', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme36.jpg', 21000, 5, 0, '-', '16:00:00', '2~6'),
+(277, 7, 36, '죽음의 신', '오늘의 마지막 손님을 모시러 갑니다', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme36.jpg', 21000, 5, 0, '-', '17:10:00', '2~6'),
+(278, 7, 36, '죽음의 신', '오늘의 마지막 손님을 모시러 갑니다', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme36.jpg', 21000, 5, 0, '-', '18:20:00', '2~6');
 
 --
 -- 덤프된 테이블의 인덱스
@@ -447,19 +554,19 @@ ALTER TABLE `p_region`
 -- 테이블의 AUTO_INCREMENT `p_reservation`
 --
 ALTER TABLE `p_reservation`
-  MODIFY `reservation_seq` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=107;
+  MODIFY `reservation_seq` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=124;
 
 --
 -- 테이블의 AUTO_INCREMENT `p_reservation_status`
 --
 ALTER TABLE `p_reservation_status`
-  MODIFY `reservation_status_seq` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `reservation_status_seq` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 
 --
 -- 테이블의 AUTO_INCREMENT `p_theme`
 --
 ALTER TABLE `p_theme`
-  MODIFY `theme_seq` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=155;
+  MODIFY `theme_seq` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=279;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
