@@ -1970,7 +1970,7 @@ body { min-width:360px; background-color: #fff; color: #505050; position: relati
 	100%  { transform: scale(1) }
   }
 
-#main_propos { background: #000 url('img/bg_main_propos.jpg') center no-repeat; background-size: cover; }
+#main_propos { background: #000 url('https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/bg_main_propos.jpg') center no-repeat; background-size: cover; }
 #main_propos .feature_desc span { color: #fac05a; }
 #main_propos .tit_top { position: absolute; top: 10%; width: 100%; }
 #main_propos .tit_top .feature_desc { font-size: 20px; line-height: 35px; color: #fff; padding-top: 5%; max-width: 600px; margin: 0 auto; }
