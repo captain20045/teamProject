@@ -347,12 +347,15 @@ function check(){
 		alert('이름을 입력해 주세요.');
 		return;
 	}
-	if(document.getElementById("phone2").value == ''){
+	if(document.getElementById("phone2").value == '' || document.getElementById("phone3").value == ''){
 		alert('연락처를 입력해 주세요.');
 		return;
 	}
-	if(document.getElementById("phone3").value == ''){
-		alert('연락처를 입력해 주세요.');
+    
+    const checkbox = document.getElementById('agree');
+	const is_checked = checkbox.checked;
+	if(is_checked==false){
+		alert('개인정보취급방침에 동의해 주세요.');
 		return;
 	}
     document.getElementById('reservationForm').submit();
@@ -367,8 +370,7 @@ function check(){
 		document.querySelector(`.price`).innerHTML = `${price*value}원`;
 	}
 
-
-$(document).ready(function(){
+    $(document).ready(function(){
 	$('.dim_close').click(function(){
 		$("body").css({"position" : "static", "width" : "auto"});
 		$('.dim_layer').removeClass('on');
@@ -383,133 +385,6 @@ $(document).ready(function(){
 });
 
 
-$(function() {
-    var options_reservation = {
-        beforeSubmit:validate_reservation,
-        success:showResponse_reservation
-    };
-    $('#reservationForm').ajaxForm(options_reservation);
-    cal_price();
-
-    $("#inwon_").change(function() {
-        cal_price();
-    });
-
-    $(".pay_type").change(function() {
-        $("#pay_type").val( $(this).val() );
-        cal_price();
-    });
-});
-
-function validate_reservation(formData, jqForm, options) {
-    var frm = document.reservationForm;
-    if (frm.name.value==""){
-        alert("이름을 입력해 주세요.");
-        frm.name.focus();
-        return false;
-    }
-    if (frm.phone2.value==""){
-        alert("연락처를 입력해 주세요.");
-        frm.phone2.focus();
-        return false;
-    }
-    if (frm.phone3.value==""){
-        alert("연락처를 입력해 주세요.");
-        frm.phone3.focus();
-        return false;
-    }
-    if (!frm.agree.checked){
-        alert("개인정보취급방침에 동의해 주세요.");
-        frm.agree.focus();
-        return false;
-    }
-}
-
-function showResponse_reservation(responseText, statusText, xhr, $form){
-    if(responseText == "y" || responseText == "yy"){
-        //location.href = "result.php";
-        location.href = "result_new.php";
-    }else if(responseText == "x"){
-        alert("해당 시간에 이미 예약된 정보가 있습니다.");
-        location.href = "/reservation/";
-    }else if(responseText == "x2"){
-        alert("중복 예약은 불가합니다.");
-        location.href = "/reservation/index_hyundai.php";
-    }else{
-		//alert(responseText);
-        alert("error");
-    }
-}
-
-function cal_price(){
-
-    var pay_type =  $("#pay_type").val();
-    var spdata = $("#inwon_").val().split("::");
-    var inwon = spdata[0];
-    var price = spdata[1];
-    var dv_price = 0;
-
-    if(pay_type == "1"){
-        price = price;
-
-        $("#dc_str").hide();
-        $("#dc_price").html("");
-
-    }else if(pay_type == "2"){
-
-		if (186 == 105)
-		{
-			dv_price = 30000;
-			//price = price - dv_price;
-
-			$("#dc_str").show();
-			//$("#dc_price").html(set_comma(dv_price));
-		//}else if((57 == 12) && (186 == 111)){
-		}else if((186 == 111)){
-
-				price = price;
-
-				//$("#dc_str").show();
-				$("#dc_price").html(set_comma(dv_price));
-		}else{
-			 dv_price = inwon * 2000;
-			//price = price - dv_price;
-			price = price;
-
-			$("#dc_str").show();
-			$("#dc_price").html(set_comma(dv_price));
-		}
-
-
-    }else if(pay_type == "3"){
-        price = 0;
-
-        $("#dc_str").hide();
-        $("#dc_price").html("");
-
-    }
-
-    $("#inwon").val(inwon);
-    $("#price").val(price);
-
-    if(pay_type == "3")
-    {
-        $("#vprice").html("-");
-    }
-    else
-    {
-		//신림점 잭더리퍼 8명 이상시
-		if((57 == 12) && (186 == 111) && (inwon == "100"))
-		{
-			$("#vprice").html("* 8인이상시 지점전화문의");
-		}else{
-
-			
-			$("#vprice").html(set_comma(price)+"원");
-
-					}
-    }
-}
 
 </script>
 

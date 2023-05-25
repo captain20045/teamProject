@@ -86,10 +86,10 @@
 						</tr>
 					
 				</tbody></table>
-				<div class="em">* 예약시 등록한 정보를 입력하면 예약조회가 가능합니다.</div>
+				<div class="em">* 예약시 등록한 정보를 입력하면 예약조회가 가능합니다.<br>* 예약정보는 3일후 삭제됩니다.</div>
 			</div>
 			<div class="btn_group center">
-				<button type="submit" class="btn gray">예약조회</button>
+				<button type="button" class="btn gray" onclick="check()">예약조회</button>
 			</div>
 			</form>
 
@@ -97,6 +97,7 @@
 	</section>
 	
 </div>
+
 <footer id="footer">
 	<section class="footer_top">
 		<div class="inner container">
@@ -128,5 +129,20 @@
 	</section>
 </footer>
 
+<script>
+function check(){
+	if(document.getElementById("name").value == ''){		
+		alert('이름을 입력해 주세요.');
+		return;
+	}
+	if(document.getElementById("phone2").value == '' || document.getElementById("phone3").value == ''){
+		alert('연락처를 입력해 주세요.');
+		return;
+	}
+
+    document.getElementById('reservationConfirmForm').submit();
+}
+
+</script>
 
 </body></html>
