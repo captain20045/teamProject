@@ -184,8 +184,6 @@ a.btn{display: inline-block;}
 .ico.cal_w { background: url(../images/ico/ico_cal_white.png) center no-repeat; }
 .ico.cal_black { background: url(../images/ico/ico_cal_black.png) center no-repeat; }
 .ico.star { background: url(../images/ico/ico_star.png) no-repeat 0 7px/contain; margin-bottom:-3px;}
-.ico.star_black { background: url(img/ico_star_black.png) center no-repeat; }
-.ico.zoom_black { background: url(../images/ico/ico_zoom_black.png) center no-repeat; }
 .ico.list { background: url(../images/ico/ico_list.png) center no-repeat; }
 .ico.members { background: url(../images/ico/ico_members.png) center no-repeat; }
 .ico.location{ background: url(../images/ico/ico_location.png) center no-repeat; }
@@ -2278,6 +2276,8 @@ body { min-width:360px; background-color: #fff; color: #505050; position: relati
 #reservation .write_form .checktd .ipt_group { margin-bottom: 0; }
 #reservation .write_form .em { font-size: 14px; color: #e6950c; margin-top: 10px; }
 #reservation section.res_info_confirm { padding-bottom: 200px; }
+
+input{ padding: 12px; border-width: 1; background-color: #fff; font-size: 15px; font-weight: 500; font-family: Arial,Helvetica,sans-serif; }
 
 
 #affiliated section.affiliated { padding-bottom: 200px; }
