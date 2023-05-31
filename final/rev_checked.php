@@ -138,7 +138,7 @@
 							<td class="theme"><?= $theme_name ?></td>
 							<td class="name"><?= $customer_name ?></td>
 							<td class="num"><?= $customer_phone_number ?></td>
-							<td class="per"><?= $booked_member ?></td>
+							<td class="per"><?= $booked_member ?>명</td>
                             <td class="price"><?= $price ?></td>
                             <td class="pay"><?= $purchase_way ?></td>
 							<td class="cancel"><a href="javascript:goPage(<?=$branch_seq?>,<?=$theme_number?>,'<?=$reservation_date?>','<?=$reservation_time?>');">취소</a></td>
