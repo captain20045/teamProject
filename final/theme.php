@@ -30,6 +30,17 @@
             </div>
         </header>
 
+<script>
+		function change(){
+			var obj = document.getElementById("sort");
+			for (i=0;i<obj.length;i++ ){
+				if(obj[i].selected){
+					document.test.sort.value = obj[i].value;
+			    }
+		    }
+			document.test.submit();
+		}
+</script>
 
     <div id="theme" class="body">
         <section id="title_area">
@@ -42,13 +53,14 @@
 
         <section class="feature03 black_body" id="theme_list">
             <div class="inner container">
-            <select class="sort">
-                    <option value>정렬</option>
-                    <option value>난이도</option>
-                    <option value>공포도</option>
-                
+        <form action="theme.php" method="post" name="test">
+            <select class="sort" id="sort" name="sort" onchange="change()">
+                    <option>정렬</option>
+                    <option value="basic">최신순</option>
+                    <option value="level">난이도</option>
+                    <option value="scare">공포도</option>
             </select>
-
+        </form>
 
             <div class="row">
 <!-- 첫 번째 꺼 -->
@@ -58,7 +70,14 @@
         echo "데이터베이스 연결에 실패하였습니다.";
     }
 
-    $result = mysqli_query($connect,"SELECT * FROM p_theme GROUP by theme_number");
+    $_POST["sort"] = isset($_POST["sort"]) ? $_POST["sort"] : "basic";
+    if($_POST["sort"] == "basic"){
+    $result = mysqli_query($connect,"SELECT * FROM p_theme GROUP by theme_number order by theme_number desc;");
+    }else if($_POST["sort"] == "level"){
+    $result = mysqli_query($connect,"SELECT * FROM p_theme group by theme_number order by theme_level desc;");
+    }else if($_POST["sort"] == "scare"){
+    $result = mysqli_query($connect,"SELECT * FROM p_theme group by theme_number order by theme_scare desc;");
+    }
     while($data = mysqli_fetch_array($result)){
         $branch_seq = $data['branch_seq'];
         $result2 = mysqli_query($connect,"SELECT branch_name FROM p_branch where branch_seq = $branch_seq");
@@ -135,20 +154,20 @@
         </section>
         
 
-            <footer id="footer">
+        <footer id="footer">
                 <section class="footer_top">
                     <div class="inner container">
                         <ul class="footer_list">
-                            <li><a href="/privacy/personal.php">개인정보취급방침</a></li>
-                            <li><a href="/privacy/agreement.php">이용약관</a></li>
-                            <li><a href="/branch">지점소개</a></li>
-                            <li><a href="http://unreal-company.co.kr">프랜차이즈 가맹문의</a></li>
+                            <li><a href="#">개인정보취급방침</a></li>
+                            <li><a href="#">이용약관</a></li>
+                            <li><a href="branch.php">지점소개</a></li>
                         </ul>
                         </div>
                 </section>
                 <section class="footer_bottom">
                     <div class="inner container">
-                        <div class="site_info"> 
+                        <div class="site_info">
+                        
                             <ul class="site_info_1">
                                 <li><span>상호명</span> 현생탈출</li>
                                 <li><span>주소</span> 경기도 성남시 중원구 광명로 377</li>
@@ -156,13 +175,13 @@
                             <ul class="site_info_2">
                                <li><span>(주)현생탈출컴퍼니</span> </li>
                                <li><span> 사업자등록번호</span> 111-22-33333</li>
-                               <li><span> 통신판매업 신고 </span> 2023-신구대-412호 </li>
+                               <li><span> 통신판매업 신고 </span> 2023-신구대-212호 </li>
                                <!-- 190926 요청에 따라 연락 이메일 교체 -->
-                                <li><span>대표전화</span> 1800.6777  &nbsp;&nbsp;  / &nbsp;&nbsp;  E-mail shingucompany@naver.com<!--info@shingucompany.co.kr--></li>
+                                <li><span>대표전화</span> 1111.2222  &nbsp;&nbsp;  / &nbsp;&nbsp;  E-mail shingucompany@naver.com<!--info@shingucompany.co.kr--></li>
                             </ul>
                             <div class="copyright">Copyright ⓒ Escape from the Present. All rights reserved.</div>
                         </div>
-                    </div>
+                            
                 </section>
             </footer>
 
