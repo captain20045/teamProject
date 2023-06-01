@@ -42,7 +42,12 @@
 
         <section class="feature03 black_body" id="theme_list">
             <div class="inner container">
+            <select class="sort">
+                    <option value>정렬</option>
+                    <option value>난이도</option>
+                    <option value>공포도</option>
                 
+            </select>
 
 
             <div class="row">
@@ -71,6 +76,7 @@
                                                     <div class="desc" style="height: 55%;"><?=$data['theme_description']?></div>
                                                     <div class="level" style="width:230px;">
                                                         <table class="level_inner">
+                                                            
                                                 <tbody>
                                                     <tr>
                                                         <td><?=$data['theme_jenre']?></td>
@@ -109,6 +115,7 @@
                         </div>
                     </div>
                 </div>
+ 
 <?php
         }
     }
