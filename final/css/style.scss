@@ -568,7 +568,7 @@ body { min-width:360px; background-color: #fff; color: #505050; position: relati
    #theme section.feature03 .row .col { width:33.3%;}
    
 }
-
+   
 @media screen and (max-width: 767px){
    #header { background-color: #1a1a1a !important; padding-top: 0 !important; }
    #header .header_nav { position: absolute; top: 100%; left: 0; width: 100%; height: 0; overflow: auto; }
@@ -677,6 +677,7 @@ body { min-width:360px; background-color: #fff; color: #505050; position: relati
    #theme section.feature03 .img .over .desc {height:auto !important; max-height:none !important; margin-bottom:30px;}
 }
 
+
 @media screen and (max-width: 399px){
    .container { padding: 0 20px; }
    #header .header_logo { width: 100px; margin: 10px; }
@@ -687,3 +688,43 @@ body { min-width:360px; background-color: #fff; color: #505050; position: relati
 @media screen and (max-width: 360px){
 
 }
+
+select.sort { max-width: 100px; opacity: 1; background-color: #505050; margin-left:91.5%; color:#fff; font-size:medium;}
+
+
+/*
+.ico_zoom_black{
+   background-color: #000;
+   background: url(/pit/search.png) center no-repeat;
+   width: 20px;
+   height: 20px;
+
+ 
+}
+.btn.orange{
+   border:1px solid #ffffff;
+   color: #333;
+   background-color: #ffffff;
+   margin-left: 915%;
+  
+
+   }
+   .lap {border: 1px solid #b8b8b8; color: #666; padding: 5px;  line-height: 45px;
+       box-sizing: border-box; background-color: rgba(255,255,255,0.15); margin-left: 80%; }
+   textarea.lap { height: auto; line-height: 20px  }
+   .lap.w100p{width: 100%;}
+   .lap_group { margin-bottom: 5px; display: table; width: 100%; }
+   .lap_group .lap { display: table-cell;  z-index: 2; float: left; width: 100%; }
+   .lap_left,
+   .lap_right { display: table-cell;   white-space: nowrap; vertical-align: middle; }
+   // .ipt_right { padding-left: 8px; }
+   .lap_right.addon { padding-left: 0; }
+   .lap_right > .btn {  line-height: 45px; }
+   .lap_left { padding-right: 8px; }
+   .lap_left.addon { padding-right: 0; }
+   .lap.black { border-color: #1a1a1a; color: #fff; background-color: #1a1a1a; }
+   .lap.gray { border-color: transparent; background-color: #d0d0d0; }
+   .datepicker { display: inline-block; }
+   .datepicker .ico { position: absolute; top: 0; right: 0; }
+   */
+   
