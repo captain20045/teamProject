@@ -1,8 +1,63 @@
+<?php
+$page = (isset($_GET["page"]) && $_GET["page"]) ? $_GET["page"] : NULL;
+$id = (isset($_GET["id"]) && $_GET["id"]) ? $_GET["id"] : NULL;
+$pw = (isset($_GET["pw"]) && $_GET["pw"]) ? $_GET["pw"] : NULL;
+$_POST['selectedBranch'] =  isset($_POST['selectedBranch']) ? $_POST['selectedBranch'] : '';
+$_POST['s_where'] =  isset($_POST['s_where']) ? $_POST['s_where'] : '';
+
+$s_where = $_POST['h'];
+if(strlen($s_where) == 0){	
+	$s_where = 0;
+}else{
+	$s_where = $_POST['h'];
+}
+
+$connect = mysqli_connect('localhost','root','','project3');
+if(mysqli_connect_error()) {
+    echo "데이터베이스 연결에 실패하였습니다.";
+}
+
+/* --- 자유 게시판의 목록 보기  --- */
+if($page == ""){
+	$page = 1;                          //페이지 번호가 없으면 페이지번호를 1
+}
+$view_num = 5;                          //화면에 표시되는 글 목록의 수
+$page_num = 3;                          //페이지 링크의 개수
+$offset = $view_num * ($page - 1);      //한 페이지에 시작하는 글의 번호
+ 
+$sql = "select count(*) from freeboard_tbl";   //전체 레코드의 개수 구하기
+$res = mysqli_query($connect,$sql);
+
+while($row = mysqli_fetch_row($res)){
+	$total_no = $row[0];            
+}
+//전체 레코드의 수를 페이지당 레코드의 수로 나눈 값 올림
+$total_page = ceil($total_no / $view_num);   
+$cur_num = $total_no - $view_num * ($page - 1);  //현재 레코드의 번호 설정
+				
+$searchtext = $_POST['s_keyword'];
+if(strlen($searchtext) == 0){	
+	$res2 = mysqli_query($connect, "select bno,title_board,name,insert_day,count_board,branch_seq from freeboard_tbl order by branch_seq limit $offset, $view_num");
+}else{
+	if($s_where==1){
+		$res2 = mysqli_query($connect, "select bno,title_board,name,insert_day,count_board,branch_seq from freeboard_tbl where name like '%$searchtext%' order by branch_seq  limit $offset, $view_num");
+	}else if($s_where==2){
+		$res2 = mysqli_query($connect, "select bno,title_board,name,insert_day,count_board,branch_seq from freeboard_tbl where write_board like '%$searchtext%' order by branch_seq limit $offset, $view_num");
+	}else{
+		$res2 = mysqli_query($connect, "select bno,title_board,name,insert_day,count_board,branch_seq from freeboard_tbl where name like '%$searchtext%' or write_board like '%$searchtext%' order by branch_seq limit $offset, $view_num");
+	}
+}
+
+$result1 = mysqli_query($connect, "SELECT branch_name FROM p_branch JOIN freeboard_tbl ON p_branch.branch_seq = freeboard_tbl.branch_seq ORDER BY freeboard_tbl.branch_seq ASC limit $offset, $view_num");
+
+//테이블에서 목록을 쿼리문으로 가져오기
+//$sql2 = "select bno,title_board,name,insert_day,count_board from freeboard_tbl order by bno desc limit $offset, $view_num";                                                                                         
+?>
 <html lang="en">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-			<link rel="stylesheet" href="css/board.css" type="text/css">
-			<link rel="stylesheet" href="css/board1.scss" type="text/css">
+			<link rel="stylesheet" href="/css/board.css" type="text/css">
+			<link rel="stylesheet" href="/css/board1.scss" type="text/css">
 			<!-- <link rel="stylesheet" href="css/test1.css" type="text/css"> -->
 	
 	</head>
@@ -48,27 +103,45 @@
             	</div>
 					<div id="board_top">
 						<div class="board_info">
-							Total:<span>13</span>, page:<span>1/2</span>
+							Total:<span><?= $total_no ?></span>, page:<span><?= $page ?>/<?= $total_page ?></span>
 						</div>
-						<form method="get" action="/board/press.php" name="frm" id="frm">
+						<form method="post" action="board.php" name="frm" id="frm">
 							<div class="board_search">
 								<div class="ipt_group">
 									<span class="ipt_left">
-										<select name="s_where" id="s_where">
-											<option value="">전체</option>
-											<option value="subject">제목</option>
-											<option value="contents">내용</option>
+										<select name="s_where" id="s_where" onchange="change1()">
+											<?php
+												if($s_where==0){
+											?>
+												<option value=0>전체</option>
+												<option value=1>제목</option>
+												<option value=2>내용</option>
+											<?php
+												}else if($s_where==1){
+											?>	
+												<option value=0>전체</option>
+												<option value=1 selected>제목</option>
+												<option value=2>내용</option>
+											<?php
+												}else if($s_where==2){
+											?>
+												<option value=0>전체</option>
+												<option value=1>제목</option>
+												<option value=2 selected>내용</option>
+											<?php
+												}
+											?>
 										</select>
 									</span>
 				    					<input type="text" class="ipt" name="s_keyword" id="s_keyword" value="">
 				    					<span class="ipt_right addon">
-											<button type="submit" class="btn orange">
-												<img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/search.png" class="ico_zoom_black"></i>
-											</button>
+										  <button class="btn orange" onclick="change1()">
+											<img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/search.png" class="ico_zoom_black"></i>
+										  </button>
 									</span>
 								</div>
-							
-					</div>
+							</div>										
+							<input type="hidden" name="h">
 						</form>
 			</div>
 			<div id="board_list">
@@ -82,7 +155,7 @@
 					</colgroup>
 					<thead>
 						<tr>
-							<th class="num">No.</th>
+							<th class="num">지점</th>
 							<th>제목</th>
 							<th>작성자</th>
 							<th>등록일</th>
@@ -90,54 +163,96 @@
 						</tr>
 					</thead>
 					<tbody>
-
-						<tr>
-							<td class="num">공지</td>
-							<td class="left title"><a href="">서포터즈 모집 공고</a></td>
-							<td class="name">관리자</td>
-							<td class="date">2000.00.00</td>
-							<td class="view">3967</td>
-						</tr>
-
-						<tr>
-							<td class="num">공지</td>
-							<td class="left title"><a href="">테마 기획 콘테스트 안내</a></td>
-							<td class="name">관리자</td>
-							<td class="date">2000.00.00</td>
-							<td class="view">4701</td>
-						</tr>
-
-						<tr>
-							<td class="num">공지</td>
-							<td class="left title"><a href=""> 모집 공고</a></td>
-							<td class="name">관리자</td>
-							<td class="date">2000.00.08</td>
-							<td class="view">4246</td>
-						</tr>
-
-						<tr>
-							<td class="num">공지</td>
-							<td class="left title"><a href="">1차 방탈출 문화 진흥 모집 공고</a></td>
-							<td class="name">관리자</td>
-							<td class="date">2000.00.00</td>
-							<td class="view">4266</td>
-						</tr>
-
-						<tr>
-							<td class="num">공지</td>
-							<td class="left title"><a href="">방탈출 카페로 벤처기업 인증 획득</a></td>
-							<td class="name">관리자</td>
-							<td class="date">2000.00.00</td>
-							<td class="view">3424</td>
-						</tr>
-
-						
+					<?php
+						while($row2 = mysqli_fetch_row($res2)) {
+					?>
+							<tr>
+										<?php
+											while($data = mysqli_fetch_array($result1)){
+												if($data['branch_name'] == $row2[5]){
+										?>
+													<td class='num'><?= $data['branch_name'] ?></td>
+										<?php
+													continue;
+												}else{
+										?>
+													<td class='num'><?= $data['branch_name'] ?></td>
+										<?php		
+													break;
+												}
+											}
+										?>
+								<td class='left title'>
+								<a href='board_view.php?branch_seq=<?= $row2[5] ?>&bno=<?= $row2[0] ?>&page=<?= $page ?>&id=<?= $id ?>&pw=<?= $pw ?>'><?= $row2[1] ?></a></td>
+								<td class='name'><?=  $row2[2]  ?></td>
+								<td class='date'><?=  $row2[3]  ?></td>
+								<td class='view'><?=  $row2[4]  ?></td>
+							</tr>
+					<?php	
+						}
+					?>	
 					</tbody>
+					<tr height="25">
+						<td colspan="5" align="center">
+					<?php
+					//$view_num     화면에 표시되는 글 목록의 수
+					//$page_num     페이지 링크의 개수
+					//$total_no     전체 글 개수
+					//$total_page   전체 페이지 수
+					//$total_block  페이지 링크의 개수 만큼을 블럭으로 하는 총 블럭 수
+					//$block        현재 블럭
+					
+					$total_block = ceil($total_page / $page_num);
+					$block = ceil($page / $page_num);              //현재의 블록
+					$first = ($block - 1) * $page_num;             //페이지 블록의 시작하는 첫 페이지 
+					$last = $block * $page_num;                    //페이지 블록의 끝 페이지
+					
+					if($block >= $total_block) {
+						$last = $total_page;
+					}
+					if($block > 1) {
+						echo "[<a href='board.php?page=1'>처음</a>]&nbsp;&nbsp;";  //첫 페이지
+					}
+					if($page > 1) {
+						$go_page = $page - 1;
+						echo "[<a href='board.php?page=$go_page'>◀</a>]&nbsp;&nbsp;";
+					}
+					for($page_link=$first+1; $page_link <= $last; $page_link++) {
+						// [1] [2] [3] ... 각 페이지 표시
+						if($page_link == $page) {
+							echo " <font color='red'><b> {$page_link}</b></font> &nbsp;";
+						} else {
+							echo "[<a href='board.php?page=$page_link'>$page_link</a>]&nbsp;";
+						}
+					}
+					if($total_page > $page) {          //다음 페이지로 이동
+						$go_page = $page + 1;
+						echo "&nbsp;[<a href='board.php?page=$go_page'>▶</a>]";
+					}
+					if($block < $total_block) {
+						echo "&nbsp;[<a href='board.php?page=$total_page'>끝</a>]";
+					}
+					mysqli_close($connect);
+					?>
+					</td>
+					</tr>
 				</table>
 			</div>
-			<div class="btn_group right">
-				<a href="board_write.php" class="btn black"><i class="ico left cal"></i>글쓰기</a>
-			</div>
+	
+<?php
+if($id=="admin"&&$pw=="1234"){
+?>
+		<form name="write_botton" method="post" action="board_write.php">
+		<div class="btn_group right">
+			<input type="submit" name="submit" class="btn black" value=" 글쓰기 ">
+		</div>	
+		<input type="hidden" name="id" value="<?php echo $id; ?>">
+		<input type="hidden" name="pw" value="<?php echo $pw; ?>">
+		</form>
+<?php
+}
+?>
+	
 		</div>
 	</section>
 </div>
@@ -172,10 +287,20 @@
                     </div>
                 </section>
             </footer>
+			
 <script type="text/javascript">
-	$(function(){
 		
-	});
+		function change1(){
+			var obj = document.getElementById("s_where");
+			for (i=0;i<obj.length;i++ ){
+				if(obj[i].selected){
+					document.frm.h.value = obj[i].value;
+				}
+			}
+			document.frm.submit();
+		}
+		
 </script>
+
 </body>
 </html>
