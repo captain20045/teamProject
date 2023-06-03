@@ -1,9 +1,10 @@
 <?php
+session_start();
+
 $bno = $_GET['bno'];
 $page = $_GET['page'];
-$id = $_GET['id'];
-$pw = $_GET['pw'];
 $branch_seq = $_GET['branch_seq'];
+
 
 $connect = mysqli_connect('localhost','root','','project3');
 if(mysqli_connect_error()) {
@@ -44,8 +45,8 @@ mysqli_close($connect);
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 
-<link rel="stylesheet" href="/css/board_view.css" type="text/css">
-<link rel="stylesheet" href="/css/board_view1.css" type="text/css">
+<link rel="stylesheet" href="css/board_view.css" type="text/css">
+<link rel="stylesheet" href="css/board_view1.css" type="text/css">
 
 </head>
 <body>
@@ -109,17 +110,17 @@ mysqli_close($connect);
 			</div>
 			<div class="btn_group right">
 			<?php
-			if($id=="admin"&&$pw=="1234"){
+			if($_SESSION['userid'] =='admin'){
 			?>		
 					<input type="button" name="btn_update" class="btn gray2" value=" 글수정 "
 					onclick="location.href='board_fix.php?bno=<?php echo $bno; ?>
-					&page=<?php echo $page; ?>&id=<?php echo $id; ?>&pw=<?php echo $pw; ?>&branch_seq=<?php echo $branch_seq; ?>'">
+					&page=<?php echo $page; ?>&branch_seq=<?php echo $branch_seq; ?>'">
 					<input type="button" name="btn_del" class="btn gray2" value=" 글삭제 "
 					onclick="godelete()">
 			<?php
 			}
 			?>
-			<a href="board.php?id=<?= $id ?>&pw=<?= $pw ?>" class="btn gray">목록</a>
+			<a href="board.php" class="btn gray">목록</a>
 			</div>
 		</div>
 	</section>
@@ -158,7 +159,7 @@ mysqli_close($connect);
 <script type="text/javascript">
     function godelete(){
 		if(confirm("정말 삭제하시겠습니까?")==true){
-			location.href="http://localhost/delete_db.php?bno=<?php echo $_GET['bno']?>&page=<?php echo $_GET['page'];?>&id=<?php echo $_GET['id'];?>&pw=<?php echo $_GET['pw'];?>"
+			location.href="delete_db.php?bno=<?php echo $_GET['bno']?>&page=<?php echo $_GET['page'];?>"
 		}else{
 			return;
 		}

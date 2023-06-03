@@ -1,9 +1,30 @@
 <?php
+session_start();
+
+// $_REQUEST["action"] 값에 따라 세션변수 생성 또는 삭제
+$action = isset($_REQUEST["action"]) ? $_REQUEST["action"] : "";
+
+$id=$_GET['id'];
+$pw=$_GET['pw'];
+
+if ($action == "create") 
+    $_SESSION["userid"] = "admin";
+else if ($action == "delete") 
+    unset($_SESSION["userid"]);
+
+// 세션변수는 등록 즉시 사용 가능하므로
+// 프로그램을 다시 실행할 필요가 없음
+
+// 세션변수 읽기
+$_SESSION["userid"] = isset($_SESSION["userid"]) ? $_SESSION["userid"] : "";
+
 $page = (isset($_GET["page"]) && $_GET["page"]) ? $_GET["page"] : NULL;
-$id = (isset($_GET["id"]) && $_GET["id"]) ? $_GET["id"] : NULL;
-$pw = (isset($_GET["pw"]) && $_GET["pw"]) ? $_GET["pw"] : NULL;
 $_POST['selectedBranch'] =  isset($_POST['selectedBranch']) ? $_POST['selectedBranch'] : '';
 $_POST['s_where'] =  isset($_POST['s_where']) ? $_POST['s_where'] : '';
+$_POST['s_keyword'] =  isset($_POST['s_keyword']) ? $_POST['s_keyword'] : '';
+$_POST['h'] =  isset($_POST['h']) ? $_POST['h'] : '';
+$_GET['id'] =  isset($_GET['id']) ? $_GET['id'] : '';
+$_GET['pw'] =  isset($_GET['pw']) ? $_GET['pw'] : '';
 
 $s_where = $_POST['h'];
 if(strlen($s_where) == 0){	
@@ -56,8 +77,8 @@ $result1 = mysqli_query($connect, "SELECT branch_name FROM p_branch JOIN freeboa
 <html lang="en">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-			<link rel="stylesheet" href="/css/board.css" type="text/css">
-			<link rel="stylesheet" href="/css/board1.scss" type="text/css">
+			<link rel="stylesheet" href="css/board.css" type="text/css">
+			<link rel="stylesheet" href="css/board1.scss" type="text/css">
 			<!-- <link rel="stylesheet" href="css/test1.css" type="text/css"> -->
 	
 	</head>
@@ -183,7 +204,7 @@ $result1 = mysqli_query($connect, "SELECT branch_name FROM p_branch JOIN freeboa
 											}
 										?>
 								<td class='left title'>
-								<a href='board_view.php?branch_seq=<?= $row2[5] ?>&bno=<?= $row2[0] ?>&page=<?= $page ?>&id=<?= $id ?>&pw=<?= $pw ?>'><?= $row2[1] ?></a></td>
+								<a href='board_view.php?branch_seq=<?= $row2[5] ?>&bno=<?= $row2[0] ?>&page=<?= $page ?>'><?= $row2[1] ?></a></td>
 								<td class='name'><?=  $row2[2]  ?></td>
 								<td class='date'><?=  $row2[3]  ?></td>
 								<td class='view'><?=  $row2[4]  ?></td>
@@ -240,14 +261,15 @@ $result1 = mysqli_query($connect, "SELECT branch_name FROM p_branch JOIN freeboa
 			</div>
 	
 <?php
-if($id=="admin"&&$pw=="1234"){
+if(($id=='admin' && $pw=='1234') || $_SESSION['userid']=='admin'){
 ?>
+		
 		<form name="write_botton" method="post" action="board_write.php">
 		<div class="btn_group right">
 			<input type="submit" name="submit" class="btn black" value=" 글쓰기 ">
+			<a href="?action=create" class="btn gray">세션변수 생성</a>
+			<a href="?action=delete" class="btn gray">세션변수 삭제</a>
 		</div>	
-		<input type="hidden" name="id" value="<?php echo $id; ?>">
-		<input type="hidden" name="pw" value="<?php echo $pw; ?>">
 		</form>
 <?php
 }
@@ -299,6 +321,7 @@ if($id=="admin"&&$pw=="1234"){
 			}
 			document.frm.submit();
 		}
+		
 		
 </script>
 

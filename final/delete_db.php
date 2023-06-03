@@ -1,4 +1,8 @@
 <?php
+session_start();
+
+$_SESSION['userid'] = isset($_SESSION['userid']) ? $_SESSION['userid'] : '';
+
 $bno = $_GET['bno'];
 $page = $_GET['page'];
 $id = $_GET['id'];
@@ -26,7 +30,7 @@ if($bno_count > 0){
 			if('$msg' != '') {
 				alert('$msg');
 		    }
-		    location.href='board.php?page=$page&id=$id&pw=$pw';
+		    location.href='board.php?page=$page';
 		  </script>";
 }else{
 	$msg="오류";

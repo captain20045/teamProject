@@ -1,8 +1,10 @@
 <?php
+session_start();
+
+$_SESSION['userid'] = isset($_SESSION['userid']) ? $_SESSION['userid'] : '';
+
 $bno = $_GET['bno'];
 $page = $_GET['page'];
-$id = $_GET['id'];
-$pw = $_GET['pw'];
 $branch_seq = $_GET['branch_seq'];
 
 $connect = mysqli_connect('localhost','root','','project3');

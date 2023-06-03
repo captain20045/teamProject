@@ -1,6 +1,8 @@
 <?php
-	$id = $_POST['id'];
-	$pw = $_POST['pw'];
+	session_start();
+
+	$_SESSION['userid'] = isset($_SESSION['userid']) ? $_SESSION['userid'] : '';
+
 	$_POST['selectedBranch'] =  isset($_POST['selectedBranch']) ? $_POST['selectedBranch'] : '';
 
 	if(strlen($branch_seq) == 0){	

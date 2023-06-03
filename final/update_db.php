@@ -1,4 +1,8 @@
 <?php
+session_start();
+
+$_SESSION['userid'] = isset($_SESSION['userid']) ? $_SESSION['userid'] : '';
+
 $bno = $_POST['bno'];
 $page = $_POST['page'];
 $fname = $_POST['fname'];
@@ -37,7 +41,7 @@ if($bno_count > 0){  //비밀번호 확인해서 업데이트
 			if('$msg' != '') {
 				alert('$msg');
 		    }
-		    location.href='board.php?page=$page&id=$id&pw=$pw';
+		    location.href='board.php?page=$page';
 		  </script>";
 }else{
 	$msg = "오류.";

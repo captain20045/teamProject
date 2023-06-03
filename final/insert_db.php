@@ -1,4 +1,8 @@
 <?php
+session_start();
+
+$_SESSION['userid'] = isset($_SESSION['userid']) ? $_SESSION['userid'] : '';
+
 $fname = $_POST['fname'];
 $ftitle = $_POST['ftitle'];
 $fwrite = $_POST['fwrite'];
@@ -26,7 +30,7 @@ $res = mysqli_query($connect,$sql);
 mysqli_close($connect);
 if($res){
 	echo " <script>
-	         location.replace('board.php?id=$id&pw=$pw');
+	         location.replace('board.php');
 	       </script> ";
 }else{
 	echo " <script>
