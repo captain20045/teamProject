@@ -123,38 +123,36 @@ $connect = mysqli_connect('localhost','root','','project3');
 </form>
 
 
-	<footer id="footer">
-		<section class="footer_top">
-			<div class="inner container">
-				<ul class="footer_list">
-	                <li><a href="/privacy/personal.php">개인정보취급방침</a></li>
-	                <li><a href="/privacy/agreement.php">이용약관</a></li>
-	                <li><a href="/branch">지점소개</a></li>
-	                <li><a href="http://unreal-company.co.kr">프랜차이즈 가맹문의</a></li>
-	            </ul>
-	            
-			</div>
-		</section>
-		<section class="footer_bottom">
-			<div class="inner container">
-				<div class="site_info">
-					<a href="/" class="footer_logo"><img src=""></a>
-					<ul class="site_info_1">
-		                <li><span>상호명</span> 현생탈출</li>
-		                <li><span>주소</span> 경기도 성남시 중원구 광명로 377</li>
-		            </ul>
-		            <ul class="site_info_2">
-		               <li><span>(주)컴퍼니</span> </li>
-					   <li><span> 사업자등록번호</span> 000-00-000000</li>
-					   <li><span> 통신판매업 신고 </span> 2022-안양동안-202호 </li>
-		                <li><span>대표전화</span> 1800.6777  &nbsp;&nbsp;  / &nbsp;&nbsp;  E-mail escape@naver.com</li>
-		            </ul>
-		            <div class="copyright">Copyright ⓒ The Team Sherlock-Hormes. All rights reserved.</div>
-				</div>
-			
-			</div>
-		</section>
-	</footer>
+<footer id="footer">
+                <section class="footer_top">
+                    <div class="inner container">
+                        <ul class="footer_list">
+                            <li><a href="#">개인정보취급방침</a></li>
+                            <li><a href="#">이용약관</a></li>
+                            <li><a href="branch.php">지점소개</a></li>
+                        </ul>
+                        </div>
+                </section>
+                <section class="footer_bottom">
+                    <div class="inner container">
+                        <div class="site_info">
+                        
+                            <ul class="site_info_1">
+                                <li><span>상호명</span> 현생탈출</li>
+                                <li><span>주소</span> 경기도 성남시 중원구 광명로 377</li>
+                            </ul>
+                            <ul class="site_info_2">
+                               <li><span>(주)현생탈출컴퍼니</span> </li>
+                               <li><span> 사업자등록번호</span> 111-22-33333</li>
+                               <li><span> 통신판매업 신고 </span> 2023-신구대-212호 </li>
+                               <!-- 190926 요청에 따라 연락 이메일 교체 -->
+                                <li><span>대표전화</span> 1111.2222  &nbsp;&nbsp;  / &nbsp;&nbsp;  E-mail shingucompany@naver.com<!--info@shingucompany.co.kr--></li>
+                            </ul>
+                            <div class="copyright">Copyright ⓒ Escape from the Present. All rights reserved.</div>
+                        </div>
+                            
+                </section>
+            </footer>
 
 
 </body>
