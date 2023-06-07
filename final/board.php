@@ -61,11 +61,11 @@ if(strlen($searchtext) == 0){
 	$res2 = mysqli_query($connect, "select bno,title_board,name,insert_day,count_board,branch_seq from freeboard_tbl order by branch_seq limit $offset, $view_num");
 }else{
 	if($s_where==1){
-		$res2 = mysqli_query($connect, "select bno,title_board,name,insert_day,count_board,branch_seq from freeboard_tbl where name like '%$searchtext%' order by branch_seq  limit $offset, $view_num");
+		$res2 = mysqli_query($connect, "select bno,title_board,name,insert_day,count_board,branch_seq from freeboard_tbl where title_board like '%$searchtext%' order by branch_seq limit $offset, $view_num");
 	}else if($s_where==2){
 		$res2 = mysqli_query($connect, "select bno,title_board,name,insert_day,count_board,branch_seq from freeboard_tbl where write_board like '%$searchtext%' order by branch_seq limit $offset, $view_num");
 	}else{
-		$res2 = mysqli_query($connect, "select bno,title_board,name,insert_day,count_board,branch_seq from freeboard_tbl where name like '%$searchtext%' or write_board like '%$searchtext%' order by branch_seq limit $offset, $view_num");
+		$res2 = mysqli_query($connect, "select bno,title_board,name,insert_day,count_board,branch_seq from freeboard_tbl where title_board like '%$searchtext%' or write_board like '%$searchtext%' order by branch_seq limit $offset, $view_num");
 	}
 }
 
