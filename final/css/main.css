@@ -182,7 +182,6 @@ a.btn{display: inline-block;}
 .ico.close { background: url(../images/ico/ico_close.png) center no-repeat; }
 .ico.cal { background: url(../images/ico/ico_cal.png) center no-repeat; }
 .ico.cal_w { background: url(../images/ico/ico_cal_white.png) center no-repeat; }
-.ico.cal_black { background: url(../images/ico/ico_cal_black.png) center no-repeat; }
 .ico.star { background: url(../images/ico/ico_star.png) no-repeat 0 7px/contain; margin-bottom:-3px;}
 .ico.list { background: url(../images/ico/ico_list.png) center no-repeat; }
 .ico.members { background: url(../images/ico/ico_members.png) center no-repeat; }
