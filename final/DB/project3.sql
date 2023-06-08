@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- 생성 시간: 23-06-08 12:16
+-- 생성 시간: 23-06-08 14:33
 -- 서버 버전: 10.4.27-MariaDB
 -- PHP 버전: 8.2.0
 
@@ -509,7 +509,28 @@ INSERT INTO `p_theme` (`theme_seq`, `branch_seq`, `theme_number`, `theme_name`, 
 (285, 8, 37, '[프리미엄]유품정리사', '\"어이. 정리사 양반 도착했수? 아유 좀 꺼림직해도 잘 좀 부탁혀요 무슨 일 있으면 얘기하구. 끝나면 연락줘요.\"', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme37.jpg', 19000, 3, 3, '-', '16:00:00', '2~4'),
 (286, 8, 37, '[프리미엄]유품정리사', '\"어이. 정리사 양반 도착했수? 아유 좀 꺼림직해도 잘 좀 부탁혀요 무슨 일 있으면 얘기하구. 끝나면 연락줘요.\"', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme37.jpg', 19000, 3, 3, '-', '17:00:00', '2~4'),
 (287, 8, 37, '[프리미엄]유품정리사', '\"어이. 정리사 양반 도착했수? 아유 좀 꺼림직해도 잘 좀 부탁혀요 무슨 일 있으면 얘기하구. 끝나면 연락줘요.\"', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme37.jpg', 19000, 3, 3, '-', '18:00:00', '2~4'),
-(288, 8, 37, '[프리미엄]유품정리사', '\"어이. 정리사 양반 도착했수? 아유 좀 꺼림직해도 잘 좀 부탁혀요 무슨 일 있으면 얘기하구. 끝나면 연락줘요.\"', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme37.jpg', 19000, 3, 3, '-', '18:50:00', '2~4');
+(288, 8, 37, '[프리미엄]유품정리사', '\"어이. 정리사 양반 도착했수? 아유 좀 꺼림직해도 잘 좀 부탁혀요 무슨 일 있으면 얘기하구. 끝나면 연락줘요.\"', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme37.jpg', 19000, 3, 3, '-', '18:50:00', '2~4'),
+(289, 9, 38, '파란지붕집', '설녹읍 설녹2리 14-3 산 아래 파란지붕집에 어서오세요.', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme38.jpg', 19000, 3, 2, '호러', '10:00:00', '2~4'),
+(290, 9, 38, '파란지붕집', '설녹읍 설녹2리 14-3 산 아래 파란지붕집에 어서오세요.', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme38.jpg', 19000, 3, 2, '호러', '10:50:00', '2~4'),
+(291, 9, 38, '파란지붕집', '설녹읍 설녹2리 14-3 산 아래 파란지붕집에 어서오세요.', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme38.jpg', 19000, 3, 2, '호러', '11:40:00', '2~4'),
+(292, 9, 38, '파란지붕집', '설녹읍 설녹2리 14-3 산 아래 파란지붕집에 어서오세요.', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme38.jpg', 19000, 3, 2, '호러', '12:30:00', '2~4'),
+(293, 9, 38, '파란지붕집', '설녹읍 설녹2리 14-3 산 아래 파란지붕집에 어서오세요.', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme38.jpg', 19000, 3, 2, '호러', '13:20:00', '2~4'),
+(294, 9, 38, '파란지붕집', '설녹읍 설녹2리 14-3 산 아래 파란지붕집에 어서오세요.', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme38.jpg', 19000, 3, 2, '호러', '14:10:00', '2~4'),
+(295, 9, 38, '파란지붕집', '설녹읍 설녹2리 14-3 산 아래 파란지붕집에 어서오세요.', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme38.jpg', 19000, 3, 2, '호러', '15:00:00', '2~4'),
+(296, 9, 38, '파란지붕집', '설녹읍 설녹2리 14-3 산 아래 파란지붕집에 어서오세요.', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme38.jpg', 19000, 3, 2, '호러', '15:50:00', '2~4'),
+(297, 9, 38, '파란지붕집', '설녹읍 설녹2리 14-3 산 아래 파란지붕집에 어서오세요.', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme38.jpg', 19000, 3, 2, '호러', '16:40:00', '2~4'),
+(298, 9, 38, '파란지붕집', '설녹읍 설녹2리 14-3 산 아래 파란지붕집에 어서오세요.', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme38.jpg', 19000, 3, 2, '호러', '17:30:00', '2~4'),
+(299, 19, 39, '던전을 부탁해', '비인기 온라인게임 세헤라자드의 랭킹 1위인 당신. 그리고 오늘은 세헤라자드의 섭종전 마지막날이다.', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme39.jpg', 19000, 4, 0, '판타지', '09:30:00', '2~6'),
+(300, 19, 39, '던전을 부탁해', '비인기 온라인게임 세헤라자드의 랭킹 1위인 당신. 그리고 오늘은 세헤라자드의 섭종전 마지막날이다.', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme39.jpg', 19000, 4, 0, '판타지', '10:30:00', '2~6'),
+(301, 19, 39, '던전을 부탁해', '비인기 온라인게임 세헤라자드의 랭킹 1위인 당신. 그리고 오늘은 세헤라자드의 섭종전 마지막날이다.', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme39.jpg', 19000, 4, 0, '판타지', '11:30:00', '2~6'),
+(302, 19, 39, '던전을 부탁해', '비인기 온라인게임 세헤라자드의 랭킹 1위인 당신. 그리고 오늘은 세헤라자드의 섭종전 마지막날이다.', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme39.jpg', 19000, 4, 0, '판타지', '12:30:00', '2~6'),
+(303, 19, 39, '던전을 부탁해', '비인기 온라인게임 세헤라자드의 랭킹 1위인 당신. 그리고 오늘은 세헤라자드의 섭종전 마지막날이다.', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme39.jpg', 19000, 4, 0, '판타지', '13:30:00', '2~6'),
+(304, 19, 39, '던전을 부탁해', '비인기 온라인게임 세헤라자드의 랭킹 1위인 당신. 그리고 오늘은 세헤라자드의 섭종전 마지막날이다.', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme39.jpg', 19000, 4, 0, '판타지', '14:30:00', '2~6'),
+(305, 19, 39, '던전을 부탁해', '비인기 온라인게임 세헤라자드의 랭킹 1위인 당신. 그리고 오늘은 세헤라자드의 섭종전 마지막날이다.', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme39.jpg', 19000, 4, 0, '판타지', '15:30:00', '2~6'),
+(306, 19, 39, '던전을 부탁해', '비인기 온라인게임 세헤라자드의 랭킹 1위인 당신. 그리고 오늘은 세헤라자드의 섭종전 마지막날이다.', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme39.jpg', 19000, 4, 0, '판타지', '16:30:00', '2~6'),
+(307, 19, 39, '던전을 부탁해', '비인기 온라인게임 세헤라자드의 랭킹 1위인 당신. 그리고 오늘은 세헤라자드의 섭종전 마지막날이다.', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme39.jpg', 19000, 4, 0, '판타지', '17:30:00', '2~6'),
+(308, 19, 39, '던전을 부탁해', '비인기 온라인게임 세헤라자드의 랭킹 1위인 당신. 그리고 오늘은 세헤라자드의 섭종전 마지막날이다.', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme39.jpg', 19000, 4, 0, '판타지', '18:30:00', '2~6'),
+(309, 2, 4, '무인도', '불시착한 이곳에는 사람이 살지않는다.. 그런데 누군가의 흔적이 느껴진다.\r\n', 'https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/theme4.png', 23000, 2, 0, '\r\n어드벤처', '20:00:00', '2~6');
 
 --
 -- 덤프된 테이블의 인덱스
@@ -589,7 +610,7 @@ ALTER TABLE `p_reservation_status`
 -- 테이블의 AUTO_INCREMENT `p_theme`
 --
 ALTER TABLE `p_theme`
-  MODIFY `theme_seq` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=289;
+  MODIFY `theme_seq` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=310;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
