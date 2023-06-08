@@ -38,7 +38,7 @@
         <section id="main_intro" style="height: 937px;">
             <div class="container">
                 <div class="middle">
-                    <div class="intro_logo"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/main_logo.png" class="paraShowing show" data-dirc="s" data-dura="1.5" style="opacity: 1;"></div>
+                    <div class="intro_logo"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/main.png" class="paraShowing show" data-dirc="s" data-dura="1.5" style="opacity: 1;"></div>
 
                     <!-- <div class="wrapper">
                         <div class="typing-demo">현생탈출 ESCAPE ROOM ®</div>
