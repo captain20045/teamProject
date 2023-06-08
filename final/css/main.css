@@ -2533,3 +2533,43 @@ input{ padding: 12px; border-width: 1; background-color: #fff; font-size: 15px; 
 
 }
 
+.upper_blank {
+	height: 300px;
+	background: yellowgreen;
+	text-align: center;
+	padding-top: 200px;
+}
+.num-container {
+	display: flex;
+	flex-wrap: wrap;
+	background-color: #202020;	
+	justify-content: space-around;
+	align-items: center;
+	padding: 5%;
+}
+.num-item {
+	text-align: center;
+	padding: 10px;
+	margin-bottom: 30px;
+}
+.in-title {
+	font-family :'Noto Sans KR', Arial, sans-serif;
+	color: gray;
+	font-weight: 600;
+	margin-bottom: 20px;
+	font-size:25px;
+}
+.sub-title {
+	font: 14px/1 'arial';
+	color: #FAC05A;
+}
+.nums {
+	font-family:'Noto Sans KR', Arial, sans-serif;
+	color: #FAC05A;
+	font-size:40px;
+}
+#num-unit {
+	font-family:'Noto Sans KR', Arial, sans-serif;
+	color: #FAC05A;
+	font-size:40px;
+}

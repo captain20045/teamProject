@@ -12,7 +12,7 @@
     <body>
         <header id="header">
             <div class="inner">
-                <div class="header_logo"><a href="main.php"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/main_logo.png"></a>
+                <div class="header_logo"><a href="main.php"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/logo.png"></a>
                 </div>
                 <nav class="header_nav">
                     <ul class="depth1">
