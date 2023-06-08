@@ -10,7 +10,7 @@
     <header id="header">
             <div class="inner">
                 <div class="header_logo">
-                    <a href="/"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/logo.png"></a>
+                    <a href="main.php"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/logo.png"></a>
                 </div>
                 <nav class="header_nav">
                     <ul class="depth1">
@@ -50,15 +50,26 @@
                 <div class="line"></div>
             </div>
         </section>
-
+<?php
+    $_POST["sort"] = isset($_POST["sort"]) ? $_POST["sort"] : "basic";
+?>
         <section class="feature03 black_body" id="theme_list">
             <div class="inner container">
         <form action="theme.php" method="post" name="test">
             <select class="sort" id="sort" name="sort" onchange="change()">
                     <option>정렬</option>
-                    <option value="basic">최신순</option>
-                    <option value="level">난이도</option>
-                    <option value="scare">공포도</option>
+                    <option value="basic" 
+					<?php if($_POST["sort"]=='basic'){ ?>
+						selected
+					<?php } ?>>최신순</option>
+                    <option value="level"
+					<?php if($_POST["sort"]=='level'){ ?>
+						selected
+					<?php } ?>>난이도</option>
+                    <option value="scare"
+					<?php if($_POST["sort"]=='scare'){ ?>
+						selected
+					<?php } ?>>공포도</option>
             </select>
         </form>
 
@@ -70,14 +81,16 @@
         echo "데이터베이스 연결에 실패하였습니다.";
     }
 
-    $_POST["sort"] = isset($_POST["sort"]) ? $_POST["sort"] : "basic";
+    
     if($_POST["sort"] == "basic"){
     $result = mysqli_query($connect,"SELECT * FROM p_theme GROUP by theme_number order by theme_number desc;");
     }else if($_POST["sort"] == "level"){
     $result = mysqli_query($connect,"SELECT * FROM p_theme group by theme_number order by theme_level desc;");
     }else if($_POST["sort"] == "scare"){
     $result = mysqli_query($connect,"SELECT * FROM p_theme group by theme_number order by theme_scare desc;");
-    }
+    }else{
+	$result = mysqli_query($connect,"SELECT * FROM p_theme GROUP by theme_number order by theme_number desc;");
+	}
     while($data = mysqli_fetch_array($result)){
         $branch_seq = $data['branch_seq'];
         $result2 = mysqli_query($connect,"SELECT branch_name FROM p_branch where branch_seq = $branch_seq");

@@ -3,6 +3,8 @@ session_start();
 
 // $_REQUEST["action"] 값에 따라 세션변수 생성 또는 삭제
 $action = isset($_REQUEST["action"]) ? $_REQUEST["action"] : "";
+$_GET['id'] =  isset($_GET['id']) ? $_GET['id'] : '';
+$_GET['pw'] =  isset($_GET['pw']) ? $_GET['pw'] : '';
 
 $id=$_GET['id'];
 $pw=$_GET['pw'];
@@ -23,8 +25,7 @@ $_POST['selectedBranch'] =  isset($_POST['selectedBranch']) ? $_POST['selectedBr
 $_POST['s_where'] =  isset($_POST['s_where']) ? $_POST['s_where'] : '';
 $_POST['s_keyword'] =  isset($_POST['s_keyword']) ? $_POST['s_keyword'] : '';
 $_POST['h'] =  isset($_POST['h']) ? $_POST['h'] : '';
-$_GET['id'] =  isset($_GET['id']) ? $_GET['id'] : '';
-$_GET['pw'] =  isset($_GET['pw']) ? $_GET['pw'] : '';
+
 
 $s_where = $_POST['h'];
 if(strlen($s_where) == 0){	
