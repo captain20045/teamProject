@@ -1,28 +1,18 @@
-<html lang="en"><head>
+<html lang="en">
+    <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi">
     <title>Cube Escape</title>
-    <script language="javascript">
-    document.title="Cube Escape Game";
-    </script>
-    <link rel="stylesheet" href="css/main.css">
-    
-    <meta name="description" content="강남,홍대,잠실,노량진,신림 등 전국 40호점 국내최대 큐브 방탈출 카페">
-    <meta property="og:description" content="강남,홍대,잠실,노량진,신림 등 전국 40호점 국내최대 큐브 방탈출 카페">
-    <meta name="naver-site-verification" content="90315006b3ecb880974d00ad95d55b4518b7de7b">
-        
-    
     <meta property="og:type" content="website">
     <meta property="og:title" content="Cube Escape Game 카페">
- 
     <link rel="stylesheet" href="css/main.css" type="text/css">
+
+  
+    
     </head>
     <body>
         <header id="header">
             <div class="inner">
-                <div class="header_logo">
-                    <a href="main.php"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/logo.png"></a>
+                <div class="header_logo"><a href="main.php"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/main_logo.png"></a>
                 </div>
                 <nav class="header_nav">
                     <ul class="depth1">
@@ -38,8 +28,8 @@
                         <li class="reservation active">
                             <a href="reservation.php">예약하기</a>
                         </li>
-</ul>
-</div>
+                    </ul>
+                </div>
             </div>
         </header> 
     
@@ -48,7 +38,12 @@
         <section id="main_intro" style="height: 937px;">
             <div class="container">
                 <div class="middle">
-                    <div class="intro_logo"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/main.png" class="paraShowing show" data-dirc="s" data-dura="1.5" style="opacity: 1;"></div>
+                    <div class="intro_logo"><img src="https://raw.githubusercontent.com/dudxoor68/teamProject/main/front/img/main_logo.png" class="paraShowing show" data-dirc="s" data-dura="1.5" style="opacity: 1;"></div>
+
+                    <!-- <div class="wrapper">
+                        <div class="typing-demo">현생탈출 ESCAPE ROOM ®</div>
+                    </div> -->
+
                     <button type="button" class="btn white_trans paraShowing show" data-dirc="s" data-delay="0.5" onclick="window.location.href='reservation.php'" style="opacity: 1;">예약하기</button>
                     <div class="scroll_down" data-delay="1" data-dist="0">
                        
@@ -141,6 +136,78 @@
                     </div>
                 </div>
             </section>
+
+            <script>
+            this.initMotionEle = function(){
+            arrApp = [];
+            var appear = $('.paraShowing');
+            appLen = appear.length;
+            if(!appLen) return;
+            var i;
+            for(i = 0 ; i < appLen ; i++){
+                var item = appear.eq(i);
+                arrApp.push({
+                    item : item,
+                    ease : item.data('ease') || 'Power2.easeInOut',
+                    dura : parseFloat(item.data('dura') || 1),
+                    delay : parseFloat(item.data('delay') || 0),
+                    dirc : item.data('dirc') || 'y',
+                    dist : parseInt(item.data('dist') || 100)
+                });
+            }
+        }
+    </script>
+
+           
+            <div class="num-container" id="num-container">
+                <div class="num-item">
+                    <h4 class="in-title">Participants</h4>
+                        <span class="nums" data-count="120">0</span><span id="num-unit">K+</span><br>
+                        <span class="sub-title"></span><br>
+                </div>
+
+                 <div class="num-item">
+                    <h4 class="in-title">Company Events</h4>
+                        <span class="nums" data-count="180">0</span><span id="num-unit"></span><br>
+                        <span class="sub-title"> </span><br>
+                </div>
+
+                <div class="num-item">
+                    <h4 class="in-title">Review</h4>
+                        <span class="nums" data-count="255">0</span><span id="num-unit">+</span><br>
+                        <span class="sub-title"></span><br>
+                </div>
+
+                <div class="num-item">
+                    <h4 class="in-title">number of themes</h4>
+                        <span class="nums" data-count="37">0</span><span id="num-unit"></span><br>
+                        <span class="sub-title"></span><br>
+                </div>
+            </div>
+           
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.min.js"></script>
+    <script>
+        $('.nums').each(function () {
+            const $this = $(this),
+                countTo = $this.attr('data-count');
+
+            $({
+                countNum: $this.text()
+            }).animate({
+                countNum: countTo
+            }, {
+                duration: 8000,
+                easing: 'linear',
+                step: function () {
+                    $this.text(Math.floor(this.countNum));
+                },
+                complete: function () {
+                    $this.text(this.countNum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ','));
+                }
+            });
+        });
+    </script>
+            
 
         
     
