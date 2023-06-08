@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- 생성 시간: 23-06-01 12:31
+-- 생성 시간: 23-06-08 12:16
 -- 서버 버전: 10.4.27-MariaDB
 -- PHP 버전: 8.2.0
 
@@ -42,11 +42,11 @@ CREATE TABLE `freeboard_tbl` (
 --
 
 INSERT INTO `freeboard_tbl` (`bno`, `branch_seq`, `name`, `title_board`, `write_board`, `insert_day`, `count_board`) VALUES
-(1, 1, '관리자', '영화 <석조저택 살인사건> X <현생탈출> 의 제휴 이벤트 !', '※ 현생탈출 함께하는 서스펜스 스릴러 영화 <석조저택 살인사건> ! \r\n\r\n\r\n\r\n\r\n\r\n - 현생탈출 해당 이벤트 지점 / 기간 - 영화상영기간내\r\n\r\n\r\n\r\n범계점, 천안점, 수원점, 광주점, 두정점, 동탄점, 용인점, 강릉점, 대전점, 순천점\r\n\r\n안산점,제주시청점, 일산점, 세종점, 전주점, 구리점, 부평점, 강남점, 잠실점, 홍대점\r\n\r\n신림점, 인천점, 송도점, 제주제원점, 산본점, 인천논현점   \r\n\r\n\r\n\r\n각 지점별 추첨을 통해 <석조저택 살인사건> 영화 예매권을 받으실 수 있습니다. \r\n\r\n\r\n\r\n(기간 4/21~5/7)   ', '2020-12-02', 1),
+(1, 1, '관리자', '영화 <석조저택 살인사건> X <현생탈출> 의 제휴 이벤트 !', '※ 현생탈출 함께하는 서스펜스 스릴러 영화 <석조저택 살인사건> ! \r\n\r\n\r\n\r\n\r\n\r\n - 현생탈출 해당 이벤트 지점 / 기간 - 영화상영기간내\r\n\r\n\r\n\r\n범계점, 천안점, 수원점, 광주점, 두정점, 동탄점, 용인점, 강릉점, 대전점, 순천점\r\n\r\n안산점,제주시청점, 일산점, 세종점, 전주점, 구리점, 부평점, 강남점, 잠실점, 홍대점\r\n\r\n신림점, 인천점, 송도점, 제주제원점, 산본점, 인천논현점   \r\n\r\n\r\n\r\n각 지점별 추첨을 통해 <석조저택 살인사건> 영화 예매권을 받으실 수 있습니다. \r\n\r\n\r\n\r\n(기간 4/21~5/7)   ', '2020-12-02', 12),
 (2, 1, '관리자', '영화 <장산범> X <현생탈출> 의 제휴 이벤트 !', '아래 링크 클릭 시 <메인 예고편>으로 이동\r\n\r\nhttp://movie.naver.com/movie/bi/mi/mediaView.nhn?code=137696&mid=35404   \r\n\r\n\r\n\r\n영화 <장산범> X <현생탈출> 의 제휴 이벤트!\r\n\r\n\r\n\r\n현생탈출 직영점 이용 시 장산범 영화 티켓을 고객분들에게 추첨을 통하여 제공해드립니다. \r\n\r\n\r\n\r\n(영화 상영 전 ~ 상영 기간)\r\n\r\n\r\n\r\n강남점\r\n\r\n서울특별시 강남구 봉은사로 2길 24 3층 현생탈출	02.564.0052\r\n잠실점\r\n\r\n서울특별시 송파구 백제고분로 7길 19 3,4층(잠실동)	02.422.0053\r\n신림점\r\n\r\n서울특별시 관악구 신림동 1639-27 3층	02.875.0050\r\n홍대점\r\n\r\n서울특별시 마포구 서교동 340-5 3층	02.335.3360\r\n인천구월점\r\n\r\n\r\n\r\n인천광역시 남동구 인하로489번길 28 6층	032.437.0011\r\n', '2021-05-13', 1),
 (3, 1, '관리자', '<현생탈출> X <영화 글래스> 제휴 이벤트', '영화 <글래스> X [현생탈출]의 제휴 이벤트!\r\n\r\n \r\n\r\n24개의 인격, 강철 같은 신체, 천재적 두뇌! 마침내 그들이 만났다!\r\n\r\n19년을 기다려온 M. 나이트 샤말란의 소름 돋는 빅픽처!\r\n\r\n \r\n\r\n현생탈출 이용시 영화 <글래스> 티켓을 고객분들에게 추첨을 통하여 제공해드립니다!\r\n\r\n(*예매권은 <글래스> 전용 티켓으로, 개봉일 부터 상영 기간 내에 사용 가능합니다)\r\n\r\n\r\n\r\n\r\n<글래스> 메인 예고편 링크:  https://youtu.be/FzkcLIoGJxk \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n[이벤트 진행 매장] 현생탈출 전국 20개 지점\r\n\r\n신림점, 강남점, 강남2호점, 홍대점, 노량진점, 영등포점, 잠실점, \r\n\r\n범계점, 천안점, 광주점, 대학로점, 구리점, 부평점, 노원점, 안양1번가점,\r\n\r\n성신여대점, 서현점, 서현2호점, 야탑점, 의정부점 \r\n\r\n', '2021-07-22', 2),
-(4, 2, '관리자', '<현생탈출> X <영화 이스케이프룸> 제휴 이벤트', ' <현생탈출 방탈출카페> X 영화 <이스케이프 룸>  제휴 이벤트!\r\n\r\n​\r\n\r\n\r\n\r\n2019년 새해 북미 극장가를 뒤흔든 놀라운 흥행작!\r\n\r\n\r\n\r\n북미, 유럽까지 휩쓸고 드디어 3월 14일 국내 개봉하는 <이스케이프 룸>의\r\n\r\n\r\n\r\n출구 없는 방탈출 게임에 여러분을 초대합니다!\r\n\r\n\r\n\r\n​​​\r\n\r\n[현생탈출] 이용 시, 고객분들에게 추첨을 통해\r\n\r\n\r\n\r\n영화 <이스케이프 룸>예매권을 제공해드립니다!\r\n\r\n\r\n\r\n추첨 이벤트 내용은 아래의 이벤트 진행이 되는 \r\n\r\n\r\n\r\n각 매장에 문의 부탁 드립니다 :D\r\n\r\n\r\n\r\n\r\n\r\n(*예매권은 <이스케이프 룸>전용 티켓으로, 개봉일부터 상영 기간 내에 사용 가능합니다.)\r\n\r\n​\r\n\r\n\r\n\r\n\r\n\r\n오감 공포 자극하는 역대급 스케일의 방탈출 게임\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n<이스케이프 룸>예고편 보기 \r\n\r\n\r\n\r\n\r\n\r\n https://www.facebook.com/376679229019287/posts/2268625039824687?sfns=mo\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n​\r\n\r\n\r\n\r\n[이벤트 진행 매장] 현생탈출 전국 21개 매장\r\n\r\n\r\n\r\n​강남1호점, 강남2호점, 홍대점, 잠실점, 영등포점, 신림점, 노량진점\r\n\r\n\r\n\r\n대학로, 서울대, 성신여대, 노원점, 범계점, 안양 1번가, \r\n\r\n\r\n\r\n부천, 수원역, 분당 야탑, 일산, 부평, 구월, 천안, 대전', '2021-11-05', 0),
-(5, 2, '관리자', '<현생탈출> X <영화 공포의묘지> 제휴 이벤트', '[현생탈출] X 영화 <공포의 묘지> 제휴 이벤트!\r\n\r\n\r\n\r\n \r\n\r\n<그것> 스티븐 킹이 선사하는 가장 원초적인 공포!\r\n\r\n\r\n\r\n아빠, 왜 날 살렸어...?\r\n\r\n\r\n\r\n죽었던 딸이 돌아오고, 진정한 공포가 시작된다!\r\n\r\n\r\n\r\n \r\n\r\n현생탈출 이용시 영화 <공포의 묘지> 티켓을 고객분들에게 추첨을 통하여 제공해드립니다!\r\n\r\n\r\n\r\n(*예매권은 <공포의 묘지> 전용 티켓으로, 개봉일부터 상영 기간 내에 사용 가능합니다)\r\n\r\n\r\n\r\n \r\n\r\n[이벤트 진행 매장] 현생탈출 전국 10개 매장\r\n\r\n\r\n\r\n강남점, 강남2호점, 노량진점, 홍대점, 잠실점\r\n\r\n\r\n신림점, 영등포점, 부천점, 구리점, 노원점', '2022-03-15', 0),
+(4, 2, '관리자', '<현생탈출> X <영화 이스케이프룸> 제휴 이벤트', ' <현생탈출 방탈출카페> X 영화 <이스케이프 룸>  제휴 이벤트!\r\n\r\n​\r\n\r\n\r\n\r\n2019년 새해 북미 극장가를 뒤흔든 놀라운 흥행작!\r\n\r\n\r\n\r\n북미, 유럽까지 휩쓸고 드디어 3월 14일 국내 개봉하는 <이스케이프 룸>의\r\n\r\n\r\n\r\n출구 없는 방탈출 게임에 여러분을 초대합니다!\r\n\r\n\r\n\r\n​​​\r\n\r\n[현생탈출] 이용 시, 고객분들에게 추첨을 통해\r\n\r\n\r\n\r\n영화 <이스케이프 룸>예매권을 제공해드립니다!\r\n\r\n\r\n\r\n추첨 이벤트 내용은 아래의 이벤트 진행이 되는 \r\n\r\n\r\n\r\n각 매장에 문의 부탁 드립니다 :D\r\n\r\n\r\n\r\n\r\n\r\n(*예매권은 <이스케이프 룸>전용 티켓으로, 개봉일부터 상영 기간 내에 사용 가능합니다.)\r\n\r\n​\r\n\r\n\r\n\r\n\r\n\r\n오감 공포 자극하는 역대급 스케일의 방탈출 게임\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n<이스케이프 룸>예고편 보기 \r\n\r\n\r\n\r\n\r\n\r\n https://www.facebook.com/376679229019287/posts/2268625039824687?sfns=mo\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n​\r\n\r\n\r\n\r\n[이벤트 진행 매장] 현생탈출 전국 21개 매장\r\n\r\n\r\n\r\n​강남1호점, 강남2호점, 홍대점, 잠실점, 영등포점, 신림점, 노량진점\r\n\r\n\r\n\r\n대학로, 서울대, 성신여대, 노원점, 범계점, 안양 1번가, \r\n\r\n\r\n\r\n부천, 수원역, 분당 야탑, 일산, 부평, 구월, 천안, 대전', '2021-11-05', 2),
+(5, 2, '관리자', '<현생탈출> X <영화 공포의묘지> 제휴 이벤트', '[현생탈출] X 영화 <공포의 묘지> 제휴 이벤트!\r\n\r\n\r\n\r\n \r\n\r\n<그것> 스티븐 킹이 선사하는 가장 원초적인 공포!\r\n\r\n\r\n\r\n아빠, 왜 날 살렸어...?\r\n\r\n\r\n\r\n죽었던 딸이 돌아오고, 진정한 공포가 시작된다!\r\n\r\n\r\n\r\n \r\n\r\n현생탈출 이용시 영화 <공포의 묘지> 티켓을 고객분들에게 추첨을 통하여 제공해드립니다!\r\n\r\n\r\n\r\n(*예매권은 <공포의 묘지> 전용 티켓으로, 개봉일부터 상영 기간 내에 사용 가능합니다)\r\n\r\n\r\n\r\n \r\n\r\n[이벤트 진행 매장] 현생탈출 전국 10개 매장\r\n\r\n\r\n\r\n강남점, 강남2호점, 노량진점, 홍대점, 잠실점\r\n\r\n\r\n신림점, 영등포점, 부천점, 구리점, 노원점', '2022-03-15', 2),
 (6, 3, '관리자', '<현생탈출> X <영화 9명의 번역가> 제휴 이벤트', '<셜록홈즈> X <영화 9명의 번역가> 제휴 이벤트\r\n\r\n\r\n\r\n\r\n\r\n\r\n베스트셀러 소설의 번역을 위해 밀폐된 지하실에 모인 번역가들과 편집장이 \r\n\r\n\r\n\r\n출판되지 않은 소설의 내용 일부가 인터넷에 유출되자 서로를 의심하게 되는 추적 스릴러!\r\n\r\n\r\n\r\n\r\n\r\n영화 9명의 번역가와 셜록홈즈가 역대급 이벤트를 진행합니다.\r\n\r\n\r\n\r\n\r\n\r\n셜록홈즈 매장을 이용하고 매장 내 영화 포스터를 인스타그램에 해쉬태그와 함께 업로드해주시면 추첨을 통해 <9명의 번역가> 시사회에 초대해드립니다!\r\n\r\n\r\n\r\n- 응모기간 : ~ 08. 29. (월)\r\n\r\n\r\n\r\n- 당첨발표 : 08. 31. (수) 개별연락\r\n\r\n\r\n\r\n- 시사회 정보 : 2022. 09. 03. (토), 롯데시네마 월드타워 14:00\r\n\r\n\r\n\r\n- 이벤트 진행매장(서울 7개지점) : 노원점, 대학로점, 성신여대점, 신림2호점, 잠실1호점, 잠실2호점, 종각점', '2022-04-18', 0),
 (7, 3, '관리자', '언리얼컴퍼니, 방탈출 카페로 벤처기업 인증 획득', '셜록홈즈 방탈출카페 브랜드를 운영하고 있는 언리얼컴퍼니(대표 권충도, 박찬원)가 업계 최초로 벤처기업인증을 획득했다고 밝혔다.\r\n\r\n\r\n\r\n벤처기업인증은 기술보증기금과 중소기업진흥공단이 기술 및 경영혁신에 관한 능력이 우수한 중소기업을 육성하기 위해 마련한 제도이다.\r\n\r\n\r\n\r\n기술성과 성장 가능성, 혁신성 등을 기준으로 한 평가를 통해 선정 기업에게 2년간 투자유치, 조세감면, 금융, 특허, 마케팅, 정책자금 등의 혜택을 제공한다.\r\n\r\n\r\n\r\n이 업체는 3세대 방탈출 게임 셜록홈즈 방탈출카페를 개발하여 현재 동종 업계 가운데 최다(29개) 지점을 운영중이며, 이번 인증을 통해 관련 전문 기술과 성장 잠재력을 공식적으로 인정받게 됐다.\r\n\r\n\r\n\r\n언리얼컴퍼니 관계자는 소비자 확보와 품질 관리에 주력해온 점이 인증 획득으로 이어진 것 같다”며 “방탈출카페 업계의 발전을 위해 기술 개발 및 테마 개발에 더욱 힘쓰겠다고 말했다.', '2022-08-16', 0),
 (8, 5, '관리자', '성신여대점 신규테마 오픈!!', ' 성신여대점 신규테마가 오픈했습니다 중대장은 오늘 너희에게 무척 실망했다 Connect 추리 및 공상과학 테마로 중대장은 왜 실망했고 우주 생활을 경험해보세요', '2022-10-02', 0),
@@ -156,6 +156,13 @@ CREATE TABLE `p_reservation` (
   `register_date` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
+--
+-- 테이블의 덤프 데이터 `p_reservation`
+--
+
+INSERT INTO `p_reservation` (`reservation_seq`, `region_seq`, `branch_seq`, `theme_number`, `theme_name`, `reservation_date`, `reservation_time`, `customer_name`, `customer_phone_number`, `booked_member`, `price`, `purchase_way`, `memo`, `register_date`) VALUES
+(127, 3, 18, 12, '악마를 보았다', '2023-06-08', '13:50', 'a', '010-1234-1234', 3, 76500, '현장결제', '', '2023-06-08');
+
 -- --------------------------------------------------------
 
 --
@@ -185,7 +192,9 @@ CREATE TABLE `p_reservation_status` (
 --
 
 INSERT INTO `p_reservation_status` (`reservation_status_seq`, `reservation_status_date`, `region_seq`, `branch_seq`, `theme_number`, `booking_possibility_1`, `booking_possibility_2`, `booking_possibility_3`, `booking_possibility_4`, `booking_possibility_5`, `booking_possibility_6`, `booking_possibility_7`, `booking_possibility_8`, `booking_possibility_9`, `booking_possibility_10`) VALUES
-(55, '2023-05-31', 1, 3, 6, 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y');
+(57, '2023-06-07', 2, 10, 8, 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', NULL, NULL),
+(58, '2023-06-08', 3, 18, 12, 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', NULL, NULL),
+(59, '2023-06-08', 2, 13, 18, 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', 'Y', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -550,7 +559,7 @@ ALTER TABLE `p_theme`
 -- 테이블의 AUTO_INCREMENT `freeboard_tbl`
 --
 ALTER TABLE `freeboard_tbl`
-  MODIFY `bno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `bno` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- 테이블의 AUTO_INCREMENT `p_branch`
@@ -568,13 +577,13 @@ ALTER TABLE `p_region`
 -- 테이블의 AUTO_INCREMENT `p_reservation`
 --
 ALTER TABLE `p_reservation`
-  MODIFY `reservation_seq` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=125;
+  MODIFY `reservation_seq` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=129;
 
 --
 -- 테이블의 AUTO_INCREMENT `p_reservation_status`
 --
 ALTER TABLE `p_reservation_status`
-  MODIFY `reservation_status_seq` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `reservation_status_seq` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
 --
 -- 테이블의 AUTO_INCREMENT `p_theme`
